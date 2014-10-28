@@ -1,0 +1,8 @@
+moveit_setup_assistant_config:
+  URDF:
+    package: grizzly_ur10_description
+    relative_path: urdf/grizzly_ur10.urdf
+  SRDF:
+    relative_path: config/grizzly_ur10.srdf
+  CONFIG:
+    generated_timestamp: 1414524427

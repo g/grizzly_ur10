@@ -1,0 +1,25 @@
+<?xml version="1.0"?>
+<package>
+  <name>grizzly_ur10_description</name>
+  <version>0.2.0</version>
+  <description>Contains a URDF description for Grizzly with integrated UR10 manipulator.</description>
+
+  <maintainer email="mpurvis@clearpathrobotics.com">Mike Purvis</maintainer>
+  <maintainer email="dash@clearpathrobotics.com">Devon Ash</maintainer>
+
+  <license>BSD</license>
+  
+  <buildtool_depend>catkin</buildtool_depend>
+
+  <!--ROS specific-->
+  <run_depend>grizzly_description</run_depend>
+  <run_depend>joint_state_publisher</run_depend>
+  <run_depend>robot_state_publisher</run_depend>
+  <run_depend>roscpp</run_depend>
+  <run_depend>rospy</run_depend>
+  <run_depend>ur_description</run_depend>
+  <run_depend>urdf</run_depend>
+  <run_depend>xacro</run_depend>
+</package>
+
+
