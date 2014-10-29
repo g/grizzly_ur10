@@ -1,0 +1,25 @@
+<launch>
+    
+
+<include file="$(find ur10_moveit_config)/launch/ur10_moveit_planning_execution.launch"/>
+
+
+<!-- Contents of ur10_moveit_planning_execution.launch 
+<arg name="sim" default="false" />
+    <arg name="limited" default="false"/>
+    <arg name="debug" default="false"/>
+  
+    <!-- Remape follow joint traj -->
+    <remap if="$(arg sim)" from="/follow_joint_trajectory" to="/arm_controller/follow_joint_trajectory"/>
+ 
+
+    <!-- Launch MoveIt! -->
+    <include file="$(find ur10_moveit_config)/launch/move_group.launch">
+        <arg name="limited" default="$(arg limited)"/>
+        <arg name="debug" default="$(arg debug)"/>
+    </include>
+-->
+
+    
+
+</launch>

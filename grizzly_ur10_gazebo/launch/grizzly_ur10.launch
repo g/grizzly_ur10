@@ -1,0 +1,16 @@
+<launch>
+
+    <arg name="description" />
+
+    <include file="$(find grizzly_ur10_gazebo)/launch/grizzly_ur10_gazebo.launch">
+        <arg name="description" value="$(arg description)" />
+    </include>
+
+    <include file="$(find grizzly_motion)/launch/motion.launch">
+    <arg name="simulate" value="true" />
+    </include>
+   
+    <include file="$(find grizzly_navigation)/launch/ekf.launch"/>    
+
+</launch>
+
