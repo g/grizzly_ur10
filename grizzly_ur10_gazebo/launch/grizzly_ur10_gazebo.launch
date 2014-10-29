@@ -3,7 +3,7 @@
     <arg name="description"/>
     <param name="use_sim_time" value="true" />
     
-    <param name="robot_description" value="$(arg description)"/>
+    <param name="robot_description" command="$(find xacro)/xacro.py '$(arg description)'"/>
 
     <node name="spawn_robot" pkg="gazebo_ros" type="spawn_model"
         args="-param robot_description

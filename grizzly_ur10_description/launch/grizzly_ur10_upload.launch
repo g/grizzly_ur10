@@ -1,0 +1,5 @@
+<launch>
+
+   <param name="robot_description" command="$(find xacro)/xacro.py '$(find grizzly_ur10_description)/urdf/base_with_manipulator.urdf.xacro'" />
+
+</launch>

@@ -1,16 +1,25 @@
 <launch>
 
-    <arg name="description" />
 
-    <include file="$(find grizzly_ur10_gazebo)/launch/grizzly_ur10_gazebo.launch">
-        <arg name="description" value="$(arg description)" />
+    <!-- This file launches everything the ur10.launch does except for the spawning of the URDF to the server. This is instead replaced by the launch of the grizzly_ur10_upload.launch file -->
+
+    <arg name="limited" default="false"/>
+    <arg name="paused" default="true" />
+  
+    <include file="$(find gazebo_ros)/launch/empty_world.launch">
+        <arg name="world_name" default="worlds/empty.world"/>
+        <arg name="paused" value="$(arg paused)"/>
     </include>
 
-    <include file="$(find grizzly_motion)/launch/motion.launch">
-    <arg name="simulate" value="true" />
-    </include>
-   
-    <include file="$(find grizzly_navigation)/launch/ekf.launch"/>    
+    <include file="$(find grizzly_ur10_description)/launch/grizzly_ur10_upload.launch"/>
+
+    <node name="spawn_gazebo_model" pkg="gazebo_ros" type="spawn_model" args="-urdf -param robot_description -model robot -z 0.1" respawn="false" output="screen"/>
+
+    <include file="$(find ur_gazebo)/launch/controller_utils.launch"/>
+
+    <rosparam file="$(find ur_gazebo)/controller/arm_controller_ur10.yaml" command="load" />
+
+    <node name="arm_controller_spawner" pkg="controller_manager" type="spawner" args="arm_controller" />
 
 </launch>
 
