@@ -6,8 +6,7 @@
      An automatically generated package with all the configuration and launch files for using the grizzly_ur10 with the MoveIt Motion Planning Framework
   </description>
   <author email="assistant@moveit.ros.org">MoveIt Setup Assistant</author>
-  <maintainer email="mpurvis@clearpathrobotics.com">Mike Purvis</maintainer>
-  <maintainer email="dash@clearpathrobotics.com">Devon Ash</maintainer>
+  <maintainer email="assistant@moveit.ros.org">MoveIt Setup Assistant</maintainer>
 
   <license>BSD</license>
 
