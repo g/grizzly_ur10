@@ -68,7 +68,7 @@ Again, you can use MoveIt! to control the simulated robot.
 
 For setting up the MoveIt! nodes to allow motion planning run:
 
-roslaunch grizzly_ur10_moveit_config ur10_moveit_planning_execution.launch sim:=true
+roslaunch grizzly_ur10_moveit_config grizzly_ur10_moveit_planning_execution.launch sim:=true
 
 For starting up RViz with a configuration including the MoveIt! Motion Planning plugin run:
 
