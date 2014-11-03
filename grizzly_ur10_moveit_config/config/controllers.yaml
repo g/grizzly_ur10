@@ -1,5 +1,8 @@
 controller_list:
-  - name: fake_ur10_arm_controller
+  - name: arm_controller
+    ns: follow_joint_trajectory
+    type: FollowJointTrajectory
+    default: true
     joints:
       - shoulder_pan_joint
       - shoulder_lift_joint

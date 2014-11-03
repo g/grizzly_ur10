@@ -1,0 +1,27 @@
+<?xml version="1.0"?>
+<package>
+  <name>grizzly_ur10_gazebo</name>
+  <version>0.2.0</version>
+  <description>Example launch files for working with the Grizzly UR10 Simulator</description>
+
+  <maintainer email="dash@clearpathrobotics.com">Devon Ash</maintainer>
+  <maintainer email="mpurvis@clearpathrobotics.com">Mike Purvis</maintainer>
+
+  <license>BSD</license>
+
+  <buildtool_depend>catkin</buildtool_depend>
+
+   <build_depend>grizzly_msgs</build_depend>
+   <run_depend>gazebo_ros</run_depend>
+   <run_depend>grizzly_ur10_moveit_config</run_depend>
+   <run_depend>grizzly_ur10_description</run_depend>
+   <run_depend>grizzly_description</run_depend>
+   <run_depend>grizzly_motion</run_depend>
+   <run_depend>grizzly_navigation</run_depend>
+   <run_depend>grizzly_gazebo_plugins</run_depend>
+
+
+
+  <export>
+  </export>
+</package>

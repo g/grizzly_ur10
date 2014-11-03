@@ -1,0 +1,9 @@
+<launch>
+ 
+    <arg name="description" default="$(find grizzly_ur10_description)/urdf/base_with_manipulator.urdf.xacro"/>
+
+    <include file="$(find gazebo_ros)/launch/empty_world.launch"/>
+    <include file="$(find grizzly_ur10_gazebo)/launch/grizzly_ur10.launch">
+        <arg name="description" value="$(arg description)"/>
+    </include>
+</launch>
