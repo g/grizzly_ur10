@@ -1,5 +1,5 @@
 ==============================
-Usage with real Hardware
+Usage with real Hardware (Not tested yet)
 ==============================
 
 There are launch files available to bringup a real Grizzly + UR10 robot.
@@ -18,7 +18,7 @@ CAUTION:
 Remember that you should always have your hands on the big red button in case there is something in the way or anything unexpected happens.
 
 ==============================
-MoveIt! with real Hardware
+MoveIt! with real Hardware (Not tested yet)
 ==============================
 
 Additionally, you can use MoveIt! to control the robot.
@@ -68,17 +68,7 @@ Again, you can use MoveIt! to control the simulated robot.
 
 For setting up the MoveIt! nodes to allow motion planning run:
 
-roslaunch grizzly_ur10_moveit_config grizzly_ur10_moveit_planning_execution.launch sim:=true
+roslaunch grizzly_ur10_moveit_config demo.launch
 
-For starting up RViz with a configuration including the MoveIt! Motion Planning plugin run:
+Warning: if you're running this from source make sure to source your workspace (e.g source devel/setup.bash) before running the above commands.
 
-roslaunch grizzly_ur10_moveit_config moveit_rviz.launch config:=true
-
-NOTE:
-As MoveIt! seems to have difficulties with finding plans for the UR with full joint limits [-2pi, 2pi], there is a joint_limited version using joint limits restricted to [-pi,pi]. In order to use this joint limited version, simply use the launch file arguments 'limited', i.e.:
-
-roslaunch grizzly_ur10_gazebo grizzly_ur10.launch 
-
-roslaunch grizzly_ur10_moveit_config grizzly_ur10_moveit_planning_execution.launch
-
-roslaunch grizzly_ur10_moveit_config moveit_rviz.launch config:=true
