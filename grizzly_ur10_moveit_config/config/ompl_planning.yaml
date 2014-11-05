@@ -5,6 +5,7 @@ planner_configs:
     type: geometric::EST
   LBKPIECEkConfigDefault:
     type: geometric::LBKPIECE
+    range: .01
   BKPIECEkConfigDefault:
     type: geometric::BKPIECE
   KPIECEkConfigDefault:
