@@ -41,11 +41,11 @@ This program contains the description of the Grizzly + UR10 manipulator.
   <material name="Green">
     <color rgba="0.0 0.8 0.0 1.0"/>
   </material>
-  <material name="Gray">
-    <color rgba="0.7 0.7 0.7 1.0"/>
-  </material>
-  <material name="DarkGray">
+  <material name="Grey">
     <color rgba="0.3 0.3 0.3 1.0"/>
+  </material>
+  <material name="DarkGrey">
+    <color rgba="0.2 0.2 0.2 1.0"/>
   </material>
   <material name="Red">
     <color rgba="0.8 0.0 0.0 1.0"/>
@@ -56,19 +56,7 @@ This program contains the description of the Grizzly + UR10 manipulator.
   <material name="Yellow">
     <color rgba="0.8 0.8 0.0 1.0"/>
   </material>
-  <link name="base_footprint">
-    <inertial>
-      <mass value="0.0001"/>
-      <origin xyz="0 0 0"/>
-      <inertia ixx="0.0001" ixy="0.0" ixz="0.0" iyy="0.0001" iyz="0.0" izz="0.0001"/>
-    </inertial>
-    <visual>
-      <origin rpy="0 0 0" xyz="0 0 0"/>
-      <geometry>
-        <box size="0.001 0.001 0.001"/>
-      </geometry>
-    </visual>
-  </link>
+  <link name="base_footprint"/>
   <gazebo reference="base_footprint">
     <turnGravityOff>false</turnGravityOff>
   </gazebo>
@@ -90,7 +78,7 @@ This program contains the description of the Grizzly + UR10 manipulator.
       <geometry>
         <mesh filename="package://grizzly_description/meshes/base_link.stl"/>
       </geometry>
-      <material name="Black"/>
+      <material name="DarkGrey"/>
     </visual>
     <collision>
       <origin rpy="1.57079632679 0 1.57079632679" xyz="0 0 0.3"/>
@@ -101,8 +89,9 @@ This program contains the description of the Grizzly + UR10 manipulator.
     </collision>
   </link>
   <gazebo reference="base_link">
-    <material>Gazebo/FlatBlack</material>
+    <material>Gazebo/DarkGrey</material>
     <turnGravityOff>false</turnGravityOff>
+    <selfCollide>true</selfCollide>
   </gazebo>
   <joint name="base_link_sensor_anchor_link_joint" type="fixed">
     <origin rpy="0.0 0.0 0.0" xyz="0 0 0.45"/>
@@ -159,7 +148,7 @@ This program contains the description of the Grizzly + UR10 manipulator.
   </gazebo>
   <link name="back_left_wheel">
     <inertial>
-      <mass value="2.63657"/>
+      <mass value="15"/>
       <origin xyz="0.0 0.0 0.00019"/>
       <inertia ixx="0.02466885" ixy="0.0" ixz="0.0" iyy="0.02466885" iyz="0.0" izz="0.04410576"/>
     </inertial>
@@ -168,7 +157,7 @@ This program contains the description of the Grizzly + UR10 manipulator.
       <geometry>
         <mesh filename="package://grizzly_description/meshes/wheel.stl"/>
       </geometry>
-      <material name="DarkGray"/>
+      <material name="Grey"/>
     </visual>
     <collision>
       <origin rpy="1.57079632679 0.0 0" xyz="0 0 0"/>
@@ -185,6 +174,7 @@ This program contains the description of the Grizzly + UR10 manipulator.
     <fdir1 value="1 0 0"/>
     <material>Gazebo/Grey</material>
     <turnGravityOff>false</turnGravityOff>
+    <selfCollide>true</selfCollide>
   </gazebo>
   <joint name="joint_back_left_wheel" type="continuous">
     <parent link="base_link"/>
@@ -202,7 +192,7 @@ This program contains the description of the Grizzly + UR10 manipulator.
   </transmission>
   <link name="back_right_wheel">
     <inertial>
-      <mass value="2.63657"/>
+      <mass value="15"/>
       <origin xyz="0.0 0.0 0.00019"/>
       <inertia ixx="0.02466885" ixy="0.0" ixz="0.0" iyy="0.02466885" iyz="0.0" izz="0.04410576"/>
     </inertial>
@@ -211,7 +201,7 @@ This program contains the description of the Grizzly + UR10 manipulator.
       <geometry>
         <mesh filename="package://grizzly_description/meshes/wheel.stl"/>
       </geometry>
-      <material name="DarkGray"/>
+      <material name="Grey"/>
     </visual>
     <collision>
       <origin rpy="1.57079632679 3.14159265359 0" xyz="0 0 0"/>
@@ -228,6 +218,7 @@ This program contains the description of the Grizzly + UR10 manipulator.
     <fdir1 value="1 0 0"/>
     <material>Gazebo/Grey</material>
     <turnGravityOff>false</turnGravityOff>
+    <selfCollide>true</selfCollide>
   </gazebo>
   <joint name="joint_back_right_wheel" type="continuous">
     <parent link="base_link"/>
@@ -252,7 +243,7 @@ This program contains the description of the Grizzly + UR10 manipulator.
   </joint>
   <link name="front_axle_link">
     <inertial>
-      <mass value="0.45489"/>
+      <mass value="113"/>
       <origin xyz="0 0 0"/>
       <inertia ixx="0.6021637" ixy="-0.02364198" ixz="-0.11972132" iyy="1.73859574" iyz="-0.00154437" izz="2.02955229"/>
     </inertial>
@@ -261,7 +252,7 @@ This program contains the description of the Grizzly + UR10 manipulator.
       <geometry>
         <mesh filename="package://grizzly_description/meshes/front_axle.stl"/>
       </geometry>
-      <material name="Black"/>
+      <material name="DarkGrey"/>
     </visual>
     <collision>
       <origin rpy="1.57079632679 0 0" xyz="0 0 0"/>
@@ -271,12 +262,12 @@ This program contains the description of the Grizzly + UR10 manipulator.
     </collision>
   </link>
   <gazebo reference="front_axle_link">
-    <material>Gazebo/FlatBlack</material>
+    <material>Gazebo/DarkGrey</material>
     <turnGravityOff>false</turnGravityOff>
   </gazebo>
   <link name="front_left_wheel">
     <inertial>
-      <mass value="2.63657"/>
+      <mass value="15"/>
       <origin xyz="0.0 0.0 0.00019"/>
       <inertia ixx="0.02466885" ixy="0.0" ixz="0.0" iyy="0.02466885" iyz="0.0" izz="0.04410576"/>
     </inertial>
@@ -285,7 +276,7 @@ This program contains the description of the Grizzly + UR10 manipulator.
       <geometry>
         <mesh filename="package://grizzly_description/meshes/wheel.stl"/>
       </geometry>
-      <material name="DarkGray"/>
+      <material name="Grey"/>
     </visual>
     <collision>
       <origin rpy="1.57079632679 0.0 0" xyz="0 0 0"/>
@@ -302,6 +293,7 @@ This program contains the description of the Grizzly + UR10 manipulator.
     <fdir1 value="1 0 0"/>
     <material>Gazebo/Grey</material>
     <turnGravityOff>false</turnGravityOff>
+    <selfCollide>true</selfCollide>
   </gazebo>
   <joint name="joint_front_left_wheel" type="continuous">
     <parent link="front_axle_link"/>
@@ -319,7 +311,7 @@ This program contains the description of the Grizzly + UR10 manipulator.
   </transmission>
   <link name="front_right_wheel">
     <inertial>
-      <mass value="2.63657"/>
+      <mass value="15"/>
       <origin xyz="0.0 0.0 0.00019"/>
       <inertia ixx="0.02466885" ixy="0.0" ixz="0.0" iyy="0.02466885" iyz="0.0" izz="0.04410576"/>
     </inertial>
@@ -328,7 +320,7 @@ This program contains the description of the Grizzly + UR10 manipulator.
       <geometry>
         <mesh filename="package://grizzly_description/meshes/wheel.stl"/>
       </geometry>
-      <material name="DarkGray"/>
+      <material name="Grey"/>
     </visual>
     <collision>
       <origin rpy="1.57079632679 3.14159265359 0" xyz="0 0 0"/>
@@ -345,6 +337,7 @@ This program contains the description of the Grizzly + UR10 manipulator.
     <fdir1 value="1 0 0"/>
     <material>Gazebo/Grey</material>
     <turnGravityOff>false</turnGravityOff>
+    <selfCollide>true</selfCollide>
   </gazebo>
   <joint name="joint_front_right_wheel" type="continuous">
     <parent link="front_axle_link"/>
