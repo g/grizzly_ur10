@@ -6,7 +6,7 @@ Panels:
       Expanded:
         - /MotionPlanning1
       Splitter Ratio: 0.74256
-    Tree Height: 291
+    Tree Height: 268
   - Class: rviz/Help
     Name: Help
   - Class: rviz/Views
@@ -50,7 +50,27 @@ Visualization Manager:
           Expand Link Details: false
           Expand Tree: false
           Link Tree Style: Links in Alphabetic Order
-          ur10_arm_base_link:
+          back_left_wheel:
+            Alpha: 1
+            Show Axes: false
+            Show Trail: false
+            Value: true
+          back_right_wheel:
+            Alpha: 1
+            Show Axes: false
+            Show Trail: false
+            Value: true
+          base_footprint:
+            Alpha: 1
+            Show Axes: false
+            Show Trail: false
+            Value: true
+          base_footprint_bumper_part:
+            Alpha: 1
+            Show Axes: false
+            Show Trail: false
+            Value: true
+          base_link:
             Alpha: 1
             Show Axes: false
             Show Trail: false
@@ -64,6 +84,29 @@ Visualization Manager:
             Show Axes: false
             Show Trail: false
             Value: true
+          front_axle_link:
+            Alpha: 1
+            Show Axes: false
+            Show Trail: false
+            Value: true
+          front_left_wheel:
+            Alpha: 1
+            Show Axes: false
+            Show Trail: false
+            Value: true
+          front_right_wheel:
+            Alpha: 1
+            Show Axes: false
+            Show Trail: false
+            Value: true
+          imu_link:
+            Alpha: 1
+            Show Axes: false
+            Show Trail: false
+          sensor_anchor_link:
+            Alpha: 1
+            Show Axes: false
+            Show Trail: false
           shoulder_link:
             Alpha: 1
             Show Axes: false
@@ -74,10 +117,11 @@ Visualization Manager:
             Show Axes: false
             Show Trail: false
             Value: true
-          world:
+          ur10_arm_base_link:
             Alpha: 1
             Show Axes: false
             Show Trail: false
+            Value: true
           wrist_1_link:
             Alpha: 1
             Show Axes: false
@@ -113,7 +157,7 @@ Visualization Manager:
         Goal State Color: 250; 128; 0
         Interactive Marker Size: 0
         Joint Violation Color: 255; 0; 255
-        Planning Group: manipulator
+        Planning Group: ur10_arm
         Query Goal State: true
         Query Start State: false
         Show Workspace: false
@@ -136,7 +180,27 @@ Visualization Manager:
           Expand Link Details: false
           Expand Tree: false
           Link Tree Style: Links in Alphabetic Order
-          ur10_arm_base_link:
+          back_left_wheel:
+            Alpha: 1
+            Show Axes: false
+            Show Trail: false
+            Value: true
+          back_right_wheel:
+            Alpha: 1
+            Show Axes: false
+            Show Trail: false
+            Value: true
+          base_footprint:
+            Alpha: 1
+            Show Axes: false
+            Show Trail: false
+            Value: true
+          base_footprint_bumper_part:
+            Alpha: 1
+            Show Axes: false
+            Show Trail: false
+            Value: true
+          base_link:
             Alpha: 1
             Show Axes: false
             Show Trail: false
@@ -150,6 +214,29 @@ Visualization Manager:
             Show Axes: false
             Show Trail: false
             Value: true
+          front_axle_link:
+            Alpha: 1
+            Show Axes: false
+            Show Trail: false
+            Value: true
+          front_left_wheel:
+            Alpha: 1
+            Show Axes: false
+            Show Trail: false
+            Value: true
+          front_right_wheel:
+            Alpha: 1
+            Show Axes: false
+            Show Trail: false
+            Value: true
+          imu_link:
+            Alpha: 1
+            Show Axes: false
+            Show Trail: false
+          sensor_anchor_link:
+            Alpha: 1
+            Show Axes: false
+            Show Trail: false
           shoulder_link:
             Alpha: 1
             Show Axes: false
@@ -160,10 +247,11 @@ Visualization Manager:
             Show Axes: false
             Show Trail: false
             Value: true
-          world:
+          ur10_arm_base_link:
             Alpha: 1
             Show Axes: false
             Show Trail: false
+            Value: true
           wrist_1_link:
             Alpha: 1
             Show Axes: false
@@ -186,7 +274,7 @@ Visualization Manager:
   Enabled: true
   Global Options:
     Background Color: 48; 48; 48
-    Fixed Frame: world
+    Fixed Frame: odom_combined
     Frame Rate: 30
   Name: root
   Tools:
@@ -198,22 +286,22 @@ Visualization Manager:
   Views:
     Current:
       Class: rviz/XYOrbit
-      Distance: 2.9965
+      Distance: 5.91456
       Enable Stereo Rendering:
         Stereo Eye Separation: 0.06
         Stereo Focal Distance: 1
         Swap Stereo Eyes: false
         Value: false
       Focal Point:
-        X: 0.747697
-        Y: -0.20044
-        Z: 3.42727e-07
+        X: 0.113567
+        Y: 0.10592
+        Z: 2.23518e-07
       Name: Current View
       Near Clip Distance: 0.01
-      Pitch: 0.289797
-      Target Frame: world
+      Pitch: 0.354797
+      Target Frame: base_footprint
       Value: XYOrbit (rviz)
-      Yaw: 5.44495
+      Yaw: 5.23995
     Saved: ~
 Window Geometry:
   Displays:
@@ -225,9 +313,9 @@ Window Geometry:
   Hide Right Dock: false
   Motion Planning:
     collapsed: false
-  QMainWindow State: 000000ff00000000fd0000000100000000000002a20000031cfc0200000005fb000000100044006900730070006c0061007900730100000036000001b4000000b700fffffffb0000000800480065006c00700000000342000000bb0000006500fffffffb0000000a0056006900650077007300000003b0000000b00000009b00fffffffb0000000c00430061006d00650072006100000002ff000001610000000000000000fb0000001e004d006f00740069006f006e00200050006c0061006e006e0069006e006701000001f0000001620000015700ffffff000003570000031c00000001000000020000000100000002fc0000000100000002000000010000000a0054006f006f006c00730100000000ffffffff0000000000000000
+  QMainWindow State: 000000ff00000000fd0000000100000000000002a200000326fc0200000005fb000000100044006900730070006c0061007900730100000028000001a1000000dd00fffffffb0000000800480065006c00700000000342000000bb0000007600fffffffb0000000a0056006900650077007300000003b0000000b0000000b000fffffffb0000000c00430061006d00650072006100000002ff000001610000000000000000fb0000001e004d006f00740069006f006e00200050006c0061006e006e0069006e006701000001cf0000017f0000017f00ffffff000003570000032600000001000000020000000100000002fc0000000100000002000000010000000a0054006f006f006c00730100000000ffffffff0000000000000000
   Views:
     collapsed: false
   Width: 1535
-  X: 65
-  Y: 24
+  X: 57
+  Y: -4
