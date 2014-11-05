@@ -1,0 +1,6 @@
+TODO:
+Devon Ash:
+    - Re-generate the MoveIt package so that it has proper collision matrices
+    - Proper weights inside the grizzly base so that the arm doesn't flip it over
+    - Warning: NEVER SPAWN THE GAZEBO WITH PAUSED=TRUE or rviz demo.launch file will segfault. 
+
