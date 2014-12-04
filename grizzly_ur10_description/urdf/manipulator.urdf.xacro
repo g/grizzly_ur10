@@ -35,7 +35,7 @@ This program contains the description of the Grizzly + UR10 manipulator.
   <xacro:include filename="$(find ur_description)/urdf/ur10.urdf.xacro" />
 
   <!-- Spawn arm -->
-  <xacro:ur10_robot prefix="" joint_limited="true"/>
+  <xacro:ur10_robot prefix="ur10_arm_" joint_limited="true"/>
   <!-- <xacro:ur10_robot prefix="" joint_limited="true" /> -->
 
   <joint name="grizzly_ur10_joint" type="fixed">
