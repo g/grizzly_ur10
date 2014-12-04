@@ -28,12 +28,17 @@ Simulation
 
 To launch the integrated robot in simulation, run:
 
-    roslaunch grizzly_gazebo description:=`rospack find grizzly_ur10_description`/urdf/base_with_manipulator.urdf.xacro
+    roslaunch grizzly_ur10_gazebo grizzly_ur10.launch
 
-You will still need to separately run the MoveIt! configuration:
+Bring up the planning execution launch file to enable execution in simulation
 
-    roslaunch ur10_moveit_config ur10_moveit_planning_execution.launch
+    roslaunch grizzly_ur10_moveit_config grizzly_ur10_planning_execution sim:=true 
 
+Run RViz with a MoveIt flavor:
+
+    roslaunch grizzly_ur10_moveit_config moveit_rviz.launch config:=true
+
+There you have it! Grab the markers and select "Plan and Execute" under the planning tab to make the robot move. 
 
 Visualization
 -------------
