@@ -3,7 +3,7 @@
 
   <xacro:include filename="$(find ur_description)/urdf/ur10.transmission.xacro" />
   <xacro:include filename="$(find ur_description)/urdf/ur10.gazebo.xacro" />
-  <xacro:include filename="$(find ur_description)/urdf/materials.urdf.xacro" />
+  <!-- <xacro:include filename="$(find ur_description)/urdf/materials.urdf.xacro" /> -->
 
   <property name="pi" value="3.14159265" />
 
