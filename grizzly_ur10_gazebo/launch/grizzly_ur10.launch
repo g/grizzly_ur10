@@ -25,16 +25,20 @@
 <launch>
   <arg name="limited" default="false"/>
 
+  <!-- startup simulated world --> 
   <include file="$(find gazebo_ros)/launch/empty_world.launch">
     <arg name="world_name" default="worlds/empty.world"/>
     <arg name="paused" value="false"/>
   </include>
 
+  <!-- send robot to urdf to param serv -->
   <include file="$(find grizzly_ur10_description)/launch/grizzly_ur10_upload.launch">
   </include>
 
+  <!-- spawn in gazebo -->
   <node name="spawn_gazebo_model" pkg="gazebo_ros" type="spawn_model" args="-urdf -param robot_description -model robot -z 0.1" respawn="false" output="screen" />
 
+  <!-- launch arm controllers -->
   <include file="$(find grizzly_ur10_gazebo)/launch/controller_utils.launch"/>
 
   <rosparam file="$(find grizzly_ur10_gazebo)/controller/arm_controller_ur10.yaml" command="load"/>

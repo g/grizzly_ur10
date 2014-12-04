@@ -3,4 +3,4 @@ controller_list:
     action_ns: follow_joint_trajectory
     default: true
     type: FollowJointTrajectory
-    joints: [shoulder_pan_joint, shoulder_lift_joint, elbow_joint, wrist_1_joint, wrist_2_joint, wrist_3_joint]
+    joints: [ur10_arm_shoulder_pan_joint, ur10_arm_shoulder_lift_joint, ur10_arm_elbow_joint, ur10_arm_wrist_1_joint, ur10_arm_wrist_2_joint, ur10_arm_wrist_3_joint]
