@@ -29,7 +29,19 @@ This program contains the description of the Grizzly + UR10 manipulator.
 -->
 
 <robot xmlns:xacro="http://ros.org/wiki/xacro" name="grizzly_ur10">
-  <xacro:include filename="$(find grizzly_description)/urdf/base.urdf.xacro" />
-  <xacro:include filename="$(find grizzly_ur10_description)/urdf/ur10_arm.urdf.xacro" />
-  <xacro:include filename="$(find grizzly_ur10_description/urdf/robotiq_gripper.urdf.xacro" />
+  <xacro:property name="reflect" value="-1" />
+
+ <xacro:include filename="$(find ur_description)/urdf/gazebo.urdf.xacro" /> 
+  <xacro:include filename="$(find ur_description)/urdf/ur10_arm.urdf.xacro" />
+  <xacro:include filename="$(find robotiq_s_model_visualization)/cfg/s-model_articulated_macro.urdf.xacro" />
+
+  <!-- Spawn gripper -->
+  <xacro:s-model_articulated prefix="robotiq_"/>
+
+  <!-- Add robotiq gripper -->
+  <joint name="ee_joint" type="fixed">
+      <parent link="ee_link"/>
+      <child link="robotiq_palm"/>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+  </joint>
 </robot>
