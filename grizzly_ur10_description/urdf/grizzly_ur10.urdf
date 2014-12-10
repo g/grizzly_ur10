@@ -91,7 +91,7 @@ This program contains the description of the Grizzly + UR10 manipulator.
   <gazebo reference="base_link">
     <material>Gazebo/DarkGrey</material>
     <turnGravityOff>false</turnGravityOff>
-    <selfCollide>true</selfCollide>
+    <selfCollide>false</selfCollide>
   </gazebo>
   <joint name="base_link_sensor_anchor_link_joint" type="fixed">
     <origin rpy="0.0 0.0 0.0" xyz="0 0 0.45"/>
@@ -404,7 +404,11 @@ This program contains the description of the Grizzly + UR10 manipulator.
     <inertial>
       <mass value="4.0"/>
       <origin rpy="0 0 0" xyz="0.0 0.0 0.0"/>
-      <inertia ixx="0.0061063308908" ixy="0.0" ixz="0.0" iyy="0.0061063308908" iyz="0.0" izz="0.01125"/>
+      <!-- [[Wobbly Inertia]] -->
+      <!-- <inertia ixx="${0.0833333 * mass * (3 * radius * radius + length * length)}" ixy="0.0" ixz="0.0"
+        iyy="${0.0833333 * mass * (3 * radius * radius + length * length)}" iyz="0.0"
+        izz="${0.5 * mass * radius * radius}" /> -->
+      <inertia ixx="0.002" ixy="0.0" ixz="0.0" iyy="0.02" iyz="0.0" izz="0.002"/>
     </inertial>
   </link>
   <joint name="ur10_arm_shoulder_pan_joint" type="revolute">
@@ -413,7 +417,7 @@ This program contains the description of the Grizzly + UR10 manipulator.
     <origin rpy="0.0 0.0 0.0" xyz="0.0 0.0 0.1273"/>
     <axis xyz="0 0 1"/>
     <limit effort="330.0" lower="-3.14159265" upper="3.14159265" velocity="2.16"/>
-    <dynamics damping="0.0" friction="0.0"/>
+    <dynamics damping="0.5" friction="0.0"/>
   </joint>
   <link name="ur10_arm_shoulder_link">
     <visual>
@@ -432,7 +436,11 @@ This program contains the description of the Grizzly + UR10 manipulator.
     <inertial>
       <mass value="7.778"/>
       <origin rpy="0 0 0" xyz="0.0 0.0 0.0"/>
-      <inertia ixx="0.0314743125769" ixy="0.0" ixz="0.0" iyy="0.0314743125769" iyz="0.0" izz="0.021875625"/>
+      <!-- [[Wobbly Inertia]] -->
+      <!-- <inertia ixx="${0.0833333 * mass * (3 * radius * radius + length * length)}" ixy="0.0" ixz="0.0"
+        iyy="${0.0833333 * mass * (3 * radius * radius + length * length)}" iyz="0.0"
+        izz="${0.5 * mass * radius * radius}" /> -->
+      <inertia ixx="0.002" ixy="0.0" ixz="0.0" iyy="0.02" iyz="0.0" izz="0.002"/>
     </inertial>
   </link>
   <joint name="ur10_arm_shoulder_lift_joint" type="revolute">
@@ -441,7 +449,7 @@ This program contains the description of the Grizzly + UR10 manipulator.
     <origin rpy="0.0 1.570796325 0.0" xyz="0.0 0.220941 0.0"/>
     <axis xyz="0 1 0"/>
     <limit effort="330.0" lower="-3.14159265" upper="3.14159265" velocity="2.16"/>
-    <dynamics damping="0.0" friction="0.0"/>
+    <dynamics damping="0.5" friction="0.0"/>
   </joint>
   <link name="ur10_arm_upper_arm_link">
     <visual>
@@ -460,7 +468,11 @@ This program contains the description of the Grizzly + UR10 manipulator.
     <inertial>
       <mass value="12.93"/>
       <origin rpy="0 0 0" xyz="0.0 0.0 0.306"/>
-      <inertia ixx="0.421753803798" ixy="0.0" ixz="0.0" iyy="0.421753803798" iyz="0.0" izz="0.036365625"/>
+      <!-- [[Wobbly Inertia]] -->
+      <!-- <inertia ixx="${0.0833333 * mass * (3 * radius * radius + length * length)}" ixy="0.0" ixz="0.0"
+        iyy="${0.0833333 * mass * (3 * radius * radius + length * length)}" iyz="0.0"
+        izz="${0.5 * mass * radius * radius}" /> -->
+      <inertia ixx="0.002" ixy="0.0" ixz="0.0" iyy="0.02" iyz="0.0" izz="0.002"/>
     </inertial>
   </link>
   <joint name="ur10_arm_elbow_joint" type="revolute">
@@ -469,7 +481,7 @@ This program contains the description of the Grizzly + UR10 manipulator.
     <origin rpy="0.0 0.0 0.0" xyz="0.0 -0.1719 0.612"/>
     <axis xyz="0 1 0"/>
     <limit effort="150.0" lower="-3.14159265" upper="3.14159265" velocity="3.15"/>
-    <dynamics damping="0.0" friction="0.0"/>
+    <dynamics damping="0.5" friction="0.0"/>
   </joint>
   <link name="ur10_arm_forearm_link">
     <visual>
@@ -488,7 +500,11 @@ This program contains the description of the Grizzly + UR10 manipulator.
     <inertial>
       <mass value="3.87"/>
       <origin rpy="0 0 0" xyz="0.0 0.0 0.28615"/>
-      <inertia ixx="0.111069694097" ixy="0.0" ixz="0.0" iyy="0.111069694097" iyz="0.0" izz="0.010884375"/>
+      <!-- [[Wobbly Inertia]] -->
+      <!-- <inertia ixx="${0.0833333 * mass * (3 * radius * radius + length * length)}" ixy="0.0" ixz="0.0"
+        iyy="${0.0833333 * mass * (3 * radius * radius + length * length)}" iyz="0.0"
+        izz="${0.5 * mass * radius * radius}" /> -->
+      <inertia ixx="0.002" ixy="0.0" ixz="0.0" iyy="0.02" iyz="0.0" izz="0.002"/>
     </inertial>
   </link>
   <joint name="ur10_arm_wrist_1_joint" type="revolute">
@@ -497,7 +513,7 @@ This program contains the description of the Grizzly + UR10 manipulator.
     <origin rpy="0.0 1.570796325 0.0" xyz="0.0 0.0 0.5723"/>
     <axis xyz="0 1 0"/>
     <limit effort="54.0" lower="-3.14159265" upper="3.14159265" velocity="3.2"/>
-    <dynamics damping="0.0" friction="0.0"/>
+    <dynamics damping="0.5" friction="0.0"/>
   </joint>
   <link name="ur10_arm_wrist_1_link">
     <visual>
@@ -516,7 +532,11 @@ This program contains the description of the Grizzly + UR10 manipulator.
     <inertial>
       <mass value="1.96"/>
       <origin rpy="0 0 0" xyz="0.0 0.0 0.0"/>
-      <inertia ixx="0.0051082479567" ixy="0.0" ixz="0.0" iyy="0.0051082479567" iyz="0.0" izz="0.0055125"/>
+      <!-- [[Wobbly Inertia]] -->
+      <!-- <inertia ixx="${0.0833333 * mass * (3 * radius * radius + length * length)}" ixy="0.0" ixz="0.0"
+        iyy="${0.0833333 * mass * (3 * radius * radius + length * length)}" iyz="0.0"
+        izz="${0.5 * mass * radius * radius}" /> -->
+      <inertia ixx="0.002" ixy="0.0" ixz="0.0" iyy="0.02" iyz="0.0" izz="0.002"/>
     </inertial>
   </link>
   <joint name="ur10_arm_wrist_2_joint" type="revolute">
@@ -525,7 +545,7 @@ This program contains the description of the Grizzly + UR10 manipulator.
     <origin rpy="0.0 0.0 0.0" xyz="0.0 0.1149 0.0"/>
     <axis xyz="0 0 1"/>
     <limit effort="54.0" lower="-3.14159265" upper="3.14159265" velocity="3.2"/>
-    <dynamics damping="0.0" friction="0.0"/>
+    <dynamics damping="0.5" friction="0.0"/>
   </joint>
   <link name="ur10_arm_wrist_2_link">
     <visual>
@@ -544,7 +564,11 @@ This program contains the description of the Grizzly + UR10 manipulator.
     <inertial>
       <mass value="1.96"/>
       <origin rpy="0 0 0" xyz="0.0 0.0 0.0"/>
-      <inertia ixx="0.0051082479567" ixy="0.0" ixz="0.0" iyy="0.0051082479567" iyz="0.0" izz="0.0055125"/>
+      <!-- [[Wobbly Inertia]] -->
+      <!-- <inertia ixx="${0.0833333 * mass * (3 * radius * radius + length * length)}" ixy="0.0" ixz="0.0"
+        iyy="${0.0833333 * mass * (3 * radius * radius + length * length)}" iyz="0.0"
+        izz="${0.5 * mass * radius * radius}" /> -->
+      <inertia ixx="0.002" ixy="0.0" ixz="0.0" iyy="0.02" iyz="0.0" izz="0.002"/>
     </inertial>
   </link>
   <joint name="ur10_arm_wrist_3_joint" type="revolute">
@@ -553,7 +577,7 @@ This program contains the description of the Grizzly + UR10 manipulator.
     <origin rpy="0.0 0.0 0.0" xyz="0.0 0.0 0.1157"/>
     <axis xyz="0 1 0"/>
     <limit effort="54.0" lower="-3.14159265" upper="3.14159265" velocity="3.2"/>
-    <dynamics damping="0.0" friction="0.0"/>
+    <dynamics damping="0.5" friction="0.0"/>
   </joint>
   <link name="ur10_arm_wrist_3_link">
     <visual>
@@ -572,7 +596,11 @@ This program contains the description of the Grizzly + UR10 manipulator.
     <inertial>
       <mass value="0.202"/>
       <origin rpy="0 0 0" xyz="0.0 0.0 0.0"/>
-      <inertia ixx="0.000526462289415" ixy="0.0" ixz="0.0" iyy="0.000526462289415" iyz="0.0" izz="0.000568125"/>
+      <!-- [[Wobbly Inertia]] -->
+      <!-- <inertia ixx="${0.0833333 * mass * (3 * radius * radius + length * length)}" ixy="0.0" ixz="0.0"
+        iyy="${0.0833333 * mass * (3 * radius * radius + length * length)}" iyz="0.0"
+        izz="${0.5 * mass * radius * radius}" /> -->
+      <inertia ixx="0.002" ixy="0.0" ixz="0.0" iyy="0.02" iyz="0.0" izz="0.002"/>
     </inertial>
   </link>
   <joint name="ur10_arm_ee_fixed_joint" type="fixed">
