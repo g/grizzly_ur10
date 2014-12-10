@@ -32,16 +32,15 @@ This program contains the description of the Grizzly + UR10 manipulator.
   <xacro:property name="reflect" value="-1" />
 
  <xacro:include filename="$(find ur_description)/urdf/gazebo.urdf.xacro" /> 
-  <xacro:include filename="$(find ur_description)/urdf/ur10_arm.urdf.xacro" />
-  <xacro:include filename="$(find robotiq_s_model_visualization)/cfg/s-model_articulated_macro.urdf.xacro" />
+  <xacro:include filename="$(find robotiq_s_model_visualization)/cfg/s-model_articulated_macro.xacro" />
 
   <!-- Spawn gripper -->
   <xacro:s-model_articulated prefix="robotiq_"/>
 
   <!-- Add robotiq gripper -->
   <joint name="ee_joint" type="fixed">
-      <parent link="ee_link"/>
+      <parent link="ur10_arm_ee_link"/>
       <child link="robotiq_palm"/>
-      <origin xyz="0 0 0" rpy="0 0 0" />
+      <origin xyz="0 0 0" rpy="3.14 0 1.57" />
   </joint>
 </robot>
