@@ -1071,7 +1071,7 @@ This program contains the description of the Grizzly + UR10 manipulator.
   <joint name="ee_joint" type="fixed">
     <parent link="ur10_arm_ee_link"/>
     <child link="robotiq_palm"/>
-    <origin rpy="1.57 0.78 0.78" xyz="0 0 0"/>
+    <origin rpy="3.14 0 1.57" xyz="0 0 0"/>
   </joint>
 </robot>
 
