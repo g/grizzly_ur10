@@ -4,3 +4,7 @@ controller_list:
     default: true
     type: FollowJointTrajectory
     joints: [ur10_arm_shoulder_pan_joint, ur10_arm_shoulder_lift_joint, ur10_arm_elbow_joint, ur10_arm_wrist_1_joint, ur10_arm_wrist_2_joint, ur10_arm_wrist_3_joint]
+  - name: gripper_controller
+    action_ns: gripper_action
+    default: true
+    joints: [robotiq_finger_1_joint_1, robotiq_finger_1_joint_2, robotiq_finger_1_joint_3, robotiq_finger_2_joint_1, robotiq_finger_2_joint_2, robotiq_finger_2_joint_3, robotiq_palm_finger_1_joint, robotiq_palm_finger_2_joint, robotiq_finger_middle_joint_1, robotiq_finger_middle_joint_2, robotiq_finger_middle_joint_3]
