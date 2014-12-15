@@ -26,6 +26,11 @@
   <!-- spawn tabletop object-->
   <node name="spawn_table_model" pkg="gazebo_ros" type="spawn_model" args="-urdf -param table_description -model table -z 0.1" respawn="false" output="screen" />
  
+
+  <!-- spawn object on-top of table -->
+  <node name="spawn_tabletop_object_model" pkg="gazebo_ros" type="spawn_model" args="-urdf -file $(find grizzly_ur10_gazebo)/objects/cube_yellow.urdf -wait table -model cube_yellow -x 3.0 -z 2.0" respawn="false" output="screen"/>
+
+
 <!-- Spawn objects -->
 <!-- 
 <node name="spawn_box1" pkg="gazebo" type="spawn_model" args="-urdf -file $(find pr2_gazebo)/urdf/cube_red.urdf -wait table_1 -model cube_red_1 -x 0.7 -z 0.55" respawn="false" output="screen" />
