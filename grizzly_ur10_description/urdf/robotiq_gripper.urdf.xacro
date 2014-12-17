@@ -33,10 +33,10 @@ This program contains the description of the Grizzly + UR10 manipulator.
 
  <xacro:include filename="$(find ur_description)/urdf/gazebo.urdf.xacro" /> 
   <!-- <xacro:include filename="$(find robotiq_s_model_visualization)/cfg/s-model_articulated_macro.xacro" /> -->
-   <xacro:include filename="$(find robotiq_s_model_visualization)/cfg/s-model_mesh_macro.xacro"/>
+   <xacro:include filename="$(find robotiq_s_model_visualization)/cfg/s-model_articulated_macro.xacro"/>
 
   <!-- Spawn gripper -->
-   <xacro:s-model_mesh prefix="robotiq_"/>
+   <xacro:s-model_articulated prefix="robotiq_"/>
 
   <link name="robotiq_gripper_frame_link"/> 
 
