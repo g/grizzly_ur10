@@ -701,12 +701,13 @@ This program contains the description of the Grizzly + UR10 manipulator.
         <mesh filename="package://robotiq_s_model_visualization/meshes/s-model_articulated/visual/link_0.STL"/>
       </geometry>
     </visual>
-    <collision>
-      <origin rpy="0 3.1416 -1.57" xyz="-0.0455 0.0414 0.036"/>
-      <geometry>
-        <mesh filename="package://robotiq_s_model_visualization/meshes/s-model_articulated/collision/link_0.STL"/>
-      </geometry>
-    </collision>
+    <!-- This collision link is broken and not proper, it prevents the whole gripper from being used in MoveIt! -->
+    <!-- <collision>	
+				<origin xyz="-0.0455 0.0414 0.036" rpy="0 3.1416 -1.57"/>
+				<geometry>
+					<mesh filename="package://robotiq_s_model_visualization/meshes/s-model_articulated/collision/link_0.STL" />
+				</geometry>
+			</collision> -->
     <inertial>
       <origin rpy="0 0 0" xyz="0 0 0"/>
       <mass value="0.05"/>
@@ -715,7 +716,7 @@ This program contains the description of the Grizzly + UR10 manipulator.
   </link>
   <gazebo reference="robotiq_finger_1_link_0">
     <material>Gazebo/Black</material>
-    <selfCollide>false</selfCollide>
+    <selfCollide>true</selfCollide>
   </gazebo>
   <link name="robotiq_finger_1_link_1">
     <visual>
@@ -724,12 +725,12 @@ This program contains the description of the Grizzly + UR10 manipulator.
         <mesh filename="package://robotiq_s_model_visualization/meshes/s-model_articulated/visual/link_1.STL"/>
       </geometry>
     </visual>
-    <collision>
-      <origin rpy="0 0 -0.52" xyz="0.050 -.028 0"/>
-      <geometry>
-        <mesh filename="package://robotiq_s_model_visualization/meshes/s-model_articulated/collision/link_1.STL"/>
-      </geometry>
-    </collision>
+    <!-- <collision>
+				<origin xyz="0.050 -.028 0" rpy="0 0 -0.52"/>
+				<geometry>
+					<mesh filename="package://robotiq_s_model_visualization/meshes/s-model_articulated/collision/link_1.STL" />
+				</geometry>
+			</collision> -->
     <inertial>
       <origin rpy="0 0 0" xyz="0 0 0"/>
       <mass value="0.15"/>
@@ -738,7 +739,7 @@ This program contains the description of the Grizzly + UR10 manipulator.
   </link>
   <gazebo reference="robotiq_finger_1_link_1">
     <material>Gazebo/Black</material>
-    <selfCollide>false</selfCollide>
+    <selfCollide>true</selfCollide>
   </gazebo>
   <link name="robotiq_finger_1_link_2">
     <!--
@@ -752,12 +753,12 @@ This program contains the description of the Grizzly + UR10 manipulator.
         <mesh filename="package://robotiq_s_model_visualization/meshes/s-model_articulated/visual/link_2.STL"/>
       </geometry>
     </visual>
-    <collision>
-      <origin rpy="0 0 0" xyz="0.039 0 0.0075"/>
-      <geometry>
-        <mesh filename="package://robotiq_s_model_visualization/meshes/s-model_articulated/collision/link_2.STL"/>
-      </geometry>
-    </collision>
+    <!-- <collision>
+				<origin xyz="0.039 0 0.0075" rpy="0 0 0"/>
+				<geometry>
+					<mesh filename="package://robotiq_s_model_visualization/meshes/s-model_articulated/collision/link_2.STL" />
+				</geometry>
+			</collision> -->
     <inertial>
       <origin rpy="0 0 0" xyz="0 0 0"/>
       <mass value="0.15"/>
@@ -766,7 +767,7 @@ This program contains the description of the Grizzly + UR10 manipulator.
   </link>
   <gazebo reference="robotiq_finger_1_link_2">
     <material>Gazebo/Black</material>
-    <selfCollide>false</selfCollide>
+    <selfCollide>true</selfCollide>
   </gazebo>
   <link name="robotiq_finger_1_link_3">
     <visual>
@@ -775,12 +776,12 @@ This program contains the description of the Grizzly + UR10 manipulator.
         <mesh filename="package://robotiq_s_model_visualization/meshes/s-model_articulated/visual/link_3.STL"/>
       </geometry>
     </visual>
-    <collision>
-      <origin rpy="0 0 0.52" xyz="0 0 0"/>
-      <geometry>
-        <mesh filename="package://robotiq_s_model_visualization/meshes/s-model_articulated/collision/link_3.STL"/>
-      </geometry>
-    </collision>
+    <!-- <collision>
+				<origin xyz="0 0 0" rpy="0 0 0.52"/>
+				<geometry>
+					<mesh filename="package://robotiq_s_model_visualization/meshes/s-model_articulated/collision/link_3.STL" />
+				</geometry>
+			</collision> -->
     <inertial>
       <origin rpy="0 0 0" xyz="0 0 0"/>
       <mass value="0.05"/>
@@ -789,7 +790,7 @@ This program contains the description of the Grizzly + UR10 manipulator.
   </link>
   <gazebo reference="robotiq_finger_1_link_2">
     <material>Gazebo/Black</material>
-    <selfCollide>false</selfCollide>
+    <selfCollide>true</selfCollide>
   </gazebo>
   <joint name="robotiq_finger_1_joint_1" type="revolute">
     <parent link="robotiq_finger_1_link_0"/>
@@ -819,12 +820,13 @@ This program contains the description of the Grizzly + UR10 manipulator.
         <mesh filename="package://robotiq_s_model_visualization/meshes/s-model_articulated/visual/link_0.STL"/>
       </geometry>
     </visual>
-    <collision>
-      <origin rpy="0 3.1416 -1.57" xyz="-0.0455 0.0414 0.036"/>
-      <geometry>
-        <mesh filename="package://robotiq_s_model_visualization/meshes/s-model_articulated/collision/link_0.STL"/>
-      </geometry>
-    </collision>
+    <!-- This collision link is broken and not proper, it prevents the whole gripper from being used in MoveIt! -->
+    <!-- <collision>	
+				<origin xyz="-0.0455 0.0414 0.036" rpy="0 3.1416 -1.57"/>
+				<geometry>
+					<mesh filename="package://robotiq_s_model_visualization/meshes/s-model_articulated/collision/link_0.STL" />
+				</geometry>
+			</collision> -->
     <inertial>
       <origin rpy="0 0 0" xyz="0 0 0"/>
       <mass value="0.05"/>
@@ -833,7 +835,7 @@ This program contains the description of the Grizzly + UR10 manipulator.
   </link>
   <gazebo reference="robotiq_finger_2_link_0">
     <material>Gazebo/Black</material>
-    <selfCollide>false</selfCollide>
+    <selfCollide>true</selfCollide>
   </gazebo>
   <link name="robotiq_finger_2_link_1">
     <visual>
@@ -842,12 +844,12 @@ This program contains the description of the Grizzly + UR10 manipulator.
         <mesh filename="package://robotiq_s_model_visualization/meshes/s-model_articulated/visual/link_1.STL"/>
       </geometry>
     </visual>
-    <collision>
-      <origin rpy="0 0 -0.52" xyz="0.050 -.028 0"/>
-      <geometry>
-        <mesh filename="package://robotiq_s_model_visualization/meshes/s-model_articulated/collision/link_1.STL"/>
-      </geometry>
-    </collision>
+    <!-- <collision>
+				<origin xyz="0.050 -.028 0" rpy="0 0 -0.52"/>
+				<geometry>
+					<mesh filename="package://robotiq_s_model_visualization/meshes/s-model_articulated/collision/link_1.STL" />
+				</geometry>
+			</collision> -->
     <inertial>
       <origin rpy="0 0 0" xyz="0 0 0"/>
       <mass value="0.15"/>
@@ -856,7 +858,7 @@ This program contains the description of the Grizzly + UR10 manipulator.
   </link>
   <gazebo reference="robotiq_finger_2_link_1">
     <material>Gazebo/Black</material>
-    <selfCollide>false</selfCollide>
+    <selfCollide>true</selfCollide>
   </gazebo>
   <link name="robotiq_finger_2_link_2">
     <!--
@@ -870,12 +872,12 @@ This program contains the description of the Grizzly + UR10 manipulator.
         <mesh filename="package://robotiq_s_model_visualization/meshes/s-model_articulated/visual/link_2.STL"/>
       </geometry>
     </visual>
-    <collision>
-      <origin rpy="0 0 0" xyz="0.039 0 0.0075"/>
-      <geometry>
-        <mesh filename="package://robotiq_s_model_visualization/meshes/s-model_articulated/collision/link_2.STL"/>
-      </geometry>
-    </collision>
+    <!-- <collision>
+				<origin xyz="0.039 0 0.0075" rpy="0 0 0"/>
+				<geometry>
+					<mesh filename="package://robotiq_s_model_visualization/meshes/s-model_articulated/collision/link_2.STL" />
+				</geometry>
+			</collision> -->
     <inertial>
       <origin rpy="0 0 0" xyz="0 0 0"/>
       <mass value="0.15"/>
@@ -884,7 +886,7 @@ This program contains the description of the Grizzly + UR10 manipulator.
   </link>
   <gazebo reference="robotiq_finger_2_link_2">
     <material>Gazebo/Black</material>
-    <selfCollide>false</selfCollide>
+    <selfCollide>true</selfCollide>
   </gazebo>
   <link name="robotiq_finger_2_link_3">
     <visual>
@@ -893,12 +895,12 @@ This program contains the description of the Grizzly + UR10 manipulator.
         <mesh filename="package://robotiq_s_model_visualization/meshes/s-model_articulated/visual/link_3.STL"/>
       </geometry>
     </visual>
-    <collision>
-      <origin rpy="0 0 0.52" xyz="0 0 0"/>
-      <geometry>
-        <mesh filename="package://robotiq_s_model_visualization/meshes/s-model_articulated/collision/link_3.STL"/>
-      </geometry>
-    </collision>
+    <!-- <collision>
+				<origin xyz="0 0 0" rpy="0 0 0.52"/>
+				<geometry>
+					<mesh filename="package://robotiq_s_model_visualization/meshes/s-model_articulated/collision/link_3.STL" />
+				</geometry>
+			</collision> -->
     <inertial>
       <origin rpy="0 0 0" xyz="0 0 0"/>
       <mass value="0.05"/>
@@ -907,7 +909,7 @@ This program contains the description of the Grizzly + UR10 manipulator.
   </link>
   <gazebo reference="robotiq_finger_2_link_2">
     <material>Gazebo/Black</material>
-    <selfCollide>false</selfCollide>
+    <selfCollide>true</selfCollide>
   </gazebo>
   <joint name="robotiq_finger_2_joint_1" type="revolute">
     <parent link="robotiq_finger_2_link_0"/>
@@ -937,12 +939,13 @@ This program contains the description of the Grizzly + UR10 manipulator.
         <mesh filename="package://robotiq_s_model_visualization/meshes/s-model_articulated/visual/link_0.STL"/>
       </geometry>
     </visual>
-    <collision>
-      <origin rpy="0 3.1416 -1.57" xyz="-0.0455 0.0414 0.036"/>
-      <geometry>
-        <mesh filename="package://robotiq_s_model_visualization/meshes/s-model_articulated/collision/link_0.STL"/>
-      </geometry>
-    </collision>
+    <!-- This collision link is broken and not proper, it prevents the whole gripper from being used in MoveIt! -->
+    <!-- <collision>	
+				<origin xyz="-0.0455 0.0414 0.036" rpy="0 3.1416 -1.57"/>
+				<geometry>
+					<mesh filename="package://robotiq_s_model_visualization/meshes/s-model_articulated/collision/link_0.STL" />
+				</geometry>
+			</collision> -->
     <inertial>
       <origin rpy="0 0 0" xyz="0 0 0"/>
       <mass value="0.05"/>
@@ -951,7 +954,7 @@ This program contains the description of the Grizzly + UR10 manipulator.
   </link>
   <gazebo reference="robotiq_finger_middle_link_0">
     <material>Gazebo/Black</material>
-    <selfCollide>false</selfCollide>
+    <selfCollide>true</selfCollide>
   </gazebo>
   <link name="robotiq_finger_middle_link_1">
     <visual>
@@ -960,12 +963,12 @@ This program contains the description of the Grizzly + UR10 manipulator.
         <mesh filename="package://robotiq_s_model_visualization/meshes/s-model_articulated/visual/link_1.STL"/>
       </geometry>
     </visual>
-    <collision>
-      <origin rpy="0 0 -0.52" xyz="0.050 -.028 0"/>
-      <geometry>
-        <mesh filename="package://robotiq_s_model_visualization/meshes/s-model_articulated/collision/link_1.STL"/>
-      </geometry>
-    </collision>
+    <!-- <collision>
+				<origin xyz="0.050 -.028 0" rpy="0 0 -0.52"/>
+				<geometry>
+					<mesh filename="package://robotiq_s_model_visualization/meshes/s-model_articulated/collision/link_1.STL" />
+				</geometry>
+			</collision> -->
     <inertial>
       <origin rpy="0 0 0" xyz="0 0 0"/>
       <mass value="0.15"/>
@@ -974,7 +977,7 @@ This program contains the description of the Grizzly + UR10 manipulator.
   </link>
   <gazebo reference="robotiq_finger_middle_link_1">
     <material>Gazebo/Black</material>
-    <selfCollide>false</selfCollide>
+    <selfCollide>true</selfCollide>
   </gazebo>
   <link name="robotiq_finger_middle_link_2">
     <!--
@@ -988,12 +991,12 @@ This program contains the description of the Grizzly + UR10 manipulator.
         <mesh filename="package://robotiq_s_model_visualization/meshes/s-model_articulated/visual/link_2.STL"/>
       </geometry>
     </visual>
-    <collision>
-      <origin rpy="0 0 0" xyz="0.039 0 0.0075"/>
-      <geometry>
-        <mesh filename="package://robotiq_s_model_visualization/meshes/s-model_articulated/collision/link_2.STL"/>
-      </geometry>
-    </collision>
+    <!-- <collision>
+				<origin xyz="0.039 0 0.0075" rpy="0 0 0"/>
+				<geometry>
+					<mesh filename="package://robotiq_s_model_visualization/meshes/s-model_articulated/collision/link_2.STL" />
+				</geometry>
+			</collision> -->
     <inertial>
       <origin rpy="0 0 0" xyz="0 0 0"/>
       <mass value="0.15"/>
@@ -1002,7 +1005,7 @@ This program contains the description of the Grizzly + UR10 manipulator.
   </link>
   <gazebo reference="robotiq_finger_middle_link_2">
     <material>Gazebo/Black</material>
-    <selfCollide>false</selfCollide>
+    <selfCollide>true</selfCollide>
   </gazebo>
   <link name="robotiq_finger_middle_link_3">
     <visual>
@@ -1011,12 +1014,12 @@ This program contains the description of the Grizzly + UR10 manipulator.
         <mesh filename="package://robotiq_s_model_visualization/meshes/s-model_articulated/visual/link_3.STL"/>
       </geometry>
     </visual>
-    <collision>
-      <origin rpy="0 0 0.52" xyz="0 0 0"/>
-      <geometry>
-        <mesh filename="package://robotiq_s_model_visualization/meshes/s-model_articulated/collision/link_3.STL"/>
-      </geometry>
-    </collision>
+    <!-- <collision>
+				<origin xyz="0 0 0" rpy="0 0 0.52"/>
+				<geometry>
+					<mesh filename="package://robotiq_s_model_visualization/meshes/s-model_articulated/collision/link_3.STL" />
+				</geometry>
+			</collision> -->
     <inertial>
       <origin rpy="0 0 0" xyz="0 0 0"/>
       <mass value="0.05"/>
@@ -1025,7 +1028,7 @@ This program contains the description of the Grizzly + UR10 manipulator.
   </link>
   <gazebo reference="robotiq_finger_middle_link_2">
     <material>Gazebo/Black</material>
-    <selfCollide>false</selfCollide>
+    <selfCollide>true</selfCollide>
   </gazebo>
   <joint name="robotiq_finger_middle_joint_1" type="revolute">
     <parent link="robotiq_finger_middle_link_0"/>
@@ -1054,14 +1057,15 @@ This program contains the description of the Grizzly + UR10 manipulator.
         <mesh filename="package://robotiq_s_model_visualization/meshes/s-model_articulated/visual/palm.STL"/>
       </geometry>
     </visual>
-    <collision>
-      <geometry>
-        <mesh filename="package://robotiq_s_model_visualization/meshes/s-model_articulated/collision/palm.STL"/>
-      </geometry>
-    </collision>
+    <!-- <collision>
+				<geometry>
+					<mesh filename="package://robotiq_s_model_visualization/meshes/s-model_articulated/collision/palm.STL" />
+				</geometry>
+			</collision> -->
   </link>
   <gazebo reference="robotiq_palm">
     <material>Gazebo/Blue</material>
+    <selfCollide>true</selfCollide>
   </gazebo>
   <inertial>
     <origin rpy="0 0 0" xyz="0 0 0"/>
