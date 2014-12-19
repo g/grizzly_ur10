@@ -51,7 +51,7 @@ This program contains the description of the Grizzly + UR10 manipulator.
       <origin xyz="0.1 0 0" rpy="1.57 0 1.57" />
   </joint>
 
-  <!-- Gazebo references to fix gripper collides 
+  <!-- Gazebo references to fix gripper collides -->
 <gazebo reference="robotiq_palm">
       <selfCollide>true</selfCollide>
   </gazebo>
@@ -87,5 +87,5 @@ This program contains the description of the Grizzly + UR10 manipulator.
   </gazebo>
 <gazebo reference="robotiq_finger_1_link_3">
       <selfCollide>true</selfCollide>
-  </gazebo> -->
+  </gazebo> 
 </robot>
