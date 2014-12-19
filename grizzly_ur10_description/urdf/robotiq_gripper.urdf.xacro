@@ -88,4 +88,7 @@ This program contains the description of the Grizzly + UR10 manipulator.
 <gazebo reference="robotiq_finger_1_link_3">
       <selfCollide>true</selfCollide>
   </gazebo> 
+<gazebo reference="robotiq_palm">
+    <selfCollide>true</selfCollide>
+</gazebo>
 </robot>
