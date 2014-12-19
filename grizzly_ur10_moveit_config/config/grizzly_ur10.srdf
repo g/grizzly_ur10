@@ -86,6 +86,7 @@
      <!--DISABLE COLLISIONS: By default it is assumed that any link of the robot could potentially come into collision with any other link in the robot. This tag disables collision checking between a specified pair of links. -->
     <disable_collisions link1="back_left_wheel" link2="back_right_wheel" reason="Never" />
     <disable_collisions link1="back_left_wheel" link2="base_footprint_bumper_part" reason="Never" />
+    <disable_collisions link1="base_link" link2="front_right_wheel"/>
     <disable_collisions link1="back_left_wheel" link2="base_link" reason="Adjacent" />
     <disable_collisions link1="back_left_wheel" link2="front_axle_link" reason="Never" />
     <disable_collisions link1="back_left_wheel" link2="front_left_wheel" reason="Never" />
@@ -104,7 +105,6 @@
     <disable_collisions link1="base_footprint_bumper_part" link2="base_link" reason="Adjacent" />
     <disable_collisions link1="base_footprint_bumper_part" link2="front_axle_link" reason="Never" />
     <disable_collisions link1="base_footprint_bumper_part" link2="front_left_wheel" reason="Never" />
-    <disable_collisions link1="base_footprint_bumper_part" link2="front_right_wheel" reason="Never" />
     <disable_collisions link1="base_footprint_bumper_part" link2="robotiq_finger_1_link_0" reason="Never" />
     <disable_collisions link1="base_footprint_bumper_part" link2="robotiq_finger_1_link_1" reason="Never" />
     <disable_collisions link1="base_footprint_bumper_part" link2="robotiq_finger_1_link_2" reason="Never" />
