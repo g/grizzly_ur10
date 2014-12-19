@@ -8,4 +8,4 @@ controller_list:
     action_ns: gripper_action
     type: GripperCommand
     default: true
-    joints: [robotiq_finger_1_joint_1, robotiq_finger_1_joint_2, robotiq_finger_1_joint_3, robotiq_finger_2_joint_1, robotiq_finger_2_joint_2, robotiq_finger_2_joint_3, robotiq_palm_finger_1_joint, robotiq_palm_finger_2_joint, robotiq_finger_middle_joint_1, robotiq_finger_middle_joint_2, robotiq_finger_middle_joint_3]
+    joints: [robotiq_finger_1_joint_1, robotiq_finger_1_joint_2, robotiq_finger_1_joint_3, robotiq_finger_2_joint_1, robotiq_finger_2_joint_2, robotiq_finger_2_joint_3, robotiq_palm_finger_1_joint, robotiq_palm_finger_2_joint, robotiq_finger_middle_joint_1, robotiq_finger_middle_joint_2, robotiq_finger_middle_joint_3, robotiq_finger_1_link_0, robotiq_finger_2_link_0, robotiq_finger_3_link_0]
