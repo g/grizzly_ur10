@@ -136,6 +136,7 @@
     <disable_collisions link1="front_left_wheel" link2="front_right_wheel" reason="Never" />
     <disable_collisions link1="front_left_wheel" link2="ur10_arm_base_link" reason="Never" />
     <disable_collisions link1="front_left_wheel" link2="ur10_arm_shoulder_link" reason="Never" />
+    <disable_collisions link1="base_link" link2="ur10_arm_upper_arm_link" reason="Never" /> -->
     <disable_collisions link1="front_right_wheel" link2="ur10_arm_base_link" reason="Never" />
     <disable_collisions link1="front_right_wheel" link2="ur10_arm_shoulder_link" reason="Never" />
     <disable_collisions link1="robotiq_finger_1_link_0" link2="robotiq_finger_1_link_1" reason="Adjacent" />
