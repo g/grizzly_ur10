@@ -91,7 +91,7 @@ This program contains the description of the Grizzly + UR10 manipulator.
   <gazebo reference="base_link">
     <material>Gazebo/DarkGrey</material>
     <turnGravityOff>false</turnGravityOff>
-    <selfCollide>false</selfCollide>
+    <selfCollide>true</selfCollide>
   </gazebo>
   <joint name="base_link_sensor_anchor_link_joint" type="fixed">
     <origin rpy="0.0 0.0 0.0" xyz="0 0 0.45"/>
@@ -809,18 +809,6 @@ This program contains the description of the Grizzly + UR10 manipulator.
     <origin rpy="0 0 0" xyz="0.039 0 0"/>
     <limit effort="100" lower="0" upper="3.1416" velocity="100"/>
   </joint>
-  <gazebo reference="robotiq_finger_1_link_1">
-    <selfCollide>true</selfCollide>
-  </gazebo>
-  <gazebo reference="robotiq_finger_1_link_2">
-    <selfCollide>true</selfCollide>
-  </gazebo>
-  <gazebo reference="robotiq_finger_1_link_3">
-    <selfCollide>true</selfCollide>
-  </gazebo>
-  <gazebo reference="robotiq_finger_1_link_0">
-    <selfCollide>true</selfCollide>
-  </gazebo>
   <link name="robotiq_finger_2_link_0">
     <visual>
       <origin rpy="0 0 0" xyz="0.020 0 0"/>
@@ -935,18 +923,6 @@ This program contains the description of the Grizzly + UR10 manipulator.
     <origin rpy="0 0 0" xyz="0.039 0 0"/>
     <limit effort="100" lower="0" upper="3.1416" velocity="100"/>
   </joint>
-  <gazebo reference="robotiq_finger_2_link_1">
-    <selfCollide>true</selfCollide>
-  </gazebo>
-  <gazebo reference="robotiq_finger_2_link_2">
-    <selfCollide>true</selfCollide>
-  </gazebo>
-  <gazebo reference="robotiq_finger_2_link_3">
-    <selfCollide>true</selfCollide>
-  </gazebo>
-  <gazebo reference="robotiq_finger_2_link_0">
-    <selfCollide>true</selfCollide>
-  </gazebo>
   <link name="robotiq_finger_middle_link_0">
     <visual>
       <origin rpy="0 0 0" xyz="0.020 0 0"/>
@@ -1061,18 +1037,6 @@ This program contains the description of the Grizzly + UR10 manipulator.
     <origin rpy="0 0 0" xyz="0.039 0 0"/>
     <limit effort="100" lower="0" upper="3.1416" velocity="100"/>
   </joint>
-  <gazebo reference="robotiq_finger_middle_link_1">
-    <selfCollide>true</selfCollide>
-  </gazebo>
-  <gazebo reference="robotiq_finger_middle_link_2">
-    <selfCollide>true</selfCollide>
-  </gazebo>
-  <gazebo reference="robotiq_finger_middle_link_3">
-    <selfCollide>true</selfCollide>
-  </gazebo>
-  <gazebo reference="robotiq_finger_middle_link_0">
-    <selfCollide>true</selfCollide>
-  </gazebo>
   <link name="robotiq_palm">
     <visual>
       <geometry>
@@ -1091,9 +1055,6 @@ This program contains the description of the Grizzly + UR10 manipulator.
       </material>
     </collision>
   </link>
-  <gazebo reference="robotiq_palm">
-    <selfCollide>true</selfCollide>
-  </gazebo>
   <inertial>
     <origin rpy="0 0 0" xyz="0 0 0"/>
     <mass value="1.3"/>

@@ -45,7 +45,7 @@ This program contains the description of the Grizzly + UR10 manipulator.
     <origin xyz="0.65 ${reflect*0.21} 0.03" rpy="0.0 0.0 ${-pi/2}" />
   </joint>
 
-  <!-- Gazebo references for self collide -->
+  <!-- Gazebo references for self collide 
   <gazebo reference="ur10_arm_shoulder_link">
       <selfCollide>true</selfCollide>
   </gazebo>
@@ -65,7 +65,6 @@ This program contains the description of the Grizzly + UR10 manipulator.
       <selfCollide>true</selfCollide>
   </gazebo>
  <gazebo reference="ur10_arm_ee_link">
-      <selfCollide>true</selfCollide>
-  </gazebo>
-
+      <selfCollide>true</selfCollide> 
+  </gazebo> -->
 </robot>
