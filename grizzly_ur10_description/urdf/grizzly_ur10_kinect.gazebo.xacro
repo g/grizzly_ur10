@@ -12,14 +12,14 @@
 <joint name="grizzly_ur10_kinect_frame_joint" type="fixed">
     <parent link="grizzly_ur10_kinect_link"/>
     <child link="grizzly_ur10_kinect_frame"/>
-    <origin xyz="0 0 0" rpy="0 0 0"/>
+    <origin xyz="0 0 0" rpy="-1.57 0 -1.57"/>
 </joint>
 
 <!-- Optical frame addition -->
 <joint name="grizzly_ur10_kinect_optical_frame_joint" type="fixed">
     <parent link="grizzly_ur10_kinect_link"/>
     <child link="grizzly_ur10_kinect_optical_frame"/>
-    <origin xyz="0 0 0" rpy="0 0 0"/>
+    <origin xyz="0 0 0" rpy="-1.57 0 -1.57"/>
 </joint>
 
 <!-- Adding the actual kinect model -->
