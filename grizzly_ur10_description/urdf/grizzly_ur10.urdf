@@ -673,7 +673,7 @@ This program contains the description of the Grizzly + UR10 manipulator.
   <joint name="grizzly_ur10_joint" type="fixed">
     <parent link="sensor_anchor_link"/>
     <child link="ur10_arm_base_link"/>
-    <origin rpy="0.0 0.0 -1.570796325" xyz="0.65 -0.21 0.03"/>
+    <origin rpy="0.0 0.0 -1.570796325" xyz="0.65 -0.01 0.03"/>
   </joint>
   <gazebo reference="ur10_arm_shoulder_link">
     <selfCollide>true</selfCollide>
@@ -1150,6 +1150,90 @@ This program contains the description of the Grizzly + UR10 manipulator.
   </gazebo>
   <gazebo reference="robotiq_finger_1_link_3">
     <selfCollide>true</selfCollide>
+  </gazebo>
+  <link name="grizzly_ur10_kinect_frame"/>
+  <joint name="grizzly_ur10_kinect_frame_joint">
+    <parent link="sensor_anchor_link"/>
+    <child link="grizzly_ur10_kinect_frame"/>
+    <origin rpy="0 0 0" xyz="0 0 0"/>
+  </joint>
+  <gazebo reference="grizzly_ur10_kinect_frame">
+    <sensor name="grizzly_ur10_kinect_frame_sensor" type="depth">
+      <always_on>true</always_on>
+      <update_rate>20.0</update_rate>
+      <camera>
+        <horizontal_fov>0.994837673637</horizontal_fov>
+        <image>
+          <format>R8G8B8</format>
+          <width>640</width>
+          <height>480</height>
+        </image>
+        <clip>
+          <near>0.01</near>
+          <far>5</far>
+        </clip>
+      </camera>
+      <plugin filename="libgazebo_ros_openni_kinect.so" name="grizzly_ur10_kinect_frame_controller">
+        <alwaysOn>true</alwaysOn>
+        <updateRate>20.0</updateRate>
+        <cameraName>grizzly_ur10_kinect</cameraName>
+        <imageTopicName>grizzly_ur10_kinect/ir/image_raw</imageTopicName>
+        <cameraInfoTopicName>grizzly_ur10_kinect/ir/camera_info</cameraInfoTopicName>
+        <depthImageTopicName>grizzly_ur10_kinect/depth/image_raw</depthImageTopicName>
+        <depthImageCameraInfoTopicName>grizzly_ur10_kinect/depth/camera_info</depthImageCameraInfoTopicName>
+        <pointCloudTopicName>grizzly_ur10_kinect/depth/points</pointCloudTopicName>
+        <frameName>grizzly_ur10_kinect_optical_frame</frameName>
+        <pointCloudCutoff>0.5</pointCloudCutoff>
+        <distortionK1>0.00000001</distortionK1>
+        <distortionK2>0.00000001</distortionK2>
+        <distortionK3>0.00000001</distortionK3>
+        <distortionT1>0.00000001</distortionT1>
+        <distortionT2>0.00000001</distortionT2>
+        <CxPrime>0</CxPrime>
+        <Cx>0</Cx>
+        <Cy>0</Cy>
+        <focalLength>0</focalLength>
+        <hackBaseline>0</hackBaseline>
+      </plugin>
+    </sensor>
+    <sensor name="grizzly_ur10_kinect_frame_sensor" type="depth">
+      <always_on>true</always_on>
+      <update_rate>20.0</update_rate>
+      <camera>
+        <horizontal_fov>0.994837673637</horizontal_fov>
+        <image>
+          <format>R8G8B8</format>
+          <width>640</width>
+          <height>480</height>
+        </image>
+        <clip>
+          <near>0.01</near>
+          <far>5</far>
+        </clip>
+      </camera>
+      <plugin filename="libgazebo_ros_openni_kinect.so" name="grizzly_ur10_kinect_frame_controller">
+        <alwaysOn>true</alwaysOn>
+        <updateRate>20.0</updateRate>
+        <cameraName>grizzly_ur10_kinect</cameraName>
+        <imageTopicName>grizzly_ur10_kinect/rgb/image_raw</imageTopicName>
+        <cameraInfoTopicName>grizzly_ur10_kinect/rgb/camera_info</cameraInfoTopicName>
+        <depthImageTopicName>grizzly_ur10_kinect/depth/image_raw</depthImageTopicName>
+        <depthImageCameraInfoTopicName>grizzly_ur10_kinect/depth/camera_info</depthImageCameraInfoTopicName>
+        <pointCloudTopicName>grizzly_ur10_kinect/rgb/points</pointCloudTopicName>
+        <frameName>grizzly_ur10_kinect_optical_frame</frameName>
+        <pointCloudCutoff>0.5</pointCloudCutoff>
+        <distortionK1>0.00000001</distortionK1>
+        <distortionK2>0.00000001</distortionK2>
+        <distortionK3>0.00000001</distortionK3>
+        <distortionT1>0.00000001</distortionT1>
+        <distortionT2>0.00000001</distortionT2>
+        <CxPrime>0</CxPrime>
+        <Cx>0</Cx>
+        <Cy>0</Cy>
+        <focalLength>0</focalLength>
+        <hackBaseline>0</hackBaseline>
+      </plugin>
+    </sensor>
   </gazebo>
 </robot>
 
