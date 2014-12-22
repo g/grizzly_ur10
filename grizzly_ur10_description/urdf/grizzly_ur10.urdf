@@ -91,7 +91,7 @@ This program contains the description of the Grizzly + UR10 manipulator.
   <gazebo reference="base_link">
     <material>Gazebo/DarkGrey</material>
     <turnGravityOff>false</turnGravityOff>
-    <selfCollide>true</selfCollide>
+    <selfCollide>false</selfCollide>
   </gazebo>
   <joint name="base_link_sensor_anchor_link_joint" type="fixed">
     <origin rpy="0.0 0.0 0.0" xyz="0 0 0.45"/>
@@ -675,6 +675,27 @@ This program contains the description of the Grizzly + UR10 manipulator.
     <child link="ur10_arm_base_link"/>
     <origin rpy="0.0 0.0 -1.570796325" xyz="0.65 -0.21 0.03"/>
   </joint>
+  <gazebo reference="ur10_arm_shoulder_link">
+    <selfCollide>true</selfCollide>
+  </gazebo>
+  <gazebo reference="ur10_arm_upper_arm_link">
+    <selfCollide>true</selfCollide>
+  </gazebo>
+  <gazebo reference="ur10_arm_forearm_link">
+    <selfCollide>true</selfCollide>
+  </gazebo>
+  <gazebo reference="ur10_arm_wrist_1_link">
+    <selfCollide>true</selfCollide>
+  </gazebo>
+  <gazebo reference="ur10_arm_wrist_3_link">
+    <selfCollide>true</selfCollide>
+  </gazebo>
+  <gazebo reference="ur10_arm_wrist_2_link">
+    <selfCollide>true</selfCollide>
+  </gazebo>
+  <gazebo reference="ur10_arm_ee_link">
+    <selfCollide>true</selfCollide>
+  </gazebo>
   <gazebo>
     <plugin filename="libgazebo_ros_control.so" name="ros_control">
       <!--robotNamespace>/</robotNamespace-->
@@ -1091,5 +1112,44 @@ This program contains the description of the Grizzly + UR10 manipulator.
     <child link="robotiq_palm"/>
     <origin rpy="1.57 0 1.57" xyz="0.1 0 0"/>
   </joint>
+  <gazebo reference="robotiq_palm">
+    <selfCollide>true</selfCollide>
+  </gazebo>
+  <gazebo reference="robotiq_finger_middle_link_0">
+    <selfCollide>true</selfCollide>
+  </gazebo>
+  <gazebo reference="robotiq_finger_middle_link_1">
+    <selfCollide>true</selfCollide>
+  </gazebo>
+  <gazebo reference="robotiq_finger_middle_link_2">
+    <selfCollide>true</selfCollide>
+  </gazebo>
+  <gazebo reference="robotiq_finger_middle_link_3">
+    <selfCollide>true</selfCollide>
+  </gazebo>
+  <gazebo reference="robotiq_finger_2_link_0">
+    <selfCollide>true</selfCollide>
+  </gazebo>
+  <gazebo reference="robotiq_finger_2_link_1">
+    <selfCollide>true</selfCollide>
+  </gazebo>
+  <gazebo reference="robotiq_finger_2_link_2">
+    <selfCollide>true</selfCollide>
+  </gazebo>
+  <gazebo reference="robotiq_finger_2_link_3">
+    <selfCollide>true</selfCollide>
+  </gazebo>
+  <gazebo reference="robotiq_finger_1_link_0">
+    <selfCollide>true</selfCollide>
+  </gazebo>
+  <gazebo reference="robotiq_finger_1_link_1">
+    <selfCollide>true</selfCollide>
+  </gazebo>
+  <gazebo reference="robotiq_finger_1_link_2">
+    <selfCollide>true</selfCollide>
+  </gazebo>
+  <gazebo reference="robotiq_finger_1_link_3">
+    <selfCollide>true</selfCollide>
+  </gazebo>
 </robot>
 
