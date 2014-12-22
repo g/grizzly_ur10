@@ -42,7 +42,7 @@ This program contains the description of the Grizzly + UR10 manipulator.
   <joint name="grizzly_ur10_joint" type="fixed">
     <parent link="sensor_anchor_link" />
     <child link="ur10_arm_base_link" />
-    <origin xyz="0.65 ${reflect*0.21} 0.03" rpy="0.0 0.0 ${-pi/2}" />
+    <origin xyz="0.65 ${reflect*0.01} 0.03" rpy="0.0 0.0 ${-pi/2}" />
   </joint>
 
   <!-- Gazebo references for self collide -->

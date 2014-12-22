@@ -8,7 +8,7 @@
     <visual>
       <origin xyz="0 0 0.0145"/>
       <geometry>
-        <box size="0.04 0.04 0.04"/>
+        <box size="0.09 0.09 0.09"/>
       </geometry>
     </visual>
     <collision>
