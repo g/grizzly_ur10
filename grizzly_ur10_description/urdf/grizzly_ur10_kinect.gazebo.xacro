@@ -45,10 +45,11 @@
 	</inertial>
 </link>
 
+<!-- Connect kinect to robot -->
 <joint name="grizzly_ur10_kinect_joint" type="fixed">
     <parent link="grizzly_ur10_kinect_frame"/>
     <child link="grizzly_ur10_kinect_link"/>
-    <origin xyz="0 0 0" rpy="0 0 0"/>
+    <origin xyz="0.9 0 0" rpy="0 0 0"/>
 </joint>
 
 <!-- Add the kinect to the grizzly_ur10 project. This macro looks for ${name}_frame as its target frame. -->
