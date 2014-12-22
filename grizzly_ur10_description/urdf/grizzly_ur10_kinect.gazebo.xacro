@@ -12,14 +12,14 @@
 <joint name="grizzly_ur10_kinect_frame_joint" type="fixed">
     <parent link="grizzly_ur10_kinect_link"/>
     <child link="grizzly_ur10_kinect_frame"/>
-    <origin xyz="0.9 0 0" rpy="0 0 0"/>
+    <origin xyz="0 0 0" rpy="0 0 0"/>
 </joint>
 
 <!-- Optical frame addition -->
 <joint name="grizzly_ur10_kinect_optical_frame_joint" type="fixed">
     <parent link="grizzly_ur10_kinect_link"/>
     <child link="grizzly_ur10_kinect_optical_frame"/>
-    <origin xyz="0.9 0 0" rpy="0 0 0"/>
+    <origin xyz="0 0 0" rpy="0 0 0"/>
 </joint>
 
 <!-- Adding the actual kinect model -->
@@ -49,7 +49,7 @@
 <joint name="grizzly_ur10_kinect_joint" type="fixed">
     <parent link="sensor_anchor_link"/>
     <child link="grizzly_ur10_kinect_link"/>
-    <origin xyz="0 0 0" rpy="0 0 0"/>
+    <origin xyz="0.9 0 0" rpy="0 0 0"/>
 </joint>
 
 <!-- Add the kinect to the grizzly_ur10 project. This macro looks for ${name}_frame as its target frame. -->
