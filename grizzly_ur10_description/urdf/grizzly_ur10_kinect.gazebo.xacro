@@ -10,5 +10,9 @@
     <origin xyz="0.9 0 0" rpy="0 0 0"/>
 </xacro:kinect_camera_v0>
 
+<gazebo reference="grizzly_ur10_kinect_link">
+    <selfCollide>true</selfCollide>
+</gazebo>
+
 
 </robot>
