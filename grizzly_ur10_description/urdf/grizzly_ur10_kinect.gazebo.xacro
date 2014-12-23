@@ -2,60 +2,13 @@
 <robot xmlns:xacro="http://ros.org/wiki/xacro" name="grizzly_ur10_kinect">
   <xacro:property name="reflect" value="-1" />
 
-<xacro:include filename="$(find pr2_description)/urdf/sensors/kinect_camera.gazebo.xacro"/>
+<xacro:include filename="$(find pr2_description)/urdf/sensors/kinect_camera.urdf.xacro"/>
+<xacro:include filename="$(find pr2_description)/urdf/common.xacro"/>
 
-<!-- Add the kinect frame to the grizzly_ur10 -->
-<link name="grizzly_ur10_kinect_frame"/>
-
-<link name="grizzly_ur10_kinect_optical_frame"/>
-
-<!-- Kinect frame addition -->
-<joint name="grizzly_ur10_kinect_frame_joint" type="fixed">
-    <parent link="grizzly_ur10_kinect_link"/>
-    <child link="grizzly_ur10_kinect_frame"/>
-    <origin xyz="0 0 0" rpy="0 0 0"/>
-</joint>
-
-<!-- Optical frame addition -->
-<joint name="grizzly_ur10_kinect_optical_frame_joint" type="fixed">
-    <parent link="grizzly_ur10_kinect_frame"/>
-    <child link="grizzly_ur10_kinect_optical_frame"/>
-    <origin xyz="0 0 0" rpy="0 0 -${M_PI/2}"/>
-</joint> 
-
-<!-- Adding the actual kinect model -->
-<link name="grizzly_ur10_kinect_link">
-	<visual>
-		<origin xyz="0 0 0" rpy="-${M_PI/2} 0 ${M_PI}"/>
-		<geometry>
-		<mesh filename="package://grizzly_ur10_description/meshes/sensors/kinect.dae"/>
-		</geometry>
-	</visual>
-	<collision>
-		<origin xyz="0.0 0.0 0.0" rpy="0 0 0"/>
-		<geometry>
-		<box size="0.07271 0.27794 0.073"/>
-		</geometry>
-	</collision>
-	<inertial>
-		<mass value="0.001" />
-		<origin xyz="0 0 0" />
-		<inertia ixx="0.0001" ixy="0.0" ixz="0.0"
-		iyy="0.0001" iyz="0.0"
-		izz="0.0001" />
-	</inertial>
-</link>
-
-<!-- Connect kinect to robot -->
-<joint name="grizzly_ur10_kinect_joint" type="fixed">
-    <parent link="sensor_anchor_link"/>
-    <child link="grizzly_ur10_kinect_link"/>
-    <origin xyz="0.9 0 0" rpy="${M_PI/2} ${M_PI} ${M_PI/2}"/>
-</joint>
-
-<!-- Add the kinect to the grizzly_ur10 project. This macro looks for ${name}_frame as its target frame. -->
-<xacro:kinect_camera_gazebo_v0 name="grizzly_ur10_kinect"/>
-
+<!-- Add kinect -->
+<xacro:kinect_camera_v0 name="grizzly_ur10_kinect" parent="sensor_anchor_link">
+    <origin xyz="0.9 0 0" rpy="0 0 0"/>
+</xacro:kinect_camera_v0>
 
 
 </robot>
