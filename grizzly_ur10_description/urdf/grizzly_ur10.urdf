@@ -1151,12 +1151,36 @@ This program contains the description of the Grizzly + UR10 manipulator.
   <gazebo reference="robotiq_finger_1_link_3">
     <selfCollide>true</selfCollide>
   </gazebo>
-  <link name="grizzly_ur10_kinect_frame"/>
-  <joint name="grizzly_ur10_kinect_frame_joint">
+  <joint name="grizzly_ur10_kinect_frame_joint" type="fixed">
+    <origin rpy="0 0.349065850399 0" xyz="0.5 0 0.4"/>
     <parent link="sensor_anchor_link"/>
     <child link="grizzly_ur10_kinect_frame"/>
-    <origin rpy="0 0 0" xyz="0 0 0"/>
   </joint>
+  <link name="grizzly_ur10_kinect_frame">
+    <inertial>
+      <mass value="0.1"/>
+      <origin rpy="0 0 0" xyz="0 0 0"/>
+      <inertia ixx="0.01" ixy="0.0" ixz="0.0" iyy="0.01" iyz="0.0" izz="0.01"/>
+    </inertial>
+    <visual>
+      <origin rpy="0 0 0" xyz="0.0 0.012 0"/>
+      <geometry>
+        <mesh filename="package://pr2_description/meshes/sensors/kinect_v0/kinect.dae" scale="0.001 0.001 0.001"/>
+      </geometry>
+    </visual>
+    <collision>
+      <origin rpy="0 0 0" xyz="0.0 0.012 0"/>
+      <geometry>
+        <mesh filename="package://pr2_description/meshes/sensors/kinect_v0/kinect.dae" scale="0.001 0.001 0.001"/>
+      </geometry>
+    </collision>
+  </link>
+  <joint name="grizzly_ur10_kinect_optical_joint" type="fixed">
+    <origin rpy="-1.57079632679 0.0 -1.57079632679" xyz="0.0            0.0         0.0"/>
+    <parent link="grizzly_ur10_kinect_frame"/>
+    <child link="grizzly_ur10_kinect_optical_frame"/>
+  </joint>
+  <link name="grizzly_ur10_kinect_optical_frame"/>
   <gazebo reference="grizzly_ur10_kinect_frame">
     <sensor name="grizzly_ur10_kinect_frame_sensor" type="depth">
       <always_on>true</always_on>
@@ -1232,6 +1256,53 @@ This program contains the description of the Grizzly + UR10 manipulator.
         <Cy>0</Cy>
         <focalLength>0</focalLength>
         <hackBaseline>0</hackBaseline>
+      </plugin>
+    </sensor>
+  </gazebo>
+  <gazebo reference="grizzly_ur10_kinect_link">
+    <selfCollide>true</selfCollide>
+  </gazebo>
+  <joint name="grizzly_ur10_hokuyo_joint" type="fixed">
+    <axis xyz="0 1 0"/>
+    <origin rpy="0 0 0" xyz="1.0 0 -0.1"/>
+    <parent link="sensor_anchor_link"/>
+    <child link="grizzly_ur10_hokuyo_link"/>
+  </joint>
+  <link name="grizzly_ur10_hokuyo_link" type="laser">
+    <inertial>
+      <mass value="0.001"/>
+      <origin rpy="0 0 0" xyz="0 0 0"/>
+      <inertia ixx="0.0001" ixy="0" ixz="0" iyy="0.000001" iyz="0" izz="0.0001"/>
+    </inertial>
+  </link>
+  <gazebo reference="grizzly_ur10_hokuyo_link">
+    <sensor name="grizzly_ur10_hokuyo" type="ray">
+      <always_on>true</always_on>
+      <update_rate>100</update_rate>
+      <pose>0 0 0 0 0 0</pose>
+      <visualize>false</visualize>
+      <ray>
+        <scan>
+          <horizontal>
+            <samples>640</samples>
+            <resolution>1</resolution>
+            <min_angle>0</min_angle>
+            <max_angle>180</max_angle>
+          </horizontal>
+        </scan>
+        <range>
+          <min>0.08</min>
+          <max>10.0</max>
+          <resolution>0.01</resolution>
+        </range>
+      </ray>
+      <plugin filename="libgazebo_ros_laser.so" name="gazebo_ros_grizzly_ur10_hokuyo_controller">
+        <gaussianNoise>0.005</gaussianNoise>
+        <alwaysOn>true</alwaysOn>
+        <updateRate>100</updateRate>
+        <topicName>scan</topicName>
+        <frameName>grizzly_ur10_hokuyo_link</frameName>
+        <hokuyoMinIntensity>101</hokuyoMinIntensity>
       </plugin>
     </sensor>
   </gazebo>
