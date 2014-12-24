@@ -77,7 +77,7 @@
     <!--END EFFECTOR: Purpose: Represent information about an end effector.-->
     <end_effector name="robotiq_gripper_eef" parent_link="ur10_arm_ee_link" group="robotiq_hand" />
     <!--VIRTUAL JOINT: Purpose: this element defines a virtual joint between a robot link and an external frame of reference (considered fixed with respect to the robot)-->
-    <virtual_joint name="virtual_joint" type="planar" parent_frame="world" child_link="base_footprint" />
+    <virtual_joint name="virtual_joint" type="planar" parent_frame="base_footprint" child_link="base_link" />
     <!--PASSIVE JOINT: Purpose: this element is used to mark joints that are not actuated-->
     <passive_joint name="joint_front_right_wheel" />
     <passive_joint name="joint_front_left_wheel" />
