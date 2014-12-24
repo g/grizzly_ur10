@@ -7,7 +7,7 @@
 
 <!-- Add kinect -->
 <xacro:kinect_camera_v0 name="grizzly_ur10_kinect" parent="sensor_anchor_link">
-    <origin xyz="0.9 0 0" rpy="0 0 0"/>
+    <origin xyz="0.5 0 0.4" rpy="0 ${M_PI/9} 0"/>
 </xacro:kinect_camera_v0>
 
 <gazebo reference="grizzly_ur10_kinect_link">

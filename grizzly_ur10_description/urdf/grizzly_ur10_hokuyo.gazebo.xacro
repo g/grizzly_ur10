@@ -6,8 +6,8 @@
 <xacro:include filename="$(find pr2_description)/urdf/common.xacro"/>
 
 <!-- Add laser -->
-<xacro:hokuyo_lx30_laser_v0 name="grizzly_ur10_hokyuo" parent="sensor_anchor" ros_topic="scan" update_rate="100" min_angle="0" max_angle="180">
-    <origin xyz="0.9 0 0" rpy="0 0 0"/>
+<xacro:hokuyo_lx30_laser_v0 name="grizzly_ur10_hokuyo" parent="sensor_anchor" ros_topic="scan" update_rate="100" min_angle="0" max_angle="180">
+    <origin xyz="1.0 0 -0.1" rpy="0 0 0"/>
 </xacro:hokuyo_lx30_laser_v0>
 
 </robot>
