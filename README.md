@@ -43,11 +43,6 @@ roslaunch grizzly_ur10_moveit_config grizzly_ur10_moveit_planning_execution.laun
 roslaunch grizzly_ur10_moveit_config moveit_rviz.launch config:=true
 
 
-
-
-
-
-
 ===============================
 Usage with Gazebo Simulation
 ===============================
@@ -70,7 +65,11 @@ Again, you can use MoveIt! to control the simulated robot.
 
 For setting up the MoveIt! nodes to allow motion planning run:
 
-roslaunch grizzly_ur10_moveit_config demo.launch
+roslaunch grizzly_ur10_moveit_config grizzly_ur10_planning_execution.launch sim:=true
 
-Warning: if you're running this from source make sure to source your workspace (e.g source devel/setup.bash) before running the above commands.
+and then to start the RViz interface:
+
+roslaunch grizzly_ur10_moveit_config moveit_rviz.launch config:=true
+
+
 
