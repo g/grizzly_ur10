@@ -12,8 +12,10 @@
     <group name="ur10_arm">
         <chain base_link="ur10_arm_base_link" tip_link="ur10_arm_ee_link" />
     </group>
-
-   <group name="robotiq_gripper">
+    <group name="robotiq_gripper">
+       <chain base_link="ur10_arm_ee_link" tip_link="robotiq_gripper_tip_frame"/>
+    </group>
+   <!-- <group name="robotiq_gripper">
         <link name="robotiq_palm"/>
         <link name="robotiq_finger_1_link_0" />
         <link name="robotiq_finger_1_link_1" />
@@ -26,11 +28,9 @@
         <link name="robotiq_finger_middle_link_0" />
         <link name="robotiq_finger_middle_link_1" />
         <link name="robotiq_finger_middle_link_2" />
-        <!-- this is the gripper tip link -->
         <link name="robotiq_finger_middle_link_3" />
-        <!-- this is the gripper tip frame -->
         <link name="robotiq_gripper_tip_frame" />
-   </group>
+   </group>  Try defining a chain see if it likes that? -->
 
 <!--    <group name="robotiq_hand">
         <link name="robotiq_palm" />
