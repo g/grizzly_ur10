@@ -1118,12 +1118,12 @@ This program contains the description of the Grizzly + UR10 manipulator.
   <joint name="ur10_arm_to_gripper_joint" type="fixed">
     <parent link="ur10_arm_ee_link"/>
     <child link="robotiq_palm"/>
-    <origin rpy="1.57 0 1.57" xyz="0 -0.1 0"/>
+    <origin rpy="1.57 1.57 0" xyz="0.01 0 0"/>
   </joint>
   <joint name="robotiq_gripper_ee_joint" type="revolute">
     <parent link="robotiq_finger_middle_link_3"/>
     <child link="robotiq_gripper_tip_frame"/>
-    <origin rpy="1.57 0 1.57" xyz="0.1 0 0"/>
+    <origin rpy="0 0 0" xyz="0 0 0"/>
     <limit effort="100" lower="-0.25" upper="0.16" velocity="100"/>
   </joint>
   <gazebo reference="robotiq_palm">
