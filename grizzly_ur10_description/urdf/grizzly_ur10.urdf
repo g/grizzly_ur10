@@ -1075,12 +1075,12 @@ This program contains the description of the Grizzly + UR10 manipulator.
         <color rgba="0 1 1 1"/>
       </material>
     </collision>
+    <inertial>
+      <origin rpy="0 0 0" xyz="0 0 0"/>
+      <mass value="1.3"/>
+      <inertia ixx="0.006012" ixy="0.000079" ixz="-0.00024" iyy="0.012892" iyz="0" izz="0.002435"/>
+    </inertial>
   </link>
-  <inertial>
-    <origin rpy="0 0 0" xyz="0 0 0"/>
-    <mass value="1.3"/>
-    <inertia ixx="0.006012" ixy="0.000079" ixz="-0.00024" iyy="0.012892" iyz="0" izz="0.002435"/>
-  </inertial>
   <joint name="robotiq_palm_finger_1_joint" type="revolute">
     <parent link="robotiq_palm"/>
     <child link="robotiq_finger_1_link_0"/>
@@ -1151,6 +1151,102 @@ This program contains the description of the Grizzly + UR10 manipulator.
   <gazebo reference="robotiq_finger_1_link_3">
     <selfCollide>true</selfCollide>
   </gazebo>
+  <transmission name="robotiq_finger_1_joint_1_trans">
+    <type>transmission_interface/SimpleTransmission</type>
+    <joint name="robotiq_finger_1_joint_1"/>
+    <actuator name="robotiq_finger_1_joint_1_motor">
+      <hardwareInterface>EffortJointInterface</hardwareInterface>
+      <mechanicalReduction>1</mechanicalReduction>
+    </actuator>
+  </transmission>
+  <transmission name="robotiq_finger_1_joint_2_trans">
+    <type>transmission_interface/SimpleTransmission</type>
+    <joint name="robotiq_finger_1_joint_2"/>
+    <actuator name="robotiq_finger_1_joint_2_motor">
+      <hardwareInterface>EffortJointInterface</hardwareInterface>
+      <mechanicalReduction>1</mechanicalReduction>
+    </actuator>
+  </transmission>
+  <transmission name="robotiq_finger_1_joint_3_trans">
+    <type>transmission_interface/SimpleTransmission</type>
+    <joint name="robotiq_finger_1_joint_3"/>
+    <actuator name="robotiq_finger_1_joint_3_motor">
+      <hardwareInterface>EffortJointInterface</hardwareInterface>
+      <mechanicalReduction>1</mechanicalReduction>
+    </actuator>
+  </transmission>
+  <transmission name="robotiq_finger_2_joint_1_trans">
+    <type>transmission_interface/SimpleTransmission</type>
+    <joint name="robotiq_finger_2_joint_1"/>
+    <actuator name="robotiq_finger_2_joint_1_motor">
+      <hardwareInterface>EffortJointInterface</hardwareInterface>
+      <mechanicalReduction>1</mechanicalReduction>
+    </actuator>
+  </transmission>
+  <transmission name="robotiq_finger_2_joint_2_trans">
+    <type>transmission_interface/SimpleTransmission</type>
+    <joint name="robotiq_finger_2_joint_2"/>
+    <actuator name="robotiq_finger_2_joint_2_motor">
+      <hardwareInterface>EffortJointInterface</hardwareInterface>
+      <mechanicalReduction>1</mechanicalReduction>
+    </actuator>
+  </transmission>
+  <transmission name="robotiq_finger_2_joint_3_trans">
+    <type>transmission_interface/SimpleTransmission</type>
+    <joint name="robotiq_finger_2_joint_3"/>
+    <actuator name="robotiq_finger_2_joint_3_motor">
+      <hardwareInterface>EffortJointInterface</hardwareInterface>
+      <mechanicalReduction>1</mechanicalReduction>
+    </actuator>
+  </transmission>
+  <transmission name="robotiq_palm_finger_1_joint_trans">
+    <type>transmission_interface/SimpleTransmission</type>
+    <joint name="robotiq_palm_finger_1_joint"/>
+    <actuator name="robotiq_palm_finger_1_joint_motor">
+      <hardwareInterface>EffortJointInterface</hardwareInterface>
+      <mechanicalReduction>1</mechanicalReduction>
+    </actuator>
+  </transmission>
+  <transmission name="robotiq_palm_finger_2_joint_trans">
+    <type>transmission_interface/SimpleTransmission</type>
+    <joint name="robotiq_palm_finger_2_joint"/>
+    <actuator name="robotiq_palm_finger_2_joint_motor">
+      <hardwareInterface>EffortJointInterface</hardwareInterface>
+      <mechanicalReduction>1</mechanicalReduction>
+    </actuator>
+  </transmission>
+  <transmission name="robotiq_palm_finger_middle_joint_trans">
+    <type>transmission_interface/SimpleTransmission</type>
+    <joint name="robotiq_palm_finger_middle_joint"/>
+    <actuator name="robotiq_palm_finger_middle_joint_motor">
+      <hardwareInterface>EffortJointInterface</hardwareInterface>
+      <mechanicalReduction>1</mechanicalReduction>
+    </actuator>
+  </transmission>
+  <transmission name="robotiq_finger_middle_joint_1_trans">
+    <type>transmission_interface/SimpleTransmission</type>
+    <joint name="robotiq_finger_middle_joint_1"/>
+    <actuator name="robotiq_finger_middle_joint_1_motor">
+      <hardwareInterface>EffortJointInterface</hardwareInterface>
+      <mechanicalReduction>1</mechanicalReduction>
+    </actuator>
+  </transmission>
+  <transmission name="robotiq_finger_middle_joint_2_trans">
+    <type>transmission_interface/SimpleTransmission</type>
+    <joint name="robotiq_finger_middle_joint_2"/>
+    <actuator name="robotiq_finger_middle_joint_2_motor">
+      <hardwareInterface>EffortJointInterface</hardwareInterface>
+      <mechanicalReduction>1</mechanicalReduction>
+    </actuator>
+  </transmission>
+  <transmission name="robotiq_finger_middle_joint_3_trans">
+    <type>transmission_interface/SimpleTransmission</type>
+    <joint name="robotiq_finger_middle_joint_3"/>
+    <actuator name="robotiq_finger_middle_joint_3_motor">
+      <hardwareInterface>EffortJointInterface</hardwareInterface>
+      <mechanicalReduction>1</mechanicalReduction>
+    </actuator>
+  </transmission>
   <joint name="grizzly_ur10_kinect_frame_joint" type="fixed">
     <origin rpy="0 0.349065850399 0" xyz="0.5 0 0.4"/>
     <parent link="sensor_anchor_link"/>

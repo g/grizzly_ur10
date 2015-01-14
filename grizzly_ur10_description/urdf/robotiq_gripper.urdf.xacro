@@ -33,6 +33,9 @@ This program contains the description of the Grizzly + UR10 manipulator.
 
    <xacro:include filename="$(find ur_description)/urdf/gazebo.urdf.xacro" /> 
    <xacro:include filename="$(find robotiq_s_model_visualization)/cfg/s-model_articulated_macro.xacro"/>
+ 
+   <!-- Transmission for robotiq gripper so that it can use ROS control -->
+   <xacro:include filename="$(find grizzly_ur10_description)/urdf/s-model_articulated.transmission.xacro" />
 
   <!-- Spawn gripper -->
    <xacro:s-model_articulated prefix="robotiq_"/>
@@ -91,4 +94,8 @@ This program contains the description of the Grizzly + UR10 manipulator.
 <gazebo reference="robotiq_finger_1_link_3">
       <selfCollide>true</selfCollide>
   </gazebo> 
+
+    <!-- Instantiate transmission file -->
+    <xacro:robotiq_gripper_transmission prefix="" />
+
 </robot>

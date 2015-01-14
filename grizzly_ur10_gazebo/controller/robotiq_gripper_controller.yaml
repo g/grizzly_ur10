@@ -1,0 +1,17 @@
+gripper_action_controller:
+  type: effort_controllers/GripperActionController
+  topic: "test2"
+  joint: ee_joint
+  joints: 
+    - robotiq_finger_1_joint_1
+    - robotiq_finger_1_joint_2
+    - robotiq_finger_1_joint_3
+    - robotiq_finger_2_joint_1
+    - robotiq_finger_2_joint_2
+    - robotiq_finger_2_joint_3
+    - robotiq_palm_finger_1_joint
+    - robotiq_palm_finger_2_joint
+    - robotiq_finger_middle_joint_1
+    - robotiq_finger_middle_joint_2
+    - robotiq_finger_middle_joint_3
+    - robotiq_palm_finger_middle_joint
