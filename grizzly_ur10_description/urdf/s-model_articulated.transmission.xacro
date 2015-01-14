@@ -21,6 +21,8 @@
       </actuator>
     </transmission>
 
+
+
  <transmission name="robotiq_finger_1_joint_3_trans">
       <type>transmission_interface/SimpleTransmission</type>
       <joint name="robotiq_finger_1_joint_3"/>

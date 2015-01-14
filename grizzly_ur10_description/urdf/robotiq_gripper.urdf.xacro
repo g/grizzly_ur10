@@ -31,14 +31,24 @@ This program contains the description of the Grizzly + UR10 manipulator.
 <robot xmlns:xacro="http://ros.org/wiki/xacro" name="grizzly_ur10">
   <xacro:property name="reflect" value="-1" />
 
+   <!-- Gazebo references for ur  description -->
    <xacro:include filename="$(find ur_description)/urdf/gazebo.urdf.xacro" /> 
    <xacro:include filename="$(find robotiq_s_model_visualization)/cfg/s-model_articulated_macro.xacro"/>
+
+   <!-- Gazebo references -->
+   <xacro:include filename="$(find grizzly_ur10_description)/urdf/s-model_articulated.gazebo.xacro" />
  
    <!-- Transmission for robotiq gripper so that it can use ROS control -->
    <xacro:include filename="$(find grizzly_ur10_description)/urdf/s-model_articulated.transmission.xacro" />
 
   <!-- Spawn gripper -->
    <xacro:s-model_articulated prefix="robotiq_"/>
+
+  <!-- Note: the gripper_action_controller and MoveIt require a specific structure of the URDF so that this will work.
+   end_of_robotiq_finger_tip -> joint -> tip_link -> ee_joint -> tip_frame -->
+
+
+  <!-- End of robotiq gripper = robotiq_palm_finger -->
 
   <link name="robotiq_gripper_frame_link"/> 
 
@@ -54,47 +64,8 @@ This program contains the description of the Grizzly + UR10 manipulator.
       <origin xyz="0.1 0 0" rpy="1.57 0 1.57" />
   </joint>
 
-  <!-- Gazebo references to fix gripper collides -->
-<gazebo reference="robotiq_palm">
-      <selfCollide>true</selfCollide>
-  </gazebo>
-<gazebo reference="robotiq_finger_middle_link_0">
-      <selfCollide>true</selfCollide>
-  </gazebo>
-<gazebo reference="robotiq_finger_middle_link_1">
-      <selfCollide>true</selfCollide>
-  </gazebo>
-<gazebo reference="robotiq_finger_middle_link_2">
-      <selfCollide>true</selfCollide>
-  </gazebo>
-<gazebo reference="robotiq_finger_middle_link_3">
-      <selfCollide>true</selfCollide>
-  </gazebo>
-<gazebo reference="robotiq_finger_2_link_0">
-      <selfCollide>true</selfCollide>
-  </gazebo>
-<gazebo reference="robotiq_finger_2_link_1">
-      <selfCollide>true</selfCollide>
-  </gazebo>	
-<gazebo reference="robotiq_finger_2_link_2">
-      <selfCollide>true</selfCollide>
-  </gazebo>
-<gazebo reference="robotiq_finger_2_link_3">
-      <selfCollide>true</selfCollide>
-  </gazebo>
-<gazebo reference="robotiq_finger_1_link_0">
-      <selfCollide>true</selfCollide>
-  </gazebo>
-<gazebo reference="robotiq_finger_1_link_1">
-      <selfCollide>true</selfCollide>
-  </gazebo>
-<gazebo reference="robotiq_finger_1_link_2">
-      <selfCollide>true</selfCollide>
-  </gazebo>
-<gazebo reference="robotiq_finger_1_link_3">
-      <selfCollide>true</selfCollide>
-  </gazebo> 
-
+    <!-- Gazebo macro for gripper -->
+    <xacro:robotiq_gripper_gazebo/>
     <!-- Instantiate transmission file -->
     <xacro:robotiq_gripper_transmission prefix="" />
 
