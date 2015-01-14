@@ -1,5 +1,4 @@
 gripper_action_controller:
-  type: GripperActionController
+  type: effort_controllers/GripperActionController
   topic: "test2"
-  joint: 
-    - robotiq_grpiper_ee_joint
+  joint: robotiq_gripper_ee_joint

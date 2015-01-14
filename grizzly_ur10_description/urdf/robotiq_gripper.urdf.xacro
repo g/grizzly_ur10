@@ -57,7 +57,19 @@ This program contains the description of the Grizzly + UR10 manipulator.
   <!-- Chain looks like this:
    ur10_arm -> ur10_arm_ee_link -> robotiq_palm -> -->
 
-  <link name="robotiq_gripper_tip_frame"/> 
+  <link name="robotiq_gripper_tip_frame">
+        <origin xyz="0 0 0" rpy="0 0 0" />
+	<visual>
+                    <geometry>
+                       <box size="0 0 0"/>
+                    </geometry>
+        </visual>
+	<inertial>
+		    <origin xyz="0 0 0" rpy="0 0 0"/>
+		    <mass value="1.3"/>
+		    <inertia ixx="0.006012" ixy="0.000079" ixz="-0.00024" iyy="0.012892" iyz="0" izz="0.002435" />
+	</inertial>
+  </link>
 
   <!-- This connects the robotiq gripper to the ur10 arm -->
   <joint name="ur10_arm_to_gripper_joint" type="fixed">
@@ -67,10 +79,11 @@ This program contains the description of the Grizzly + UR10 manipulator.
   </joint> 
 
   <!-- this is the end effector joint before the tip frame -->
-  <joint name="robotiq_gripper_ee_joint" type="fixed">
+  <joint name="robotiq_gripper_ee_joint" type="revolute">
       <parent link="robotiq_finger_middle_link_3"/>
       <child link="robotiq_gripper_tip_frame"/>
       <origin xyz="0.1 0 0" rpy="1.57 0 1.57" />
+      <limit lower="-0.25" upper="0.16" effort="100" velocity="100"/>
   </joint>
 
     <!-- Gazebo macro for gripper -->

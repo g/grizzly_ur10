@@ -21,7 +21,14 @@
       </actuator>
     </transmission>
 
-
+ <transmission name="robotiq_gripper_ee_joint_trans">
+      <type>transmission_interface/SimpleTransmission</type>
+      <joint name="robotiq_gripper_ee_joint"/>
+      <actuator name="robotiq_gripper_ee_joint_motor">
+        <hardwareInterface>EffortJointInterface</hardwareInterface>
+        <mechanicalReduction>1</mechanicalReduction>
+      </actuator>
+    </transmission>
 
  <transmission name="robotiq_finger_1_joint_3_trans">
       <type>transmission_interface/SimpleTransmission</type>
