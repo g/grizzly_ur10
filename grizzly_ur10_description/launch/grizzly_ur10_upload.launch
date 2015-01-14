@@ -2,5 +2,6 @@
 <launch>
 
    <param name="robot_description" command="$(find xacro)/xacro.py '$(find grizzly_ur10_description)/urdf/base_with_manipulator.urdf.xacro'" />
+   <node name="joint_state_publisher" pkg="joint_state_publisher" type="joint_state_publisher"/>
 
 </launch>

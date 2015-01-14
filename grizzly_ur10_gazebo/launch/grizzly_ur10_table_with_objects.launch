@@ -13,20 +13,26 @@
   </include>
 
   <!-- spawn in gazebo -->
-  <node name="spawn_gazebo_model" pkg="gazebo_ros" type="spawn_model" args="-urdf -param robot_description -model robot -z 0.1" respawn="false" output="screen" />
+  <node name="spawn_robot_model" pkg="gazebo_ros" type="spawn_model" args="-urdf -param robot_description -model robot -z 0.1" respawn="false" output="screen" />
 
   <!-- launch arm controllers -->
   <include file="$(find grizzly_ur10_gazebo)/launch/controller_utils.launch"/>
   <rosparam file="$(find grizzly_ur10_gazebo)/controller/arm_controller_ur10.yaml" command="load"/>
   <node name="arm_controller_spawner" pkg="controller_manager" type="spawner" args="arm_controller" />
 
-<!-- spawn table and tabletop object-->
-  <param name="table_description" 
-   command="$(find xacro)/xacro.py '$(find gazebo_worlds)/objects/table.urdf.xacro'" />
-  <node name="spawn_table" pkg="gazebo" type="spawn_model" args="-urdf -param table_description -model table_1" 
-   respawn="false" output="screen" />
 
-<!-- Spawn lots of objects -->
+  <!-- load table object to server --> 
+  <param name="table_description" command="$(find xacro)/xacro.py '$(find grizzly_ur10_gazebo)/objects/table.urdf.xacro'" />
+  <!-- spawn tabletop object-->
+  <node name="spawn_table_model" pkg="gazebo_ros" type="spawn_model" args="-urdf -param table_description -model table -z 0.1 -x -1.0" respawn="false" output="screen" />
+ 
+
+  <!-- spawn object on-top of table -->
+  <node name="spawn_tabletop_object_model" pkg="gazebo_ros" type="spawn_model" args="-urdf -file $(find grizzly_ur10_gazebo)/objects/cube_yellow.urdf -wait table -model cube_yellow -x 2.0 -z 2.0" respawn="false" output="screen"/>
+
+
+<!-- Spawn objects -->
+<!-- 
 <node name="spawn_box1" pkg="gazebo" type="spawn_model" args="-urdf -file $(find pr2_gazebo)/urdf/cube_red.urdf -wait table_1 -model cube_red_1 -x 0.7 -z 0.55" respawn="false" output="screen" />
   <node name="spawn_box2" pkg="gazebo" type="spawn_model" args="-urdf -file $(find pr2_gazebo)/urdf/cube_blue.urdf -wait cube_red_1 -model cube_blue_1 -x 0.7 -z 0.60" respawn="false" output="screen" />
   <node name="spawn_box3" pkg="gazebo" type="spawn_model" args="-urdf -file $(find pr2_gazebo)/urdf/cube_yellow.urdf -wait cube_blue_1 -model cube_yellow_1 -x 0.7 -z 0.65" respawn="false" output="screen" />
@@ -36,7 +42,7 @@
   <node name="spawn_cyl1" pkg="gazebo" type="spawn_model" args="-urdf -file $(find pr2_gazebo)/urdf/cylinder_red.urdf -wait table_1 -model cylinder_red_1 -x 0.7 -y -0.05 -z 0.55" respawn="false" output="screen" />
   <node name="spawn_cyl2" pkg="gazebo" type="spawn_model" args="-urdf -file $(find pr2_gazebo)/urdf/cylinder_blue.urdf -wait cylinder_red_1 -model cylinder_blue_1 -x 0.7 -y -0.05 -z 0.65" respawn="false" output="screen" />
   <node name="spawn_cyl3" pkg="gazebo" type="spawn_model" args="-urdf -file $(find pr2_gazebo)/urdf/cylinder_yellow.urdf -wait cylinder_blue_1 -model cylinder_yellow_1 -x 0.7 -y -0.05 -z 0.75" respawn="false" output="screen" />
-  <node name="spawn_cyl4" pkg="gazebo" type="spawn_model" args="-urdf -file $(find pr2_gazebo)/urdf/cylinder_green.urdf -wait cylinder_yellow_1 -model cylinder_green_1 -x 0.7 -y -0.05 -z 0.85" respawn="false" output="screen" />
+  <node name="spawn_cyl4" pkg="gazebo" type="spawn_model" args="-urdf -file $(find pr2_gazebo)/urdf/cylinder_green.urdf -wait cylinder_yellow_1 -model cylinder_green_1 -x 0.7 -y -0.05 -z 0.85" respawn="false" output="screen" /> -->
 
 
 

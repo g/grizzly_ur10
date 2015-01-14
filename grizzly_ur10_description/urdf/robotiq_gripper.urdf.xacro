@@ -1,0 +1,81 @@
+<?xml version="1.0"?>
+<!--
+Copyright (c) 2014, Clearpath Robotics
+All rights reserved.
+
+Redistribution and use in source and binary forms, with or without
+modification, are permitted provided that the following conditions are met:
+    * Redistributions of source code must retain the above copyright
+      notice, this list of conditions and the following disclaimer.
+    * Redistributions in binary form must reproduce the above copyright
+      notice, this list of conditions and the following disclaimer in the
+      documentation and/or other materials provided with the distribution.
+    * Neither the name of Clearpath Robotics nor the
+      names of its contributors may be used to endorse or promote products
+      derived from this software without specific prior written permission.
+
+THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS" AND
+ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED
+WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE
+DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT HOLDERS BE LIABLE FOR ANY
+DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES
+(INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES;
+LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND
+ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT
+(INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS
+SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+
+This program contains the description of the Grizzly + UR10 manipulator.
+-->
+
+<robot xmlns:xacro="http://ros.org/wiki/xacro" name="grizzly_ur10">
+  <xacro:property name="reflect" value="-1" />
+
+   <!-- Gazebo references for ur  description -->
+   <xacro:include filename="$(find ur_description)/urdf/gazebo.urdf.xacro" /> 
+   <xacro:include filename="$(find robotiq_s_model_visualization)/cfg/s-model_articulated_macro.xacro"/>
+
+   <!-- Gazebo references -->
+   <xacro:include filename="$(find grizzly_ur10_description)/urdf/s-model_articulated.gazebo.xacro" />
+ 
+   <!-- Transmission for robotiq gripper so that it can use ROS control -->
+   <xacro:include filename="$(find grizzly_ur10_description)/urdf/s-model_articulated.transmission.xacro" />
+
+  <!-- Spawn gripper -->
+   <xacro:s-model_articulated prefix="robotiq_"/>
+
+  <!-- Note: the gripper_action_controller and MoveIt require a specific structure of the URDF so that this will work.
+   end_of_robotiq_finger_tip -> joint -> tip_link -> ee_joint -> tip_frame -->
+
+
+  <!-- End of robotiq gripper = robotiq_finger_middle_link_3 -->
+  <!-- Make some joint be the joint between that and the tip link -->
+  <!-- ROBOTIQ GRIPPER's TIP LINK = robotiq_finger_middle_link_3 -->
+  <!-- ROBOTIQ GRIPPER's EE_JOINT IS ur10_arm_ee_joint -->
+  <!-- then there should be the tip_link and the joint that connects these.  -->
+
+  <!-- Chain looks like this:
+   ur10_arm -> ur10_arm_ee_link -> robotiq_palm -> -->
+
+  <link name="robotiq_gripper_tip_frame"/> 
+
+  <!-- This connects the robotiq gripper to the ur10 arm -->
+  <joint name="ur10_arm_to_gripper_joint" type="fixed">
+      <parent link="ur10_arm_ee_link"/>
+      <child link="robotiq_palm"/>
+      <origin xyz="0 -0.1 0" rpy="1.57 0 1.57" />
+  </joint> 
+
+  <!-- this is the end effector joint before the tip frame -->
+  <joint name="robotiq_gripper_ee_joint" type="fixed">
+      <parent link="robotiq_finger_middle_link_3"/>
+      <child link="robotiq_gripper_tip_frame"/>
+      <origin xyz="0.1 0 0" rpy="1.57 0 1.57" />
+  </joint>
+
+    <!-- Gazebo macro for gripper -->
+    <xacro:robotiq_gripper_gazebo/>
+    <!-- Instantiate transmission file -->
+    <xacro:robotiq_gripper_transmission prefix="" />
+
+</robot>

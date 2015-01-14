@@ -1,11 +1,5 @@
 controller_list:
-  - name: arm_controller
-    action_ns: follow_joint_trajectory
-    default: true
-    type: FollowJointTrajectory
+  - name: fake_arm_controller
     joints: [ur10_arm_shoulder_pan_joint, ur10_arm_shoulder_lift_joint, ur10_arm_elbow_joint, ur10_arm_wrist_1_joint, ur10_arm_wrist_2_joint, ur10_arm_wrist_3_joint, ee_joint]
-  - name: gripper_action_controller
-    action_ns: gripper_action
-    type: position_controllers/GripperActionController
-    default: true
+  - name: fake_gripper_controller
     joints: [robotiq_finger_1_joint_1, robotiq_finger_1_joint_2, robotiq_finger_1_joint_3, robotiq_finger_2_joint_1, robotiq_finger_2_joint_2, robotiq_finger_2_joint_3, robotiq_palm_finger_1_joint, robotiq_palm_finger_2_joint, robotiq_finger_middle_joint, robotiq_finger_middle_joint_1, robotiq_finger_middle_joint_2, robotiq_finger_middle_joint_3]

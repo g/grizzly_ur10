@@ -1,0 +1,50 @@
+<?xml version="1.0"?>
+<robot xmlns:xacro="http://ros.org/wiki/xacro">
+
+<xacro:macro name="robotiq_gripper_gazebo">
+
+	 <!-- Gazebo references to fix gripper collides -->
+	<gazebo reference="robotiq_palm">
+	      <selfCollide>true</selfCollide>
+	  </gazebo>
+	<gazebo reference="robotiq_finger_middle_link_0">
+	      <selfCollide>true</selfCollide>
+	  </gazebo>
+	<gazebo reference="robotiq_finger_middle_link_1">
+	      <selfCollide>true</selfCollide>
+	  </gazebo>
+	<gazebo reference="robotiq_finger_middle_link_2">
+	      <selfCollide>true</selfCollide>
+	  </gazebo>
+	<gazebo reference="robotiq_finger_middle_link_3">
+	      <selfCollide>true</selfCollide>
+	  </gazebo>
+	<gazebo reference="robotiq_finger_2_link_0">
+	      <selfCollide>true</selfCollide>
+	  </gazebo>
+	<gazebo reference="robotiq_finger_2_link_1">
+	      <selfCollide>true</selfCollide>
+	  </gazebo>	
+	<gazebo reference="robotiq_finger_2_link_2">
+	      <selfCollide>true</selfCollide>
+	  </gazebo>
+	<gazebo reference="robotiq_finger_2_link_3">
+	      <selfCollide>true</selfCollide>
+	  </gazebo>
+	<gazebo reference="robotiq_finger_1_link_0">
+	      <selfCollide>true</selfCollide>
+	  </gazebo>
+	<gazebo reference="robotiq_finger_1_link_1">
+	      <selfCollide>true</selfCollide>
+	  </gazebo>
+	<gazebo reference="robotiq_finger_1_link_2">
+	      <selfCollide>true</selfCollide>
+	  </gazebo>
+	<gazebo reference="robotiq_finger_1_link_3">
+	      <selfCollide>true</selfCollide>
+	  </gazebo> 
+
+</xacro:macro>
+ 
+</robot>
+

@@ -36,7 +36,7 @@ ur10_arm:
     - PRMstarkConfigDefault
   projection_evaluator: joints(ur10_arm_shoulder_pan_joint,ur10_arm_shoulder_lift_joint)
   longest_valid_segment_fraction: 0.05
-robotiq_gripper:
+robotiq_hand:
   planner_configs:
     - SBLkConfigDefault
     - ESTkConfigDefault

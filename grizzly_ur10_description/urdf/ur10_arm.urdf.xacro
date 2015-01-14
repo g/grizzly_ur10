@@ -29,9 +29,42 @@ This program contains the description of the Grizzly + UR10 manipulator.
 -->
 
 <robot xmlns:xacro="http://ros.org/wiki/xacro" name="grizzly_ur10">
-  <xacro:include filename="$(find grizzly_description)/urdf/base.urdf.xacro" />
-  <xacro:include filename="$(find grizzly_ur10_description)/urdf/ur10_arm.urdf.xacro" />
-  <xacro:include filename="$(find grizzly_ur10_description)/urdf/robotiq_gripper.urdf.xacro" />
-  <xacro:include filename="$(find grizzly_ur10_description)/urdf/grizzly_ur10_kinect.gazebo.xacro" />
-  <xacro:include filename="$(find grizzly_ur10_description)/urdf/grizzly_ur10_hokuyo.gazebo.xacro" />
+  <xacro:property name="reflect" value="-1" />
+
+ <xacro:include filename="$(find ur_description)/urdf/gazebo.urdf.xacro" /> 
+  <xacro:include filename="$(find ur_description)/urdf/ur10.urdf.xacro" />
+
+  <!-- Spawn arm -->
+  <xacro:ur10_robot prefix="ur10_arm_" joint_limited="true"/>
+  <!-- <xacro:ur10_robot prefix="" joint_limited="true" /> -->
+
+  <!-- Join arm -->
+  <joint name="grizzly_ur10_joint" type="fixed">
+    <parent link="sensor_anchor_link" />
+    <child link="ur10_arm_base_link" />
+    <origin xyz="0.65 ${reflect*0.01} 0.03" rpy="0.0 0.0 ${-pi/2}" />
+  </joint>
+
+  <!-- Gazebo references for self collide -->
+  <gazebo reference="ur10_arm_shoulder_link">
+      <selfCollide>true</selfCollide>
+  </gazebo>
+ <gazebo reference="ur10_arm_upper_arm_link">
+      <selfCollide>true</selfCollide>
+  </gazebo>
+ <gazebo reference="ur10_arm_forearm_link">
+      <selfCollide>true</selfCollide>
+  </gazebo>
+ <gazebo reference="ur10_arm_wrist_1_link">
+      <selfCollide>true</selfCollide>
+  </gazebo>
+ <gazebo reference="ur10_arm_wrist_3_link">
+      <selfCollide>true</selfCollide>
+  </gazebo>
+ <gazebo reference="ur10_arm_wrist_2_link">
+      <selfCollide>true</selfCollide>
+  </gazebo>
+ <gazebo reference="ur10_arm_ee_link">
+      <selfCollide>true</selfCollide> 
+  </gazebo> 
 </robot>
