@@ -48,19 +48,26 @@ This program contains the description of the Grizzly + UR10 manipulator.
    end_of_robotiq_finger_tip -> joint -> tip_link -> ee_joint -> tip_frame -->
 
 
-  <!-- End of robotiq gripper = robotiq_palm_finger -->
+  <!-- End of robotiq gripper = robotiq_finger_middle_link_3 -->
+  <!-- Make some joint be the joint between that and the tip link -->
+  <!-- ROBOTIQ GRIPPER's TIP LINK = robotiq_finger_middle_link_3 -->
+  <!-- ROBOTIQ GRIPPER's EE_JOINT IS EE_JOINT -->
+  <!-- then there should be the tip_link and the joint that connects these.  -->
 
-  <link name="robotiq_gripper_frame_link"/> 
 
+  <link name="robotiq_gripper_tip_frame"/> 
+
+  <!-- This connects the robotiq gripper to the ur10 arm -->
   <joint name="robotiq_gripper_frame_joint" type="fixed">
       <parent link="ur10_arm_ee_link"/>
       <child link="robotiq_gripper_frame_link"/>
       <origin xyz="0 -0.1 0" rpy="1.57 0 1.57" />
   </joint> 
 
+  <!-- this is the end effector joint before the tip frame -->
   <joint name="ee_joint" type="fixed">
-      <parent link="robotiq_gripper_frame_link"/>
-      <child link="robotiq_palm"/>
+      <parent link="robotiq_finger_middle_link_3"/>
+      <child link="robotiq_gripper_tip_frame"/>
       <origin xyz="0.1 0 0" rpy="1.57 0 1.57" />
   </joint>
 
