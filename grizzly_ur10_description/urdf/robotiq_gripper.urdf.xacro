@@ -28,21 +28,22 @@ SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 This program contains the description of the Grizzly + UR10 manipulator.
 -->
 
-<robot xmlns:xacro="http://ros.org/wiki/xacro" name="grizzly_ur10">
-  <xacro:property name="reflect" value="-1" />
-
+<robot xmlns:xacro="http://ros.org/wiki/xacro" name="robotiq_hand">
    <!-- Gazebo references for ur  description -->
-   <xacro:include filename="$(find ur_description)/urdf/gazebo.urdf.xacro" /> 
-   <xacro:include filename="$(find robotiq_s_model_visualization)/cfg/s-model_articulated_macro.xacro"/>
+   <!-- <xacro:include filename="$(find ur_description)/urdf/gazebo.urdf.xacro" />  -->
+   <!-- <xacro:include filename="$(find robotiq_s_model_visualization)/cfg/s-model_articulated_macro.xacro"/> -->
 
    <!-- Gazebo references -->
-   <xacro:include filename="$(find grizzly_ur10_description)/urdf/s-model_articulated.gazebo.xacro" />
+   <!-- <xacro:include filename="$(find grizzly_ur10_description)/urdf/s-model_articulated.gazebo.xacro" /> -->
  
    <!-- Transmission for robotiq gripper so that it can use ROS control -->
-   <xacro:include filename="$(find grizzly_ur10_description)/urdf/s-model_articulated.transmission.xacro" />
+   <!-- <xacro:include filename="$(find grizzly_ur10_description)/urdf/s-model_articulated.transmission.xacro" /> -->
+
+   <!-- Atlass' robotiq hand with proper underactuated joints and physics values. -->
+   <xacro:include filename="$(find grizzly_ur10_description)/urdf/robotiq_hand.urdf.xacro"/>
 
   <!-- Spawn gripper -->
-   <xacro:s-model_articulated prefix="robotiq_"/>
+   <!-- <xacro:s-model_articulated prefix="robotiq_"/> -->
 
   <!-- Note: the gripper_action_controller and MoveIt require a specific structure of the URDF so that this will work.
    end_of_robotiq_finger_tip -> joint -> tip_link -> ee_joint -> tip_frame -->
@@ -57,7 +58,7 @@ This program contains the description of the Grizzly + UR10 manipulator.
   <!-- Chain looks like this:
    ur10_arm -> ur10_arm_ee_link -> robotiq_palm -> -->
 
-  <link name="robotiq_gripper_tip_frame">
+ <!--  <link name="robotiq_gripper_tip_frame">
         <origin xyz="0 0 0" rpy="0 0 0" />
 	<visual>
                     <geometry>
@@ -69,26 +70,29 @@ This program contains the description of the Grizzly + UR10 manipulator.
 		    <mass value="1.3"/>
 		    <inertia ixx="0.006012" ixy="0.000079" ixz="-0.00024" iyy="0.012892" iyz="0" izz="0.002435" />
 	</inertial>
-  </link>
+  </link> -->
 
   <!-- This connects the robotiq gripper to the ur10 arm -->
-  <joint name="ur10_arm_to_gripper_joint" type="fixed">
+ <!--  <joint name="ur10_arm_to_gripper_joint" type="fixed">
       <parent link="ur10_arm_ee_link"/>
       <child link="robotiq_palm"/>
       <origin xyz="0.01 0 0" rpy="1.57 1.57 0" />
-  </joint> 
+  </joint>  -->
 
   <!-- this is the end effector joint before the tip frame -->
-  <joint name="robotiq_gripper_ee_joint" type="revolute">
+  <!-- <joint name="robotiq_gripper_ee_joint" type="revolute">
       <parent link="robotiq_finger_middle_link_3"/>
       <child link="robotiq_gripper_tip_frame"/>
       <origin xyz="0 0 0" rpy="0 0 0" />
       <limit lower="-0.25" upper="0.16" effort="100" velocity="100"/>
-  </joint>
+  </joint> -->
 
     <!-- Gazebo macro for gripper -->
-    <xacro:robotiq_gripper_gazebo/>
+   <!--  <xacro:robotiq_gripper_gazebo/> -->
     <!-- Instantiate transmission file -->
-    <xacro:robotiq_gripper_transmission prefix="" />
+  <!--  <xacro:robotiq_gripper_transmission prefix="" /> -->
+   <xacro:robotiq_hand prefix="" reflect="1" parent="ur10_arm_ee_link">
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+   </xacro:robotiq_hand>
 
 </robot>
