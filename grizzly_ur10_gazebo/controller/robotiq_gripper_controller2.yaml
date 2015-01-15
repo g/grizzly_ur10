@@ -15,34 +15,34 @@ robotiq_gripper_controller:
     - robotiq_finger_2_joint_2
     - robotiq_finger_2_joint_3
   gains:
-    robotiq_palm_finger_1_joint: {p: 100.0, i: 0.0, d: 1.0, i_clamp: 0.0}
-    robotiq_palm_finger_2_joint: {p: 100.0, i: 0.0, d: 1.0, i_clamp: 0.0}
-    robotiq_palm_finger_middle_joint: {p: 100.0, i: 0.0, d: 1.0, i_clamp: 0.0}
-    robotiq_finger_middle_joint_1: {p: 100.0, i: 0.0, d: 1.0, i_clamp: 0.0}
-    robotiq_finger_middle_joint_2: {p: 100.0, i: 0.0, d: 1.0, i_clamp: 0.0}
-    robotiq_finger_middle_joint_3: {p: 100.0, i: 0.0, d: 1.0, i_clamp: 0.0}
-    robotiq_finger_1_joint_1: {p: 100.0, i: 0.0, d: 1.0, i_clamp: 0.0}
-    robotiq_finger_1_joint_2: {p: 100.0, i: 0.0, d: 1.0, i_clamp: 0.0}
-    robotiq_finger_1_joint_3: {p: 100.0, i: 0.0, d: 1.0, i_clamp: 0.0}
-    robotiq_finger_2_joint_1: {p: 100.0, i: 0.0, d: 1.0, i_clamp: 0.0}
-    robotiq_finger_2_joint_2: {p: 100.0, i: 0.0, d: 1.0, i_clamp: 0.0}
-    robotiq_finger_2_joint_3: {p: 100.0, i: 0.0, d: 1.0, i_clamp: 0.0}
+    robotiq_palm_finger_1_joint: {p: 0.6, i: 0.1, d: 0.1, i_clamp: 0.0}
+    robotiq_palm_finger_2_joint: {p: 0.6, i: 0.1, d: 0.1, i_clamp: 0.0}
+    robotiq_palm_finger_middle_joint: {p: 0.6, i: 0.1, d: 0.1, i_clamp: 0.0}
+    robotiq_finger_middle_joint_1: {p: 0.6, i: 0.1, d: 0.1, i_clamp: 0.0}
+    robotiq_finger_middle_joint_2: {p: 0.6, i: 0.1, d: 0.1, i_clamp: 0.0}
+    robotiq_finger_middle_joint_3: {p: 0.6, i: 0.1, d: 0.1, i_clamp: 0.0}
+    robotiq_finger_1_joint_1: {p: 0.6, i: 0.1, d: 0.1, i_clamp: 0.0}
+    robotiq_finger_1_joint_2: {p: 0.6, i: 0.1, d: 0.1, i_clamp: 0.0}
+    robotiq_finger_1_joint_3: {p: 0.6, i: 0.1, d: 0.1, i_clamp: 0.0}
+    robotiq_finger_2_joint_1: {p: 0.6, i: 0.1, d: 0.1, i_clamp: 0.0}
+    robotiq_finger_2_joint_2: {p: 0.6, i: 0.1, d: 0.1, i_clamp: 0.0}
+    robotiq_finger_2_joint_3: {p: 0.6, i: 0.1, d: 0.1, i_clamp: 0.0}
   constraints:
       goal_time: 0.6
-      stopped_velocity_tolerance: 0.5
-      sdh_left_knuckle_joint: {trajectory: 0.5, goal: 0.5}
-      robotiq_palm_finger_1_joint: {trajectory: 0.5, goal: 0.5}
-      robotiq_palm_finger_2_joint: {trajectory: 0.5, goal: 0.5}
-      robotiq_palm_finger_middle_joint: {trajectory: 0.5, goal: 0.5}
-      robotiq_finger_middle_joint_1: {trajectory: 0.5, goal: 0.5}
-      robotiq_finger_middle_joint_2: {trajectory: 0.5, goal: 0.5}
-      robotiq_finger_middle_joint_3: {trajectory: 0.5, goal: 0.5}
-      robotiq_finger_1_joint_1: {trajectory: 0.5, goal: 0.5}
-      robotiq_finger_1_joint_2: {trajectory: 0.5, goal: 0.5}
-      robotiq_finger_1_joint_3: {trajectory: 0.5, goal: 0.5}
-      robotiq_finger_2_joint_1: {trajectory: 0.5, goal: 0.5}
-      robotiq_finger_2_joint_2: {trajectory: 0.5, goal: 0.5}
-      robotiq_finger_2_joint_3: {trajectory: 0.5, goal: 0.5}
+      stopped_velocity_tolerance: 0.1
+      sdh_left_knuckle_joint: {trajectory: 0.1, goal: 0.1}
+      robotiq_palm_finger_1_joint: {trajectory: 0.1, goal: 0.1}
+      robotiq_palm_finger_2_joint: {trajectory: 0.1, goal: 0.1}
+      robotiq_palm_finger_middle_joint: {trajectory: 0.1, goal: 0.1}
+      robotiq_finger_middle_joint_1: {trajectory: 0.1, goal: 0.1}
+      robotiq_finger_middle_joint_2: {trajectory: 0.1, goal: 0.1}
+      robotiq_finger_middle_joint_3: {trajectory: 0.1, goal: 0.1}
+      robotiq_finger_1_joint_1: {trajectory: 0.1, goal: 0.1}
+      robotiq_finger_1_joint_2: {trajectory: 0.1, goal: 0.1}
+      robotiq_finger_1_joint_3: {trajectory: 0.1, goal: 0.1}
+      robotiq_finger_2_joint_1: {trajectory: 0.1, goal: 0.1}
+      robotiq_finger_2_joint_2: {trajectory: 0.1, goal: 0.1}
+      robotiq_finger_2_joint_3: {trajectory: 0.1, goal: 0.1}
   stop_trajectory_duration: 0.5
   state_publish_rate:  25
   action_monitor_rate: 10

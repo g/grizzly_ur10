@@ -4,10 +4,10 @@
 <xacro:macro name="robotiq_gripper_gazebo">
 
 	 <!-- Gazebo references to fix gripper collides -->
-	<gazebo reference="robotiq_palm">
+	 <gazebo reference="robotiq_palm">
 	      <selfCollide>true</selfCollide>
-	  </gazebo>
-	<gazebo reference="robotiq_finger_middle_link_0">
+	  </gazebo> 
+	 <gazebo reference="robotiq_finger_middle_link_0">
 	      <selfCollide>true</selfCollide>
 	  </gazebo>
 	<gazebo reference="robotiq_finger_middle_link_1">
