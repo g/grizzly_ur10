@@ -797,8 +797,5 @@ there are multiple hands then a prefix followed by an "_" is needed.
     <!-- end of joint list -->
 
   </xacro:macro>
- <xacro:robotiq_hand prefix="" reflect="1" parent="ur10_arm_ee_link">
-      <origin xyz="0 0 0" rpy="0 0 0"/>
-   </xacro:robotiq_hand>
 
 </robot>
