@@ -20,11 +20,13 @@
 #include <ros/ros.h>
 #include <string>
 #include <vector>
+#define private public 
 #include <gazebo/common/Plugin.hh>
 #include <gazebo/common/Time.hh>
 #include <gazebo/math/Angle.hh>
 #include <gazebo/physics/physics.hh>
 #include <grizzly_ur10_gazebo_plugins/RobotiqHandPlugin.h>
+#undef private
 
 // Default topic names initialization.
 const std::string RobotiqHandPlugin::DefaultLeftTopicCommand  =
@@ -130,7 +132,7 @@ void RobotiqHandPlugin::Load(gazebo::physics::ModelPtr _parent,
     if (this->sdf->HasElement("kd_position"))
     {
       this->posePID[i].SetDGain(this->sdf->Get<double>("kd_position"));
-      std::cout << "dGain after overloading: " << this->posePID[i].GetDGain()
+      std::cout << "dGain after overloading: " << this->posePID[i].dGain
                 << std::endl;
     }
 
@@ -205,13 +207,13 @@ void RobotiqHandPlugin::Load(gazebo::physics::ModelPtr _parent,
   {
     gzlog << "Position PID parameters for joint ["
           << this->fingerJoints[i]->GetName() << "]:"     << std::endl
-          << "\tKP: "     << this->posePID[i].GetPGain()  << std::endl
-          << "\tKI: "     << this->posePID[i].GetIGain()  << std::endl
-          << "\tKD: "     << this->posePID[i].GetDGain()  << std::endl
-          << "\tIMin: "   << this->posePID[i].GetIMin()   << std::endl
-          << "\tIMax: "   << this->posePID[i].GetIMax()   << std::endl
-          << "\tCmdMin: " << this->posePID[i].GetCmdMin() << std::endl
-          << "\tCmdMax: " << this->posePID[i].GetCmdMax() << std::endl
+          << "\tKP: "     << this->posePID[i].pGain  << std::endl
+          << "\tKI: "     << this->posePID[i].iGain  << std::endl
+          << "\tKD: "     << this->posePID[i].dGain  << std::endl
+          << "\tIMin: "   << this->posePID[i].iMin   << std::endl
+          << "\tIMax: "   << this->posePID[i].iMax   << std::endl
+          << "\tCmdMin: " << this->posePID[i].cmdMin << std::endl
+          << "\tCmdMax: " << this->posePID[i].cmdMax << std::endl
           << std::endl;
   }
   gzlog << "Topic for sending hand commands: ["   << controlTopicName

@@ -29,7 +29,7 @@
 #include <vector>
 #include <boost/scoped_ptr.hpp>
 #include <boost/thread/mutex.hpp>
-#include <gazebo/common/PID.hh>
+//#include "grizzly_ur10_gazebo_plugins/PID.hh"
 #include <gazebo/common/Plugin.hh>
 #include <gazebo/common/Time.hh>
 #include <gazebo/physics/physics.hh>
@@ -54,6 +54,10 @@
 ///                   This parameter is optional.
 class RobotiqHandPlugin : public gazebo::ModelPlugin
 {
+
+
+  
+  friend class gazebo::common::PID;
   /// \brief Hand states.
   enum State
   {
