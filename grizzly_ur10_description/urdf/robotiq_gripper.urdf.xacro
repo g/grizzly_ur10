@@ -91,9 +91,9 @@ This program contains the description of the Grizzly + UR10 manipulator.
    <!--  <xacro:robotiq_gripper_gazebo/> -->
     <!-- Instantiate transmission file -->
   <!--  <xacro:robotiq_gripper_transmission prefix="" /> -->
-   <xacro:robotiq_hand prefix="ur10_arm_" reflect="1" parent="ur10_arm_ee_link">
+  <!--  <xacro:robotiq_hand prefix="ur10_arm_" reflect="1" parent="ur10_arm_ee_link">
       <origin xyz="0 0 0" rpy="0 0 0"/>
-   </xacro:robotiq_hand>
+   </xacro:robotiq_hand> -->
 
    <!-- <gazebo>
     <plugin name="left_robotiq_hand_plugin" filename="libRobotiqHandPlugin.so">
