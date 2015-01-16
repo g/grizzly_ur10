@@ -711,7 +711,7 @@ there are multiple hands then a prefix followed by an "_" is needed.
       <link name="${prefix}palm">
         <visual>
           <geometry>
-            <mesh filename="package://grizzly_ur10_description/meshes/s-model_articulated/visual/palm.STL" />
+            <mesh filename="package://robotiq-s-model_visualization/meshes/s-model_articulated/visual/palm.STL" />
           </geometry>
           <material name="green">
             <color rgba="0 1 0 1"/>

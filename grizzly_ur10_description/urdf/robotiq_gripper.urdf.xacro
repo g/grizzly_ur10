@@ -95,12 +95,12 @@ This program contains the description of the Grizzly + UR10 manipulator.
       <origin xyz="0 0 0" rpy="0 0 0"/>
    </xacro:robotiq_hand> 
 
-    <gazebo>
+    <!-- <gazebo>
 	    <plugin name="robotiq_hand_plugin" filename="libRobotiqHandPlugin.so">
 	      <side>left</side>
 	      <kp_position>5.0</kp_position>
 	      <kd_position>0.5</kd_position>
 	     </plugin> 
-     </gazebo>
+     </gazebo> -->
 
 </robot>
