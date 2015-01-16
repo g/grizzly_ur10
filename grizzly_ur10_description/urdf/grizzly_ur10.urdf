@@ -696,12 +696,19 @@ This program contains the description of the Grizzly + UR10 manipulator.
   <gazebo reference="ur10_arm_ee_link">
     <selfCollide>true</selfCollide>
   </gazebo>
-  <joint name="ur10_arm_robotiq_hand_joint" type="fixed">
+  <gazebo>
+    <plugin filename="libRobotiqHandPlugin.so" name="robotiq_hand_plugin">
+      <side>left</side>
+      <kp_position>5.0</kp_position>
+      <kd_position>0.5</kd_position>
+    </plugin>
+  </gazebo>
+  <joint name="l_robotiq_hand_joint" type="fixed">
     <origin rpy="0 0 0" xyz="0 0 0"/>
     <parent link="ur10_arm_ee_link"/>
-    <child link="ur10_arm_palm"/>
+    <child link="l_palm"/>
   </joint>
-  <link name="ur10_arm_finger_1_link_0">
+  <link name="l_finger_1_link_0">
     <visual>
       <origin rpy="0 0 0" xyz="0 0 0"/>
       <geometry>
@@ -726,11 +733,11 @@ This program contains the description of the Grizzly + UR10 manipulator.
       <inertia ixx="0.000018" ixy="0" ixz="0" iyy="0.000025" iyz="0" izz="0.000025"/>
     </inertial>
   </link>
-  <gazebo reference="ur10_arm_finger_1_link_0">
+  <gazebo reference="l_finger_1_link_0">
     <mu1>1.1</mu1>
     <mu2>1.1</mu2>
   </gazebo>
-  <link name="ur10_arm_finger_1_link_1">
+  <link name="l_finger_1_link_1">
     <visual>
       <origin rpy="0 0 1.5708" xyz="0 0.05717 0"/>
       <geometry>
@@ -753,11 +760,11 @@ This program contains the description of the Grizzly + UR10 manipulator.
       <inertia ixx="0.00000499332" ixy="0.00000091312" ixz="-0.00000000120" iyy="0.00006434531" iyz="-0.00000000007" izz="0.00006061917"/>
     </inertial>
   </link>
-  <gazebo reference="ur10_arm_finger_1_link_1">
+  <gazebo reference="l_finger_1_link_1">
     <mu1>1.1</mu1>
     <mu2>1.1</mu2>
   </gazebo>
-  <link name="ur10_arm_finger_1_link_2">
+  <link name="l_finger_1_link_2">
     <visual>
       <origin rpy="0 0 1.5708" xyz="0 0.03810 0.0075"/>
       <geometry>
@@ -778,11 +785,11 @@ This program contains the description of the Grizzly + UR10 manipulator.
       <inertia ixx="0.00000348008" ixy="0.00000031940" ixz="0.00000013041" iyy="0.00002248123" iyz="0.00000000291" izz="0.00001986346"/>
     </inertial>
   </link>
-  <gazebo reference="ur10_arm_finger_1_link_2">
+  <gazebo reference="l_finger_1_link_2">
     <mu1>1.1</mu1>
     <mu2>1.1</mu2>
   </gazebo>
-  <link name="ur10_arm_finger_1_link_3">
+  <link name="l_finger_1_link_3">
     <visual>
       <origin rpy="0 0 0" xyz="0 0 0"/>
       <geometry>
@@ -803,11 +810,11 @@ This program contains the description of the Grizzly + UR10 manipulator.
       <inertia ixx="0.00000305151" ixy="0.00000089792" ixz="0.00000000249" iyy="0.00001427978" iyz="-0.00000001191" izz="0.00001264126"/>
     </inertial>
   </link>
-  <gazebo reference="ur10_arm_finger_1_link_3">
+  <gazebo reference="l_finger_1_link_3">
     <mu1>1.1</mu1>
     <mu2>1.1</mu2>
   </gazebo>
-  <link name="ur10_arm_finger_1_link_proximal_actuating_hinge">
+  <link name="l_finger_1_link_proximal_actuating_hinge">
     <visual>
       <origin rpy="0 0 0" xyz="0.01429 0 0"/>
       <geometry>
@@ -826,11 +833,11 @@ This program contains the description of the Grizzly + UR10 manipulator.
       <inertia ixx="0.00000156447" ixy="0.000000236226" ixz="-0.00000014862" iyy="0.00000221068" iyz="-0.00000014369" izz="0.00000323175"/>
     </inertial>
   </link>
-  <gazebo reference="ur10_arm_finger_1_link_proximal_actuating_hinge">
+  <gazebo reference="l_finger_1_link_proximal_actuating_hinge">
     <mu1>1.1</mu1>
     <mu2>1.1</mu2>
   </gazebo>
-  <link name="ur10_arm_finger_1_link_paraproximal_actuating_hinge">
+  <link name="l_finger_1_link_paraproximal_actuating_hinge">
     <visual>
       <origin rpy="0 0 0" xyz="0.01143 0 0"/>
       <geometry>
@@ -850,11 +857,11 @@ This program contains the description of the Grizzly + UR10 manipulator.
       <inertia ixx="0.00000012043" ixy="0" ixz="0" iyy="0.00000053588" iyz="0" izz="0.00000065322"/>
     </inertial>
   </link>
-  <gazebo reference="ur10_arm_finger_1_link_paraproximal_actuating_hinge">
+  <gazebo reference="l_finger_1_link_paraproximal_actuating_hinge">
     <mu1>1.1</mu1>
     <mu2>1.1</mu2>
   </gazebo>
-  <link name="ur10_arm_finger_1_link_proximal_actuating_bar">
+  <link name="l_finger_1_link_proximal_actuating_bar">
     <visual>
       <origin rpy="0 0 0" xyz="0.026789 0 0"/>
       <geometry>
@@ -873,11 +880,11 @@ This program contains the description of the Grizzly + UR10 manipulator.
       <inertia ixx="0.00000008348" ixy="-0.0000002179" ixz="0.00000000134" iyy="0.00000719076" iyz="0" izz="0.00000718272"/>
     </inertial>
   </link>
-  <gazebo reference="ur10_arm_finger_1_link_proximal_actuating_bar">
+  <gazebo reference="l_finger_1_link_proximal_actuating_bar">
     <mu1>1.1</mu1>
     <mu2>1.1</mu2>
   </gazebo>
-  <link name="ur10_arm_finger_1_link_paraproximal_bar">
+  <link name="l_finger_1_link_paraproximal_bar">
     <visual>
       <origin rpy="0 0 0" xyz="0.02885 0 0"/>
       <geometry>
@@ -896,11 +903,11 @@ This program contains the description of the Grizzly + UR10 manipulator.
       <inertia ixx="0.00000009065" ixy="-0.00000027047" ixz="0.00000000142" iyy="0.00000878034" iyz="0" izz="0.00000877558"/>
     </inertial>
   </link>
-  <gazebo reference="ur10_arm_finger_1_link_paraproximal_bar">
+  <gazebo reference="l_finger_1_link_paraproximal_bar">
     <mu1>1.1</mu1>
     <mu2>1.1</mu2>
   </gazebo>
-  <link name="ur10_arm_finger_1_link_median_actuating_hinge">
+  <link name="l_finger_1_link_median_actuating_hinge">
     <visual>
       <origin rpy="0 0 0" xyz="0 0 0"/>
       <geometry>
@@ -919,11 +926,11 @@ This program contains the description of the Grizzly + UR10 manipulator.
       <inertia ixx="0.00000024735" ixy="0.00000023619" ixz="0" iyy="0.00000047681" iyz="0" izz="0.00000071813"/>
     </inertial>
   </link>
-  <gazebo reference="ur10_arm_finger_1_link_median_actuating_hinge">
+  <gazebo reference="l_finger_1_link_median_actuating_hinge">
     <mu1>1.1</mu1>
     <mu2>1.1</mu2>
   </gazebo>
-  <link name="ur10_arm_finger_1_link_median_bar">
+  <link name="l_finger_1_link_median_bar">
     <visual>
       <origin rpy="0 0 0" xyz="0.01905 0 0"/>
       <geometry>
@@ -942,11 +949,11 @@ This program contains the description of the Grizzly + UR10 manipulator.
       <inertia ixx="0.00000006639" ixy="-0.00000010996" ixz="0.00000000094" iyy="0.00000305318" iyz="0" izz="0.00000304657"/>
     </inertial>
   </link>
-  <gazebo reference="ur10_arm_finger_1_link_median_bar">
+  <gazebo reference="l_finger_1_link_median_bar">
     <mu1>1.1</mu1>
     <mu2>1.1</mu2>
   </gazebo>
-  <link name="ur10_arm_finger_1_link_paramedian_hinge">
+  <link name="l_finger_1_link_paramedian_hinge">
     <visual>
       <origin rpy="0 0 0" xyz="0 0 0"/>
       <geometry>
@@ -965,11 +972,11 @@ This program contains the description of the Grizzly + UR10 manipulator.
       <inertia ixx="0.00000004213" ixy="-0.00000001491" ixz="0" iyy="0.00000050258" iyz="0" izz="0.00000054007"/>
     </inertial>
   </link>
-  <gazebo reference="ur10_arm_finger_1_link_paramedian_hinge">
+  <gazebo reference="l_finger_1_link_paramedian_hinge">
     <mu1>1.1</mu1>
     <mu2>1.1</mu2>
   </gazebo>
-  <link name="ur10_arm_finger_1_link_median_bar_underactuated">
+  <link name="l_finger_1_link_median_bar_underactuated">
     <visual>
       <origin rpy="0 0 0" xyz="0.01905 0 0"/>
       <geometry>
@@ -988,11 +995,11 @@ This program contains the description of the Grizzly + UR10 manipulator.
       <inertia ixx="0.00000006639" ixy="-0.00000010996" ixz="-0.00000000094" iyy="0.00000305318" iyz="0" izz="0.00000304657"/>
     </inertial>
   </link>
-  <gazebo reference="ur10_arm_finger_1_link_median_bar_underactuated">
+  <gazebo reference="l_finger_1_link_median_bar_underactuated">
     <mu1>1.1</mu1>
     <mu2>1.1</mu2>
   </gazebo>
-  <link name="ur10_arm_finger_1_link_paradistal_hinge">
+  <link name="l_finger_1_link_paradistal_hinge">
     <visual>
       <origin rpy="0 0 0" xyz="0 0 0"/>
       <geometry>
@@ -1011,143 +1018,143 @@ This program contains the description of the Grizzly + UR10 manipulator.
       <inertia ixx="0.00000001907" ixy="0" ixz="0" iyy="0.00000010970" iyz="0" izz="0.00000012610"/>
     </inertial>
   </link>
-  <gazebo reference="ur10_arm_finger_1_link_paradistal_hinge">
+  <gazebo reference="l_finger_1_link_paradistal_hinge">
     <mu1>1.1</mu1>
     <mu2>1.1</mu2>
   </gazebo>
-  <joint name="ur10_arm_finger_1_joint_proximal_actuating_hinge" type="revolute">
-    <parent link="ur10_arm_finger_1_link_0"/>
-    <child link="ur10_arm_finger_1_link_proximal_actuating_hinge"/>
+  <joint name="l_finger_1_joint_proximal_actuating_hinge" type="revolute">
+    <parent link="l_finger_1_link_0"/>
+    <child link="l_finger_1_link_proximal_actuating_hinge"/>
     <axis xyz="0 0 1"/>
     <origin rpy="0 0 -2.0906" xyz="0 0 0.01"/>
     <limit effort="100" lower="-3.1416" upper="3.1416" velocity="100"/>
   </joint>
-  <gazebo reference="ur10_arm_finger_1_joint_proximal_actuating_hinge">
+  <gazebo reference="l_finger_1_joint_proximal_actuating_hinge">
     <implicitSpringDamper>1</implicitSpringDamper>
   </gazebo>
-  <joint name="ur10_arm_finger_1_joint_paraproximal_actuating_hinge" type="revolute">
-    <parent link="ur10_arm_finger_1_link_0"/>
-    <child link="ur10_arm_finger_1_link_paraproximal_actuating_hinge"/>
+  <joint name="l_finger_1_joint_paraproximal_actuating_hinge" type="revolute">
+    <parent link="l_finger_1_link_0"/>
+    <child link="l_finger_1_link_paraproximal_actuating_hinge"/>
     <axis xyz="0 0 1"/>
     <origin rpy="0 0 -2.0906" xyz="0 0 -0.01"/>
     <limit effort="100" lower="-3.1416" upper="3.1416" velocity="100"/>
   </joint>
-  <gazebo reference="ur10_arm_finger_1_joint_paraproximal_actuating_hinge">
+  <gazebo reference="l_finger_1_joint_paraproximal_actuating_hinge">
     <implicitSpringDamper>1</implicitSpringDamper>
   </gazebo>
-  <joint name="ur10_arm_finger_1_joint_proximal_actuating_bar" type="revolute">
-    <parent link="ur10_arm_finger_1_link_proximal_actuating_hinge"/>
-    <child link="ur10_arm_finger_1_link_proximal_actuating_bar"/>
+  <joint name="l_finger_1_joint_proximal_actuating_bar" type="revolute">
+    <parent link="l_finger_1_link_proximal_actuating_hinge"/>
+    <child link="l_finger_1_link_proximal_actuating_bar"/>
     <axis xyz="0 0 1"/>
     <origin rpy="0 0 1.8616" xyz="0.02858 0 0"/>
     <limit effort="100" lower="-3.1416" upper="3.1416" velocity="100"/>
   </joint>
-  <gazebo reference="ur10_arm_finger_1_joint_proximal_actuating_bar">
+  <gazebo reference="l_finger_1_joint_proximal_actuating_bar">
     <implicitSpringDamper>1</implicitSpringDamper>
   </gazebo>
-  <joint name="ur10_arm_finger_1_joint_paraproximal_bar" type="revolute">
-    <parent link="ur10_arm_finger_1_link_paraproximal_actuating_hinge"/>
-    <child link="ur10_arm_finger_1_link_paraproximal_bar"/>
+  <joint name="l_finger_1_joint_paraproximal_bar" type="revolute">
+    <parent link="l_finger_1_link_paraproximal_actuating_hinge"/>
+    <child link="l_finger_1_link_paraproximal_bar"/>
     <axis xyz="0 0 1"/>
     <origin rpy="0 0 1.57" xyz="0.02286 0 0"/>
     <limit effort="100" lower="-3.1416" upper="3.1416" velocity="100"/>
   </joint>
-  <gazebo reference="ur10_arm_finger_1_joint_paraproximal_bar">
+  <gazebo reference="l_finger_1_joint_paraproximal_bar">
     <implicitSpringDamper>1</implicitSpringDamper>
   </gazebo>
-  <joint name="ur10_arm_finger_1_joint_median_actuating_hinge" type="revolute">
-    <parent link="ur10_arm_finger_1_link_1"/>
-    <child link="ur10_arm_finger_1_link_median_actuating_hinge"/>
+  <joint name="l_finger_1_joint_median_actuating_hinge" type="revolute">
+    <parent link="l_finger_1_link_1"/>
+    <child link="l_finger_1_link_median_actuating_hinge"/>
     <axis xyz="0 0 1"/>
     <origin rpy="0 0 -0.37" xyz="0 0.05715 0.01"/>
     <limit effort="100" lower="-3.1416" upper="3.1416" velocity="100"/>
   </joint>
-  <gazebo reference="ur10_arm_finger_1_joint_median_actuating_hinge">
+  <gazebo reference="l_finger_1_joint_median_actuating_hinge">
     <implicitSpringDamper>1</implicitSpringDamper>
   </gazebo>
-  <joint name="ur10_arm_finger_1_joint_paramedian_hinge" type="revolute">
-    <parent link="ur10_arm_finger_1_link_1"/>
-    <child link="ur10_arm_finger_1_link_paramedian_hinge"/>
+  <joint name="l_finger_1_joint_paramedian_hinge" type="revolute">
+    <parent link="l_finger_1_link_1"/>
+    <child link="l_finger_1_link_paramedian_hinge"/>
     <axis xyz="0 0 1"/>
     <!-- -0.37 is hand picked, 0.9719 is hand calculated from atan(0.02381/0.01625) -->
     <origin rpy="0 0 0" xyz="0 0.05715 -0.01"/>
     <limit effort="100" lower="-3.1416" upper="3.1416" velocity="100"/>
   </joint>
-  <gazebo reference="ur10_arm_finger_1_joint_paramedian_hinge">
+  <gazebo reference="l_finger_1_joint_paramedian_hinge">
     <implicitSpringDamper>1</implicitSpringDamper>
   </gazebo>
-  <joint name="ur10_arm_finger_1_joint_median_actuating_hinge_median_bar" type="revolute">
-    <parent link="ur10_arm_finger_1_link_median_actuating_hinge"/>
-    <child link="ur10_arm_finger_1_link_median_bar"/>
+  <joint name="l_finger_1_joint_median_actuating_hinge_median_bar" type="revolute">
+    <parent link="l_finger_1_link_median_actuating_hinge"/>
+    <child link="l_finger_1_link_median_bar"/>
     <axis xyz="0 0 1"/>
     <!-- hand calc 90 deg + atan(0.01516/0.01625) -->
     <origin rpy="0 0 2.3215" xyz="0.01625 0.01516 0"/>
     <limit effort="100" lower="-3.1416" upper="3.1416" velocity="100"/>
   </joint>
-  <gazebo reference="ur10_arm_finger_1_joint_median_actuating_hinge_median_bar">
+  <gazebo reference="l_finger_1_joint_median_actuating_hinge_median_bar">
     <implicitSpringDamper>1</implicitSpringDamper>
   </gazebo>
-  <joint name="ur10_arm_finger_1_joint_paradistal_hinge" type="revolute">
-    <parent link="ur10_arm_finger_1_link_2"/>
-    <child link="ur10_arm_finger_1_link_paradistal_hinge"/>
+  <joint name="l_finger_1_joint_paradistal_hinge" type="revolute">
+    <parent link="l_finger_1_link_2"/>
+    <child link="l_finger_1_link_paradistal_hinge"/>
     <axis xyz="0 0 1"/>
     <origin rpy="0 0 0" xyz="0 0.039 -0.01"/>
     <limit effort="100" lower="-3.1416" upper="3.1416" velocity="100"/>
   </joint>
-  <gazebo reference="ur10_arm_finger_1_joint_paradistal_hinge">
+  <gazebo reference="l_finger_1_joint_paradistal_hinge">
     <implicitSpringDamper>1</implicitSpringDamper>
   </gazebo>
-  <joint name="ur10_arm_finger_1_joint_paramedian_hinge_median_bar_underactuated" type="revolute">
-    <parent link="ur10_arm_finger_1_link_paramedian_hinge"/>
-    <child link="ur10_arm_finger_1_link_median_bar_underactuated"/>
+  <joint name="l_finger_1_joint_paramedian_hinge_median_bar_underactuated" type="revolute">
+    <parent link="l_finger_1_link_paramedian_hinge"/>
+    <child link="l_finger_1_link_median_bar_underactuated"/>
     <axis xyz="0 0 1"/>
     <!-- hand calc 90 deg + atan(0.01227/0.00329) -->
     <origin rpy="0 0 1.5708" xyz="0.01227 0.00329 0"/>
     <limit effort="100" lower="-3.1416" upper="3.1416" velocity="100"/>
   </joint>
-  <gazebo reference="ur10_arm_finger_1_joint_paramedian_hinge_median_bar_underactuated">
+  <gazebo reference="l_finger_1_joint_paramedian_hinge_median_bar_underactuated">
     <implicitSpringDamper>1</implicitSpringDamper>
   </gazebo>
-  <joint name="ur10_arm_finger_1_joint_1" type="revolute">
+  <joint name="l_finger_1_joint_1" type="revolute">
     <origin rpy="0 0 -2.0906" xyz="0 0 0"/>
     <axis xyz="0 0 1"/>
-    <parent link="ur10_arm_finger_1_link_0"/>
-    <child link="ur10_arm_finger_1_link_1"/>
+    <parent link="l_finger_1_link_0"/>
+    <child link="l_finger_1_link_1"/>
     <dynamics damping="1" friction="0"/>
     <!-- Limits: [0deg.,70deg.] -->
     <limit effort="60" lower="0" upper="1.2217" velocity="-1"/>
   </joint>
-  <gazebo reference="ur10_arm_finger_1_joint_1">
+  <gazebo reference="l_finger_1_joint_1">
     <implicitSpringDamper>1</implicitSpringDamper>
   </gazebo>
-  <joint name="ur10_arm_finger_1_joint_2" type="revolute">
-    <parent link="ur10_arm_finger_1_link_1"/>
-    <child link="ur10_arm_finger_1_link_2"/>
+  <joint name="l_finger_1_joint_2" type="revolute">
+    <parent link="l_finger_1_link_1"/>
+    <child link="l_finger_1_link_2"/>
     <dynamics damping="1" friction="0"/>
     <axis xyz="0 0 1"/>
     <origin rpy="0 0 0" xyz="0 0.05715 0"/>
     <!-- Limits: [0deg.,90deg.] -->
     <limit effort="60" lower="0" upper="1.5708" velocity="-1"/>
   </joint>
-  <gazebo reference="ur10_arm_finger_1_joint_2">
+  <gazebo reference="l_finger_1_joint_2">
     <implicitSpringDamper>1</implicitSpringDamper>
   </gazebo>
-  <joint name="ur10_arm_finger_1_joint_3" type="revolute">
-    <parent link="ur10_arm_finger_1_link_2"/>
-    <child link="ur10_arm_finger_1_link_3"/>
+  <joint name="l_finger_1_joint_3" type="revolute">
+    <parent link="l_finger_1_link_2"/>
+    <child link="l_finger_1_link_3"/>
     <dynamics damping="1" friction="0"/>
     <axis xyz="0 0 1"/>
     <origin rpy="0 0 2.0906" xyz="0 0.039 0"/>
     <!-- Limits: [-38deg.,60deg.] -->
     <limit effort="60" lower="-0.6632" upper="1.0471" velocity="-1"/>
   </joint>
-  <gazebo reference="ur10_arm_finger_1_joint_3">
+  <gazebo reference="l_finger_1_joint_3">
     <implicitSpringDamper>1</implicitSpringDamper>
   </gazebo>
   <gazebo>
-    <joint name="ur10_arm_finger_1_link_proximal_actuating_bar_median_actuating_hinge_couple" type="revolute">
-      <parent>ur10_arm_finger_1_link_median_actuating_hinge</parent>
-      <child>ur10_arm_finger_1_link_proximal_actuating_bar</child>
+    <joint name="l_finger_1_link_proximal_actuating_bar_median_actuating_hinge_couple" type="revolute">
+      <parent>l_finger_1_link_median_actuating_hinge</parent>
+      <child>l_finger_1_link_proximal_actuating_bar</child>
       <pose>0.05398 0 0 0 0 0</pose>
       <axis>
         <dynamics>
@@ -1159,13 +1166,13 @@ This program contains the description of the Grizzly + UR10 manipulator.
       </axis>
     </joint>
   </gazebo>
-  <gazebo reference="ur10_arm_finger_1_link_proximal_actuating_bar_median_actuating_hinge_couple">
+  <gazebo reference="l_finger_1_link_proximal_actuating_bar_median_actuating_hinge_couple">
     <implicitSpringDamper>1</implicitSpringDamper>
   </gazebo>
   <gazebo>
-    <joint name="ur10_arm_finger_1_link_median_bar_link_3_couple" type="revolute">
-      <parent>ur10_arm_finger_1_link_3</parent>
-      <child>ur10_arm_finger_1_link_median_bar</child>
+    <joint name="l_finger_1_link_median_bar_link_3_couple" type="revolute">
+      <parent>l_finger_1_link_3</parent>
+      <child>l_finger_1_link_median_bar</child>
       <pose>0.0381 0 0 0 0 0</pose>
       <axis>
         <dynamics>
@@ -1177,13 +1184,13 @@ This program contains the description of the Grizzly + UR10 manipulator.
       </axis>
     </joint>
   </gazebo>
-  <gazebo reference="ur10_arm_finger_1_link_median_bar_link_3_couple">
+  <gazebo reference="l_finger_1_link_median_bar_link_3_couple">
     <implicitSpringDamper>1</implicitSpringDamper>
   </gazebo>
   <gazebo>
-    <joint name="ur10_arm_finger_1_link_paramedian_bar_paradistal_hinge_couple" type="revolute">
-      <parent>ur10_arm_finger_1_link_paradistal_hinge</parent>
-      <child>ur10_arm_finger_1_link_median_bar_underactuated</child>
+    <joint name="l_finger_1_link_paramedian_bar_paradistal_hinge_couple" type="revolute">
+      <parent>l_finger_1_link_paradistal_hinge</parent>
+      <child>l_finger_1_link_median_bar_underactuated</child>
       <pose>0.0381 0 0 0 0 0</pose>
       <axis>
         <dynamics>
@@ -1195,13 +1202,13 @@ This program contains the description of the Grizzly + UR10 manipulator.
       </axis>
     </joint>
   </gazebo>
-  <gazebo reference="ur10_arm_finger_1_link_median_bar_link_3_couple">
+  <gazebo reference="l_finger_1_link_median_bar_link_3_couple">
     <implicitSpringDamper>1</implicitSpringDamper>
   </gazebo>
   <gazebo>
-    <joint name="ur10_arm_finger_1_link_paradistal_hinge_link_3_couple" type="revolute">
-      <parent>ur10_arm_finger_1_link_paradistal_hinge</parent>
-      <child>ur10_arm_finger_1_link_3</child>
+    <joint name="l_finger_1_link_paradistal_hinge_link_3_couple" type="revolute">
+      <parent>l_finger_1_link_paradistal_hinge</parent>
+      <child>l_finger_1_link_3</child>
       <pose>0.0381 0 0 0 0 0</pose>
       <axis>
         <dynamics>
@@ -1213,13 +1220,13 @@ This program contains the description of the Grizzly + UR10 manipulator.
       </axis>
     </joint>
   </gazebo>
-  <gazebo reference="ur10_arm_finger_1_link_paradistal_hinge_link_3_couple">
+  <gazebo reference="l_finger_1_link_paradistal_hinge_link_3_couple">
     <implicitSpringDamper>1</implicitSpringDamper>
   </gazebo>
   <gazebo>
-    <joint name="ur10_arm_finger_1_link_paraproximal_bar_paramedian_hinge_couple" type="revolute">
-      <parent>ur10_arm_finger_1_link_paramedian_hinge</parent>
-      <child>ur10_arm_finger_1_link_paraproximal_bar</child>
+    <joint name="l_finger_1_link_paraproximal_bar_paramedian_hinge_couple" type="revolute">
+      <parent>l_finger_1_link_paramedian_hinge</parent>
+      <child>l_finger_1_link_paraproximal_bar</child>
       <pose>0.05770 0 0 0 0 0</pose>
       <axis>
         <dynamics>
@@ -1231,10 +1238,10 @@ This program contains the description of the Grizzly + UR10 manipulator.
       </axis>
     </joint>
   </gazebo>
-  <gazebo reference="ur10_arm_finger_1_link_paraproximal_bar_paramedian_hinge_couple">
+  <gazebo reference="l_finger_1_link_paraproximal_bar_paramedian_hinge_couple">
     <implicitSpringDamper>1</implicitSpringDamper>
   </gazebo>
-  <link name="ur10_arm_finger_2_link_0">
+  <link name="l_finger_2_link_0">
     <visual>
       <origin rpy="0 0 0" xyz="0 0 0"/>
       <geometry>
@@ -1259,11 +1266,11 @@ This program contains the description of the Grizzly + UR10 manipulator.
       <inertia ixx="0.000018" ixy="0" ixz="0" iyy="0.000025" iyz="0" izz="0.000025"/>
     </inertial>
   </link>
-  <gazebo reference="ur10_arm_finger_2_link_0">
+  <gazebo reference="l_finger_2_link_0">
     <mu1>1.1</mu1>
     <mu2>1.1</mu2>
   </gazebo>
-  <link name="ur10_arm_finger_2_link_1">
+  <link name="l_finger_2_link_1">
     <visual>
       <origin rpy="0 0 1.5708" xyz="0 0.05717 0"/>
       <geometry>
@@ -1286,11 +1293,11 @@ This program contains the description of the Grizzly + UR10 manipulator.
       <inertia ixx="0.00000499332" ixy="0.00000091312" ixz="-0.00000000120" iyy="0.00006434531" iyz="-0.00000000007" izz="0.00006061917"/>
     </inertial>
   </link>
-  <gazebo reference="ur10_arm_finger_2_link_1">
+  <gazebo reference="l_finger_2_link_1">
     <mu1>1.1</mu1>
     <mu2>1.1</mu2>
   </gazebo>
-  <link name="ur10_arm_finger_2_link_2">
+  <link name="l_finger_2_link_2">
     <visual>
       <origin rpy="0 0 1.5708" xyz="0 0.03810 0.0075"/>
       <geometry>
@@ -1311,11 +1318,11 @@ This program contains the description of the Grizzly + UR10 manipulator.
       <inertia ixx="0.00000348008" ixy="0.00000031940" ixz="0.00000013041" iyy="0.00002248123" iyz="0.00000000291" izz="0.00001986346"/>
     </inertial>
   </link>
-  <gazebo reference="ur10_arm_finger_2_link_2">
+  <gazebo reference="l_finger_2_link_2">
     <mu1>1.1</mu1>
     <mu2>1.1</mu2>
   </gazebo>
-  <link name="ur10_arm_finger_2_link_3">
+  <link name="l_finger_2_link_3">
     <visual>
       <origin rpy="0 0 0" xyz="0 0 0"/>
       <geometry>
@@ -1336,11 +1343,11 @@ This program contains the description of the Grizzly + UR10 manipulator.
       <inertia ixx="0.00000305151" ixy="0.00000089792" ixz="0.00000000249" iyy="0.00001427978" iyz="-0.00000001191" izz="0.00001264126"/>
     </inertial>
   </link>
-  <gazebo reference="ur10_arm_finger_2_link_3">
+  <gazebo reference="l_finger_2_link_3">
     <mu1>1.1</mu1>
     <mu2>1.1</mu2>
   </gazebo>
-  <link name="ur10_arm_finger_2_link_proximal_actuating_hinge">
+  <link name="l_finger_2_link_proximal_actuating_hinge">
     <visual>
       <origin rpy="0 0 0" xyz="0.01429 0 0"/>
       <geometry>
@@ -1359,11 +1366,11 @@ This program contains the description of the Grizzly + UR10 manipulator.
       <inertia ixx="0.00000156447" ixy="0.000000236226" ixz="-0.00000014862" iyy="0.00000221068" iyz="-0.00000014369" izz="0.00000323175"/>
     </inertial>
   </link>
-  <gazebo reference="ur10_arm_finger_2_link_proximal_actuating_hinge">
+  <gazebo reference="l_finger_2_link_proximal_actuating_hinge">
     <mu1>1.1</mu1>
     <mu2>1.1</mu2>
   </gazebo>
-  <link name="ur10_arm_finger_2_link_paraproximal_actuating_hinge">
+  <link name="l_finger_2_link_paraproximal_actuating_hinge">
     <visual>
       <origin rpy="0 0 0" xyz="0.01143 0 0"/>
       <geometry>
@@ -1383,11 +1390,11 @@ This program contains the description of the Grizzly + UR10 manipulator.
       <inertia ixx="0.00000012043" ixy="0" ixz="0" iyy="0.00000053588" iyz="0" izz="0.00000065322"/>
     </inertial>
   </link>
-  <gazebo reference="ur10_arm_finger_2_link_paraproximal_actuating_hinge">
+  <gazebo reference="l_finger_2_link_paraproximal_actuating_hinge">
     <mu1>1.1</mu1>
     <mu2>1.1</mu2>
   </gazebo>
-  <link name="ur10_arm_finger_2_link_proximal_actuating_bar">
+  <link name="l_finger_2_link_proximal_actuating_bar">
     <visual>
       <origin rpy="0 0 0" xyz="0.026789 0 0"/>
       <geometry>
@@ -1406,11 +1413,11 @@ This program contains the description of the Grizzly + UR10 manipulator.
       <inertia ixx="0.00000008348" ixy="-0.0000002179" ixz="0.00000000134" iyy="0.00000719076" iyz="0" izz="0.00000718272"/>
     </inertial>
   </link>
-  <gazebo reference="ur10_arm_finger_2_link_proximal_actuating_bar">
+  <gazebo reference="l_finger_2_link_proximal_actuating_bar">
     <mu1>1.1</mu1>
     <mu2>1.1</mu2>
   </gazebo>
-  <link name="ur10_arm_finger_2_link_paraproximal_bar">
+  <link name="l_finger_2_link_paraproximal_bar">
     <visual>
       <origin rpy="0 0 0" xyz="0.02885 0 0"/>
       <geometry>
@@ -1429,11 +1436,11 @@ This program contains the description of the Grizzly + UR10 manipulator.
       <inertia ixx="0.00000009065" ixy="-0.00000027047" ixz="0.00000000142" iyy="0.00000878034" iyz="0" izz="0.00000877558"/>
     </inertial>
   </link>
-  <gazebo reference="ur10_arm_finger_2_link_paraproximal_bar">
+  <gazebo reference="l_finger_2_link_paraproximal_bar">
     <mu1>1.1</mu1>
     <mu2>1.1</mu2>
   </gazebo>
-  <link name="ur10_arm_finger_2_link_median_actuating_hinge">
+  <link name="l_finger_2_link_median_actuating_hinge">
     <visual>
       <origin rpy="0 0 0" xyz="0 0 0"/>
       <geometry>
@@ -1452,11 +1459,11 @@ This program contains the description of the Grizzly + UR10 manipulator.
       <inertia ixx="0.00000024735" ixy="0.00000023619" ixz="0" iyy="0.00000047681" iyz="0" izz="0.00000071813"/>
     </inertial>
   </link>
-  <gazebo reference="ur10_arm_finger_2_link_median_actuating_hinge">
+  <gazebo reference="l_finger_2_link_median_actuating_hinge">
     <mu1>1.1</mu1>
     <mu2>1.1</mu2>
   </gazebo>
-  <link name="ur10_arm_finger_2_link_median_bar">
+  <link name="l_finger_2_link_median_bar">
     <visual>
       <origin rpy="0 0 0" xyz="0.01905 0 0"/>
       <geometry>
@@ -1475,11 +1482,11 @@ This program contains the description of the Grizzly + UR10 manipulator.
       <inertia ixx="0.00000006639" ixy="-0.00000010996" ixz="0.00000000094" iyy="0.00000305318" iyz="0" izz="0.00000304657"/>
     </inertial>
   </link>
-  <gazebo reference="ur10_arm_finger_2_link_median_bar">
+  <gazebo reference="l_finger_2_link_median_bar">
     <mu1>1.1</mu1>
     <mu2>1.1</mu2>
   </gazebo>
-  <link name="ur10_arm_finger_2_link_paramedian_hinge">
+  <link name="l_finger_2_link_paramedian_hinge">
     <visual>
       <origin rpy="0 0 0" xyz="0 0 0"/>
       <geometry>
@@ -1498,11 +1505,11 @@ This program contains the description of the Grizzly + UR10 manipulator.
       <inertia ixx="0.00000004213" ixy="-0.00000001491" ixz="0" iyy="0.00000050258" iyz="0" izz="0.00000054007"/>
     </inertial>
   </link>
-  <gazebo reference="ur10_arm_finger_2_link_paramedian_hinge">
+  <gazebo reference="l_finger_2_link_paramedian_hinge">
     <mu1>1.1</mu1>
     <mu2>1.1</mu2>
   </gazebo>
-  <link name="ur10_arm_finger_2_link_median_bar_underactuated">
+  <link name="l_finger_2_link_median_bar_underactuated">
     <visual>
       <origin rpy="0 0 0" xyz="0.01905 0 0"/>
       <geometry>
@@ -1521,11 +1528,11 @@ This program contains the description of the Grizzly + UR10 manipulator.
       <inertia ixx="0.00000006639" ixy="-0.00000010996" ixz="-0.00000000094" iyy="0.00000305318" iyz="0" izz="0.00000304657"/>
     </inertial>
   </link>
-  <gazebo reference="ur10_arm_finger_2_link_median_bar_underactuated">
+  <gazebo reference="l_finger_2_link_median_bar_underactuated">
     <mu1>1.1</mu1>
     <mu2>1.1</mu2>
   </gazebo>
-  <link name="ur10_arm_finger_2_link_paradistal_hinge">
+  <link name="l_finger_2_link_paradistal_hinge">
     <visual>
       <origin rpy="0 0 0" xyz="0 0 0"/>
       <geometry>
@@ -1544,143 +1551,143 @@ This program contains the description of the Grizzly + UR10 manipulator.
       <inertia ixx="0.00000001907" ixy="0" ixz="0" iyy="0.00000010970" iyz="0" izz="0.00000012610"/>
     </inertial>
   </link>
-  <gazebo reference="ur10_arm_finger_2_link_paradistal_hinge">
+  <gazebo reference="l_finger_2_link_paradistal_hinge">
     <mu1>1.1</mu1>
     <mu2>1.1</mu2>
   </gazebo>
-  <joint name="ur10_arm_finger_2_joint_proximal_actuating_hinge" type="revolute">
-    <parent link="ur10_arm_finger_2_link_0"/>
-    <child link="ur10_arm_finger_2_link_proximal_actuating_hinge"/>
+  <joint name="l_finger_2_joint_proximal_actuating_hinge" type="revolute">
+    <parent link="l_finger_2_link_0"/>
+    <child link="l_finger_2_link_proximal_actuating_hinge"/>
     <axis xyz="0 0 1"/>
     <origin rpy="0 0 -2.0906" xyz="0 0 0.01"/>
     <limit effort="100" lower="-3.1416" upper="3.1416" velocity="100"/>
   </joint>
-  <gazebo reference="ur10_arm_finger_2_joint_proximal_actuating_hinge">
+  <gazebo reference="l_finger_2_joint_proximal_actuating_hinge">
     <implicitSpringDamper>1</implicitSpringDamper>
   </gazebo>
-  <joint name="ur10_arm_finger_2_joint_paraproximal_actuating_hinge" type="revolute">
-    <parent link="ur10_arm_finger_2_link_0"/>
-    <child link="ur10_arm_finger_2_link_paraproximal_actuating_hinge"/>
+  <joint name="l_finger_2_joint_paraproximal_actuating_hinge" type="revolute">
+    <parent link="l_finger_2_link_0"/>
+    <child link="l_finger_2_link_paraproximal_actuating_hinge"/>
     <axis xyz="0 0 1"/>
     <origin rpy="0 0 -2.0906" xyz="0 0 -0.01"/>
     <limit effort="100" lower="-3.1416" upper="3.1416" velocity="100"/>
   </joint>
-  <gazebo reference="ur10_arm_finger_2_joint_paraproximal_actuating_hinge">
+  <gazebo reference="l_finger_2_joint_paraproximal_actuating_hinge">
     <implicitSpringDamper>1</implicitSpringDamper>
   </gazebo>
-  <joint name="ur10_arm_finger_2_joint_proximal_actuating_bar" type="revolute">
-    <parent link="ur10_arm_finger_2_link_proximal_actuating_hinge"/>
-    <child link="ur10_arm_finger_2_link_proximal_actuating_bar"/>
+  <joint name="l_finger_2_joint_proximal_actuating_bar" type="revolute">
+    <parent link="l_finger_2_link_proximal_actuating_hinge"/>
+    <child link="l_finger_2_link_proximal_actuating_bar"/>
     <axis xyz="0 0 1"/>
     <origin rpy="0 0 1.8616" xyz="0.02858 0 0"/>
     <limit effort="100" lower="-3.1416" upper="3.1416" velocity="100"/>
   </joint>
-  <gazebo reference="ur10_arm_finger_2_joint_proximal_actuating_bar">
+  <gazebo reference="l_finger_2_joint_proximal_actuating_bar">
     <implicitSpringDamper>1</implicitSpringDamper>
   </gazebo>
-  <joint name="ur10_arm_finger_2_joint_paraproximal_bar" type="revolute">
-    <parent link="ur10_arm_finger_2_link_paraproximal_actuating_hinge"/>
-    <child link="ur10_arm_finger_2_link_paraproximal_bar"/>
+  <joint name="l_finger_2_joint_paraproximal_bar" type="revolute">
+    <parent link="l_finger_2_link_paraproximal_actuating_hinge"/>
+    <child link="l_finger_2_link_paraproximal_bar"/>
     <axis xyz="0 0 1"/>
     <origin rpy="0 0 1.57" xyz="0.02286 0 0"/>
     <limit effort="100" lower="-3.1416" upper="3.1416" velocity="100"/>
   </joint>
-  <gazebo reference="ur10_arm_finger_2_joint_paraproximal_bar">
+  <gazebo reference="l_finger_2_joint_paraproximal_bar">
     <implicitSpringDamper>1</implicitSpringDamper>
   </gazebo>
-  <joint name="ur10_arm_finger_2_joint_median_actuating_hinge" type="revolute">
-    <parent link="ur10_arm_finger_2_link_1"/>
-    <child link="ur10_arm_finger_2_link_median_actuating_hinge"/>
+  <joint name="l_finger_2_joint_median_actuating_hinge" type="revolute">
+    <parent link="l_finger_2_link_1"/>
+    <child link="l_finger_2_link_median_actuating_hinge"/>
     <axis xyz="0 0 1"/>
     <origin rpy="0 0 -0.37" xyz="0 0.05715 0.01"/>
     <limit effort="100" lower="-3.1416" upper="3.1416" velocity="100"/>
   </joint>
-  <gazebo reference="ur10_arm_finger_2_joint_median_actuating_hinge">
+  <gazebo reference="l_finger_2_joint_median_actuating_hinge">
     <implicitSpringDamper>1</implicitSpringDamper>
   </gazebo>
-  <joint name="ur10_arm_finger_2_joint_paramedian_hinge" type="revolute">
-    <parent link="ur10_arm_finger_2_link_1"/>
-    <child link="ur10_arm_finger_2_link_paramedian_hinge"/>
+  <joint name="l_finger_2_joint_paramedian_hinge" type="revolute">
+    <parent link="l_finger_2_link_1"/>
+    <child link="l_finger_2_link_paramedian_hinge"/>
     <axis xyz="0 0 1"/>
     <!-- -0.37 is hand picked, 0.9719 is hand calculated from atan(0.02381/0.01625) -->
     <origin rpy="0 0 0" xyz="0 0.05715 -0.01"/>
     <limit effort="100" lower="-3.1416" upper="3.1416" velocity="100"/>
   </joint>
-  <gazebo reference="ur10_arm_finger_2_joint_paramedian_hinge">
+  <gazebo reference="l_finger_2_joint_paramedian_hinge">
     <implicitSpringDamper>1</implicitSpringDamper>
   </gazebo>
-  <joint name="ur10_arm_finger_2_joint_median_actuating_hinge_median_bar" type="revolute">
-    <parent link="ur10_arm_finger_2_link_median_actuating_hinge"/>
-    <child link="ur10_arm_finger_2_link_median_bar"/>
+  <joint name="l_finger_2_joint_median_actuating_hinge_median_bar" type="revolute">
+    <parent link="l_finger_2_link_median_actuating_hinge"/>
+    <child link="l_finger_2_link_median_bar"/>
     <axis xyz="0 0 1"/>
     <!-- hand calc 90 deg + atan(0.01516/0.01625) -->
     <origin rpy="0 0 2.3215" xyz="0.01625 0.01516 0"/>
     <limit effort="100" lower="-3.1416" upper="3.1416" velocity="100"/>
   </joint>
-  <gazebo reference="ur10_arm_finger_2_joint_median_actuating_hinge_median_bar">
+  <gazebo reference="l_finger_2_joint_median_actuating_hinge_median_bar">
     <implicitSpringDamper>1</implicitSpringDamper>
   </gazebo>
-  <joint name="ur10_arm_finger_2_joint_paradistal_hinge" type="revolute">
-    <parent link="ur10_arm_finger_2_link_2"/>
-    <child link="ur10_arm_finger_2_link_paradistal_hinge"/>
+  <joint name="l_finger_2_joint_paradistal_hinge" type="revolute">
+    <parent link="l_finger_2_link_2"/>
+    <child link="l_finger_2_link_paradistal_hinge"/>
     <axis xyz="0 0 1"/>
     <origin rpy="0 0 0" xyz="0 0.039 -0.01"/>
     <limit effort="100" lower="-3.1416" upper="3.1416" velocity="100"/>
   </joint>
-  <gazebo reference="ur10_arm_finger_2_joint_paradistal_hinge">
+  <gazebo reference="l_finger_2_joint_paradistal_hinge">
     <implicitSpringDamper>1</implicitSpringDamper>
   </gazebo>
-  <joint name="ur10_arm_finger_2_joint_paramedian_hinge_median_bar_underactuated" type="revolute">
-    <parent link="ur10_arm_finger_2_link_paramedian_hinge"/>
-    <child link="ur10_arm_finger_2_link_median_bar_underactuated"/>
+  <joint name="l_finger_2_joint_paramedian_hinge_median_bar_underactuated" type="revolute">
+    <parent link="l_finger_2_link_paramedian_hinge"/>
+    <child link="l_finger_2_link_median_bar_underactuated"/>
     <axis xyz="0 0 1"/>
     <!-- hand calc 90 deg + atan(0.01227/0.00329) -->
     <origin rpy="0 0 1.5708" xyz="0.01227 0.00329 0"/>
     <limit effort="100" lower="-3.1416" upper="3.1416" velocity="100"/>
   </joint>
-  <gazebo reference="ur10_arm_finger_2_joint_paramedian_hinge_median_bar_underactuated">
+  <gazebo reference="l_finger_2_joint_paramedian_hinge_median_bar_underactuated">
     <implicitSpringDamper>1</implicitSpringDamper>
   </gazebo>
-  <joint name="ur10_arm_finger_2_joint_1" type="revolute">
+  <joint name="l_finger_2_joint_1" type="revolute">
     <origin rpy="0 0 -2.0906" xyz="0 0 0"/>
     <axis xyz="0 0 1"/>
-    <parent link="ur10_arm_finger_2_link_0"/>
-    <child link="ur10_arm_finger_2_link_1"/>
+    <parent link="l_finger_2_link_0"/>
+    <child link="l_finger_2_link_1"/>
     <dynamics damping="1" friction="0"/>
     <!-- Limits: [0deg.,70deg.] -->
     <limit effort="60" lower="0" upper="1.2217" velocity="-1"/>
   </joint>
-  <gazebo reference="ur10_arm_finger_2_joint_1">
+  <gazebo reference="l_finger_2_joint_1">
     <implicitSpringDamper>1</implicitSpringDamper>
   </gazebo>
-  <joint name="ur10_arm_finger_2_joint_2" type="revolute">
-    <parent link="ur10_arm_finger_2_link_1"/>
-    <child link="ur10_arm_finger_2_link_2"/>
+  <joint name="l_finger_2_joint_2" type="revolute">
+    <parent link="l_finger_2_link_1"/>
+    <child link="l_finger_2_link_2"/>
     <dynamics damping="1" friction="0"/>
     <axis xyz="0 0 1"/>
     <origin rpy="0 0 0" xyz="0 0.05715 0"/>
     <!-- Limits: [0deg.,90deg.] -->
     <limit effort="60" lower="0" upper="1.5708" velocity="-1"/>
   </joint>
-  <gazebo reference="ur10_arm_finger_2_joint_2">
+  <gazebo reference="l_finger_2_joint_2">
     <implicitSpringDamper>1</implicitSpringDamper>
   </gazebo>
-  <joint name="ur10_arm_finger_2_joint_3" type="revolute">
-    <parent link="ur10_arm_finger_2_link_2"/>
-    <child link="ur10_arm_finger_2_link_3"/>
+  <joint name="l_finger_2_joint_3" type="revolute">
+    <parent link="l_finger_2_link_2"/>
+    <child link="l_finger_2_link_3"/>
     <dynamics damping="1" friction="0"/>
     <axis xyz="0 0 1"/>
     <origin rpy="0 0 2.0906" xyz="0 0.039 0"/>
     <!-- Limits: [-38deg.,60deg.] -->
     <limit effort="60" lower="-0.6632" upper="1.0471" velocity="-1"/>
   </joint>
-  <gazebo reference="ur10_arm_finger_2_joint_3">
+  <gazebo reference="l_finger_2_joint_3">
     <implicitSpringDamper>1</implicitSpringDamper>
   </gazebo>
   <gazebo>
-    <joint name="ur10_arm_finger_2_link_proximal_actuating_bar_median_actuating_hinge_couple" type="revolute">
-      <parent>ur10_arm_finger_2_link_median_actuating_hinge</parent>
-      <child>ur10_arm_finger_2_link_proximal_actuating_bar</child>
+    <joint name="l_finger_2_link_proximal_actuating_bar_median_actuating_hinge_couple" type="revolute">
+      <parent>l_finger_2_link_median_actuating_hinge</parent>
+      <child>l_finger_2_link_proximal_actuating_bar</child>
       <pose>0.05398 0 0 0 0 0</pose>
       <axis>
         <dynamics>
@@ -1692,13 +1699,13 @@ This program contains the description of the Grizzly + UR10 manipulator.
       </axis>
     </joint>
   </gazebo>
-  <gazebo reference="ur10_arm_finger_2_link_proximal_actuating_bar_median_actuating_hinge_couple">
+  <gazebo reference="l_finger_2_link_proximal_actuating_bar_median_actuating_hinge_couple">
     <implicitSpringDamper>1</implicitSpringDamper>
   </gazebo>
   <gazebo>
-    <joint name="ur10_arm_finger_2_link_median_bar_link_3_couple" type="revolute">
-      <parent>ur10_arm_finger_2_link_3</parent>
-      <child>ur10_arm_finger_2_link_median_bar</child>
+    <joint name="l_finger_2_link_median_bar_link_3_couple" type="revolute">
+      <parent>l_finger_2_link_3</parent>
+      <child>l_finger_2_link_median_bar</child>
       <pose>0.0381 0 0 0 0 0</pose>
       <axis>
         <dynamics>
@@ -1710,13 +1717,13 @@ This program contains the description of the Grizzly + UR10 manipulator.
       </axis>
     </joint>
   </gazebo>
-  <gazebo reference="ur10_arm_finger_2_link_median_bar_link_3_couple">
+  <gazebo reference="l_finger_2_link_median_bar_link_3_couple">
     <implicitSpringDamper>1</implicitSpringDamper>
   </gazebo>
   <gazebo>
-    <joint name="ur10_arm_finger_2_link_paramedian_bar_paradistal_hinge_couple" type="revolute">
-      <parent>ur10_arm_finger_2_link_paradistal_hinge</parent>
-      <child>ur10_arm_finger_2_link_median_bar_underactuated</child>
+    <joint name="l_finger_2_link_paramedian_bar_paradistal_hinge_couple" type="revolute">
+      <parent>l_finger_2_link_paradistal_hinge</parent>
+      <child>l_finger_2_link_median_bar_underactuated</child>
       <pose>0.0381 0 0 0 0 0</pose>
       <axis>
         <dynamics>
@@ -1728,13 +1735,13 @@ This program contains the description of the Grizzly + UR10 manipulator.
       </axis>
     </joint>
   </gazebo>
-  <gazebo reference="ur10_arm_finger_2_link_median_bar_link_3_couple">
+  <gazebo reference="l_finger_2_link_median_bar_link_3_couple">
     <implicitSpringDamper>1</implicitSpringDamper>
   </gazebo>
   <gazebo>
-    <joint name="ur10_arm_finger_2_link_paradistal_hinge_link_3_couple" type="revolute">
-      <parent>ur10_arm_finger_2_link_paradistal_hinge</parent>
-      <child>ur10_arm_finger_2_link_3</child>
+    <joint name="l_finger_2_link_paradistal_hinge_link_3_couple" type="revolute">
+      <parent>l_finger_2_link_paradistal_hinge</parent>
+      <child>l_finger_2_link_3</child>
       <pose>0.0381 0 0 0 0 0</pose>
       <axis>
         <dynamics>
@@ -1746,13 +1753,13 @@ This program contains the description of the Grizzly + UR10 manipulator.
       </axis>
     </joint>
   </gazebo>
-  <gazebo reference="ur10_arm_finger_2_link_paradistal_hinge_link_3_couple">
+  <gazebo reference="l_finger_2_link_paradistal_hinge_link_3_couple">
     <implicitSpringDamper>1</implicitSpringDamper>
   </gazebo>
   <gazebo>
-    <joint name="ur10_arm_finger_2_link_paraproximal_bar_paramedian_hinge_couple" type="revolute">
-      <parent>ur10_arm_finger_2_link_paramedian_hinge</parent>
-      <child>ur10_arm_finger_2_link_paraproximal_bar</child>
+    <joint name="l_finger_2_link_paraproximal_bar_paramedian_hinge_couple" type="revolute">
+      <parent>l_finger_2_link_paramedian_hinge</parent>
+      <child>l_finger_2_link_paraproximal_bar</child>
       <pose>0.05770 0 0 0 0 0</pose>
       <axis>
         <dynamics>
@@ -1764,10 +1771,10 @@ This program contains the description of the Grizzly + UR10 manipulator.
       </axis>
     </joint>
   </gazebo>
-  <gazebo reference="ur10_arm_finger_2_link_paraproximal_bar_paramedian_hinge_couple">
+  <gazebo reference="l_finger_2_link_paraproximal_bar_paramedian_hinge_couple">
     <implicitSpringDamper>1</implicitSpringDamper>
   </gazebo>
-  <link name="ur10_arm_finger_middle_link_0">
+  <link name="l_finger_middle_link_0">
     <visual>
       <origin rpy="0 0 0" xyz="0 0 0"/>
       <geometry>
@@ -1792,11 +1799,11 @@ This program contains the description of the Grizzly + UR10 manipulator.
       <inertia ixx="0.000018" ixy="0" ixz="0" iyy="0.000025" iyz="0" izz="0.000025"/>
     </inertial>
   </link>
-  <gazebo reference="ur10_arm_finger_middle_link_0">
+  <gazebo reference="l_finger_middle_link_0">
     <mu1>1.1</mu1>
     <mu2>1.1</mu2>
   </gazebo>
-  <link name="ur10_arm_finger_middle_link_1">
+  <link name="l_finger_middle_link_1">
     <visual>
       <origin rpy="0 0 1.5708" xyz="0 0.05717 0"/>
       <geometry>
@@ -1819,11 +1826,11 @@ This program contains the description of the Grizzly + UR10 manipulator.
       <inertia ixx="0.00000499332" ixy="0.00000091312" ixz="-0.00000000120" iyy="0.00006434531" iyz="-0.00000000007" izz="0.00006061917"/>
     </inertial>
   </link>
-  <gazebo reference="ur10_arm_finger_middle_link_1">
+  <gazebo reference="l_finger_middle_link_1">
     <mu1>1.1</mu1>
     <mu2>1.1</mu2>
   </gazebo>
-  <link name="ur10_arm_finger_middle_link_2">
+  <link name="l_finger_middle_link_2">
     <visual>
       <origin rpy="0 0 1.5708" xyz="0 0.03810 0.0075"/>
       <geometry>
@@ -1844,11 +1851,11 @@ This program contains the description of the Grizzly + UR10 manipulator.
       <inertia ixx="0.00000348008" ixy="0.00000031940" ixz="0.00000013041" iyy="0.00002248123" iyz="0.00000000291" izz="0.00001986346"/>
     </inertial>
   </link>
-  <gazebo reference="ur10_arm_finger_middle_link_2">
+  <gazebo reference="l_finger_middle_link_2">
     <mu1>1.1</mu1>
     <mu2>1.1</mu2>
   </gazebo>
-  <link name="ur10_arm_finger_middle_link_3">
+  <link name="l_finger_middle_link_3">
     <visual>
       <origin rpy="0 0 0" xyz="0 0 0"/>
       <geometry>
@@ -1869,11 +1876,11 @@ This program contains the description of the Grizzly + UR10 manipulator.
       <inertia ixx="0.00000305151" ixy="0.00000089792" ixz="0.00000000249" iyy="0.00001427978" iyz="-0.00000001191" izz="0.00001264126"/>
     </inertial>
   </link>
-  <gazebo reference="ur10_arm_finger_middle_link_3">
+  <gazebo reference="l_finger_middle_link_3">
     <mu1>1.1</mu1>
     <mu2>1.1</mu2>
   </gazebo>
-  <link name="ur10_arm_finger_middle_link_proximal_actuating_hinge">
+  <link name="l_finger_middle_link_proximal_actuating_hinge">
     <visual>
       <origin rpy="0 0 0" xyz="0.01429 0 0"/>
       <geometry>
@@ -1892,11 +1899,11 @@ This program contains the description of the Grizzly + UR10 manipulator.
       <inertia ixx="0.00000156447" ixy="0.000000236226" ixz="-0.00000014862" iyy="0.00000221068" iyz="-0.00000014369" izz="0.00000323175"/>
     </inertial>
   </link>
-  <gazebo reference="ur10_arm_finger_middle_link_proximal_actuating_hinge">
+  <gazebo reference="l_finger_middle_link_proximal_actuating_hinge">
     <mu1>1.1</mu1>
     <mu2>1.1</mu2>
   </gazebo>
-  <link name="ur10_arm_finger_middle_link_paraproximal_actuating_hinge">
+  <link name="l_finger_middle_link_paraproximal_actuating_hinge">
     <visual>
       <origin rpy="0 0 0" xyz="0.01143 0 0"/>
       <geometry>
@@ -1916,11 +1923,11 @@ This program contains the description of the Grizzly + UR10 manipulator.
       <inertia ixx="0.00000012043" ixy="0" ixz="0" iyy="0.00000053588" iyz="0" izz="0.00000065322"/>
     </inertial>
   </link>
-  <gazebo reference="ur10_arm_finger_middle_link_paraproximal_actuating_hinge">
+  <gazebo reference="l_finger_middle_link_paraproximal_actuating_hinge">
     <mu1>1.1</mu1>
     <mu2>1.1</mu2>
   </gazebo>
-  <link name="ur10_arm_finger_middle_link_proximal_actuating_bar">
+  <link name="l_finger_middle_link_proximal_actuating_bar">
     <visual>
       <origin rpy="0 0 0" xyz="0.026789 0 0"/>
       <geometry>
@@ -1939,11 +1946,11 @@ This program contains the description of the Grizzly + UR10 manipulator.
       <inertia ixx="0.00000008348" ixy="-0.0000002179" ixz="0.00000000134" iyy="0.00000719076" iyz="0" izz="0.00000718272"/>
     </inertial>
   </link>
-  <gazebo reference="ur10_arm_finger_middle_link_proximal_actuating_bar">
+  <gazebo reference="l_finger_middle_link_proximal_actuating_bar">
     <mu1>1.1</mu1>
     <mu2>1.1</mu2>
   </gazebo>
-  <link name="ur10_arm_finger_middle_link_paraproximal_bar">
+  <link name="l_finger_middle_link_paraproximal_bar">
     <visual>
       <origin rpy="0 0 0" xyz="0.02885 0 0"/>
       <geometry>
@@ -1962,11 +1969,11 @@ This program contains the description of the Grizzly + UR10 manipulator.
       <inertia ixx="0.00000009065" ixy="-0.00000027047" ixz="0.00000000142" iyy="0.00000878034" iyz="0" izz="0.00000877558"/>
     </inertial>
   </link>
-  <gazebo reference="ur10_arm_finger_middle_link_paraproximal_bar">
+  <gazebo reference="l_finger_middle_link_paraproximal_bar">
     <mu1>1.1</mu1>
     <mu2>1.1</mu2>
   </gazebo>
-  <link name="ur10_arm_finger_middle_link_median_actuating_hinge">
+  <link name="l_finger_middle_link_median_actuating_hinge">
     <visual>
       <origin rpy="0 0 0" xyz="0 0 0"/>
       <geometry>
@@ -1985,11 +1992,11 @@ This program contains the description of the Grizzly + UR10 manipulator.
       <inertia ixx="0.00000024735" ixy="0.00000023619" ixz="0" iyy="0.00000047681" iyz="0" izz="0.00000071813"/>
     </inertial>
   </link>
-  <gazebo reference="ur10_arm_finger_middle_link_median_actuating_hinge">
+  <gazebo reference="l_finger_middle_link_median_actuating_hinge">
     <mu1>1.1</mu1>
     <mu2>1.1</mu2>
   </gazebo>
-  <link name="ur10_arm_finger_middle_link_median_bar">
+  <link name="l_finger_middle_link_median_bar">
     <visual>
       <origin rpy="0 0 0" xyz="0.01905 0 0"/>
       <geometry>
@@ -2008,11 +2015,11 @@ This program contains the description of the Grizzly + UR10 manipulator.
       <inertia ixx="0.00000006639" ixy="-0.00000010996" ixz="0.00000000094" iyy="0.00000305318" iyz="0" izz="0.00000304657"/>
     </inertial>
   </link>
-  <gazebo reference="ur10_arm_finger_middle_link_median_bar">
+  <gazebo reference="l_finger_middle_link_median_bar">
     <mu1>1.1</mu1>
     <mu2>1.1</mu2>
   </gazebo>
-  <link name="ur10_arm_finger_middle_link_paramedian_hinge">
+  <link name="l_finger_middle_link_paramedian_hinge">
     <visual>
       <origin rpy="0 0 0" xyz="0 0 0"/>
       <geometry>
@@ -2031,11 +2038,11 @@ This program contains the description of the Grizzly + UR10 manipulator.
       <inertia ixx="0.00000004213" ixy="-0.00000001491" ixz="0" iyy="0.00000050258" iyz="0" izz="0.00000054007"/>
     </inertial>
   </link>
-  <gazebo reference="ur10_arm_finger_middle_link_paramedian_hinge">
+  <gazebo reference="l_finger_middle_link_paramedian_hinge">
     <mu1>1.1</mu1>
     <mu2>1.1</mu2>
   </gazebo>
-  <link name="ur10_arm_finger_middle_link_median_bar_underactuated">
+  <link name="l_finger_middle_link_median_bar_underactuated">
     <visual>
       <origin rpy="0 0 0" xyz="0.01905 0 0"/>
       <geometry>
@@ -2054,11 +2061,11 @@ This program contains the description of the Grizzly + UR10 manipulator.
       <inertia ixx="0.00000006639" ixy="-0.00000010996" ixz="-0.00000000094" iyy="0.00000305318" iyz="0" izz="0.00000304657"/>
     </inertial>
   </link>
-  <gazebo reference="ur10_arm_finger_middle_link_median_bar_underactuated">
+  <gazebo reference="l_finger_middle_link_median_bar_underactuated">
     <mu1>1.1</mu1>
     <mu2>1.1</mu2>
   </gazebo>
-  <link name="ur10_arm_finger_middle_link_paradistal_hinge">
+  <link name="l_finger_middle_link_paradistal_hinge">
     <visual>
       <origin rpy="0 0 0" xyz="0 0 0"/>
       <geometry>
@@ -2077,143 +2084,143 @@ This program contains the description of the Grizzly + UR10 manipulator.
       <inertia ixx="0.00000001907" ixy="0" ixz="0" iyy="0.00000010970" iyz="0" izz="0.00000012610"/>
     </inertial>
   </link>
-  <gazebo reference="ur10_arm_finger_middle_link_paradistal_hinge">
+  <gazebo reference="l_finger_middle_link_paradistal_hinge">
     <mu1>1.1</mu1>
     <mu2>1.1</mu2>
   </gazebo>
-  <joint name="ur10_arm_finger_middle_joint_proximal_actuating_hinge" type="revolute">
-    <parent link="ur10_arm_finger_middle_link_0"/>
-    <child link="ur10_arm_finger_middle_link_proximal_actuating_hinge"/>
+  <joint name="l_finger_middle_joint_proximal_actuating_hinge" type="revolute">
+    <parent link="l_finger_middle_link_0"/>
+    <child link="l_finger_middle_link_proximal_actuating_hinge"/>
     <axis xyz="0 0 1"/>
     <origin rpy="0 0 -2.0906" xyz="0 0 0.01"/>
     <limit effort="100" lower="-3.1416" upper="3.1416" velocity="100"/>
   </joint>
-  <gazebo reference="ur10_arm_finger_middle_joint_proximal_actuating_hinge">
+  <gazebo reference="l_finger_middle_joint_proximal_actuating_hinge">
     <implicitSpringDamper>1</implicitSpringDamper>
   </gazebo>
-  <joint name="ur10_arm_finger_middle_joint_paraproximal_actuating_hinge" type="revolute">
-    <parent link="ur10_arm_finger_middle_link_0"/>
-    <child link="ur10_arm_finger_middle_link_paraproximal_actuating_hinge"/>
+  <joint name="l_finger_middle_joint_paraproximal_actuating_hinge" type="revolute">
+    <parent link="l_finger_middle_link_0"/>
+    <child link="l_finger_middle_link_paraproximal_actuating_hinge"/>
     <axis xyz="0 0 1"/>
     <origin rpy="0 0 -2.0906" xyz="0 0 -0.01"/>
     <limit effort="100" lower="-3.1416" upper="3.1416" velocity="100"/>
   </joint>
-  <gazebo reference="ur10_arm_finger_middle_joint_paraproximal_actuating_hinge">
+  <gazebo reference="l_finger_middle_joint_paraproximal_actuating_hinge">
     <implicitSpringDamper>1</implicitSpringDamper>
   </gazebo>
-  <joint name="ur10_arm_finger_middle_joint_proximal_actuating_bar" type="revolute">
-    <parent link="ur10_arm_finger_middle_link_proximal_actuating_hinge"/>
-    <child link="ur10_arm_finger_middle_link_proximal_actuating_bar"/>
+  <joint name="l_finger_middle_joint_proximal_actuating_bar" type="revolute">
+    <parent link="l_finger_middle_link_proximal_actuating_hinge"/>
+    <child link="l_finger_middle_link_proximal_actuating_bar"/>
     <axis xyz="0 0 1"/>
     <origin rpy="0 0 1.8616" xyz="0.02858 0 0"/>
     <limit effort="100" lower="-3.1416" upper="3.1416" velocity="100"/>
   </joint>
-  <gazebo reference="ur10_arm_finger_middle_joint_proximal_actuating_bar">
+  <gazebo reference="l_finger_middle_joint_proximal_actuating_bar">
     <implicitSpringDamper>1</implicitSpringDamper>
   </gazebo>
-  <joint name="ur10_arm_finger_middle_joint_paraproximal_bar" type="revolute">
-    <parent link="ur10_arm_finger_middle_link_paraproximal_actuating_hinge"/>
-    <child link="ur10_arm_finger_middle_link_paraproximal_bar"/>
+  <joint name="l_finger_middle_joint_paraproximal_bar" type="revolute">
+    <parent link="l_finger_middle_link_paraproximal_actuating_hinge"/>
+    <child link="l_finger_middle_link_paraproximal_bar"/>
     <axis xyz="0 0 1"/>
     <origin rpy="0 0 1.57" xyz="0.02286 0 0"/>
     <limit effort="100" lower="-3.1416" upper="3.1416" velocity="100"/>
   </joint>
-  <gazebo reference="ur10_arm_finger_middle_joint_paraproximal_bar">
+  <gazebo reference="l_finger_middle_joint_paraproximal_bar">
     <implicitSpringDamper>1</implicitSpringDamper>
   </gazebo>
-  <joint name="ur10_arm_finger_middle_joint_median_actuating_hinge" type="revolute">
-    <parent link="ur10_arm_finger_middle_link_1"/>
-    <child link="ur10_arm_finger_middle_link_median_actuating_hinge"/>
+  <joint name="l_finger_middle_joint_median_actuating_hinge" type="revolute">
+    <parent link="l_finger_middle_link_1"/>
+    <child link="l_finger_middle_link_median_actuating_hinge"/>
     <axis xyz="0 0 1"/>
     <origin rpy="0 0 -0.37" xyz="0 0.05715 0.01"/>
     <limit effort="100" lower="-3.1416" upper="3.1416" velocity="100"/>
   </joint>
-  <gazebo reference="ur10_arm_finger_middle_joint_median_actuating_hinge">
+  <gazebo reference="l_finger_middle_joint_median_actuating_hinge">
     <implicitSpringDamper>1</implicitSpringDamper>
   </gazebo>
-  <joint name="ur10_arm_finger_middle_joint_paramedian_hinge" type="revolute">
-    <parent link="ur10_arm_finger_middle_link_1"/>
-    <child link="ur10_arm_finger_middle_link_paramedian_hinge"/>
+  <joint name="l_finger_middle_joint_paramedian_hinge" type="revolute">
+    <parent link="l_finger_middle_link_1"/>
+    <child link="l_finger_middle_link_paramedian_hinge"/>
     <axis xyz="0 0 1"/>
     <!-- -0.37 is hand picked, 0.9719 is hand calculated from atan(0.02381/0.01625) -->
     <origin rpy="0 0 0" xyz="0 0.05715 -0.01"/>
     <limit effort="100" lower="-3.1416" upper="3.1416" velocity="100"/>
   </joint>
-  <gazebo reference="ur10_arm_finger_middle_joint_paramedian_hinge">
+  <gazebo reference="l_finger_middle_joint_paramedian_hinge">
     <implicitSpringDamper>1</implicitSpringDamper>
   </gazebo>
-  <joint name="ur10_arm_finger_middle_joint_median_actuating_hinge_median_bar" type="revolute">
-    <parent link="ur10_arm_finger_middle_link_median_actuating_hinge"/>
-    <child link="ur10_arm_finger_middle_link_median_bar"/>
+  <joint name="l_finger_middle_joint_median_actuating_hinge_median_bar" type="revolute">
+    <parent link="l_finger_middle_link_median_actuating_hinge"/>
+    <child link="l_finger_middle_link_median_bar"/>
     <axis xyz="0 0 1"/>
     <!-- hand calc 90 deg + atan(0.01516/0.01625) -->
     <origin rpy="0 0 2.3215" xyz="0.01625 0.01516 0"/>
     <limit effort="100" lower="-3.1416" upper="3.1416" velocity="100"/>
   </joint>
-  <gazebo reference="ur10_arm_finger_middle_joint_median_actuating_hinge_median_bar">
+  <gazebo reference="l_finger_middle_joint_median_actuating_hinge_median_bar">
     <implicitSpringDamper>1</implicitSpringDamper>
   </gazebo>
-  <joint name="ur10_arm_finger_middle_joint_paradistal_hinge" type="revolute">
-    <parent link="ur10_arm_finger_middle_link_2"/>
-    <child link="ur10_arm_finger_middle_link_paradistal_hinge"/>
+  <joint name="l_finger_middle_joint_paradistal_hinge" type="revolute">
+    <parent link="l_finger_middle_link_2"/>
+    <child link="l_finger_middle_link_paradistal_hinge"/>
     <axis xyz="0 0 1"/>
     <origin rpy="0 0 0" xyz="0 0.039 -0.01"/>
     <limit effort="100" lower="-3.1416" upper="3.1416" velocity="100"/>
   </joint>
-  <gazebo reference="ur10_arm_finger_middle_joint_paradistal_hinge">
+  <gazebo reference="l_finger_middle_joint_paradistal_hinge">
     <implicitSpringDamper>1</implicitSpringDamper>
   </gazebo>
-  <joint name="ur10_arm_finger_middle_joint_paramedian_hinge_median_bar_underactuated" type="revolute">
-    <parent link="ur10_arm_finger_middle_link_paramedian_hinge"/>
-    <child link="ur10_arm_finger_middle_link_median_bar_underactuated"/>
+  <joint name="l_finger_middle_joint_paramedian_hinge_median_bar_underactuated" type="revolute">
+    <parent link="l_finger_middle_link_paramedian_hinge"/>
+    <child link="l_finger_middle_link_median_bar_underactuated"/>
     <axis xyz="0 0 1"/>
     <!-- hand calc 90 deg + atan(0.01227/0.00329) -->
     <origin rpy="0 0 1.5708" xyz="0.01227 0.00329 0"/>
     <limit effort="100" lower="-3.1416" upper="3.1416" velocity="100"/>
   </joint>
-  <gazebo reference="ur10_arm_finger_middle_joint_paramedian_hinge_median_bar_underactuated">
+  <gazebo reference="l_finger_middle_joint_paramedian_hinge_median_bar_underactuated">
     <implicitSpringDamper>1</implicitSpringDamper>
   </gazebo>
-  <joint name="ur10_arm_finger_middle_joint_1" type="revolute">
+  <joint name="l_finger_middle_joint_1" type="revolute">
     <origin rpy="0 0 -2.0906" xyz="0 0 0"/>
     <axis xyz="0 0 1"/>
-    <parent link="ur10_arm_finger_middle_link_0"/>
-    <child link="ur10_arm_finger_middle_link_1"/>
+    <parent link="l_finger_middle_link_0"/>
+    <child link="l_finger_middle_link_1"/>
     <dynamics damping="1" friction="0"/>
     <!-- Limits: [0deg.,70deg.] -->
     <limit effort="60" lower="0" upper="1.2217" velocity="-1"/>
   </joint>
-  <gazebo reference="ur10_arm_finger_middle_joint_1">
+  <gazebo reference="l_finger_middle_joint_1">
     <implicitSpringDamper>1</implicitSpringDamper>
   </gazebo>
-  <joint name="ur10_arm_finger_middle_joint_2" type="revolute">
-    <parent link="ur10_arm_finger_middle_link_1"/>
-    <child link="ur10_arm_finger_middle_link_2"/>
+  <joint name="l_finger_middle_joint_2" type="revolute">
+    <parent link="l_finger_middle_link_1"/>
+    <child link="l_finger_middle_link_2"/>
     <dynamics damping="1" friction="0"/>
     <axis xyz="0 0 1"/>
     <origin rpy="0 0 0" xyz="0 0.05715 0"/>
     <!-- Limits: [0deg.,90deg.] -->
     <limit effort="60" lower="0" upper="1.5708" velocity="-1"/>
   </joint>
-  <gazebo reference="ur10_arm_finger_middle_joint_2">
+  <gazebo reference="l_finger_middle_joint_2">
     <implicitSpringDamper>1</implicitSpringDamper>
   </gazebo>
-  <joint name="ur10_arm_finger_middle_joint_3" type="revolute">
-    <parent link="ur10_arm_finger_middle_link_2"/>
-    <child link="ur10_arm_finger_middle_link_3"/>
+  <joint name="l_finger_middle_joint_3" type="revolute">
+    <parent link="l_finger_middle_link_2"/>
+    <child link="l_finger_middle_link_3"/>
     <dynamics damping="1" friction="0"/>
     <axis xyz="0 0 1"/>
     <origin rpy="0 0 2.0906" xyz="0 0.039 0"/>
     <!-- Limits: [-38deg.,60deg.] -->
     <limit effort="60" lower="-0.6632" upper="1.0471" velocity="-1"/>
   </joint>
-  <gazebo reference="ur10_arm_finger_middle_joint_3">
+  <gazebo reference="l_finger_middle_joint_3">
     <implicitSpringDamper>1</implicitSpringDamper>
   </gazebo>
   <gazebo>
-    <joint name="ur10_arm_finger_middle_link_proximal_actuating_bar_median_actuating_hinge_couple" type="revolute">
-      <parent>ur10_arm_finger_middle_link_median_actuating_hinge</parent>
-      <child>ur10_arm_finger_middle_link_proximal_actuating_bar</child>
+    <joint name="l_finger_middle_link_proximal_actuating_bar_median_actuating_hinge_couple" type="revolute">
+      <parent>l_finger_middle_link_median_actuating_hinge</parent>
+      <child>l_finger_middle_link_proximal_actuating_bar</child>
       <pose>0.05398 0 0 0 0 0</pose>
       <axis>
         <dynamics>
@@ -2225,13 +2232,13 @@ This program contains the description of the Grizzly + UR10 manipulator.
       </axis>
     </joint>
   </gazebo>
-  <gazebo reference="ur10_arm_finger_middle_link_proximal_actuating_bar_median_actuating_hinge_couple">
+  <gazebo reference="l_finger_middle_link_proximal_actuating_bar_median_actuating_hinge_couple">
     <implicitSpringDamper>1</implicitSpringDamper>
   </gazebo>
   <gazebo>
-    <joint name="ur10_arm_finger_middle_link_median_bar_link_3_couple" type="revolute">
-      <parent>ur10_arm_finger_middle_link_3</parent>
-      <child>ur10_arm_finger_middle_link_median_bar</child>
+    <joint name="l_finger_middle_link_median_bar_link_3_couple" type="revolute">
+      <parent>l_finger_middle_link_3</parent>
+      <child>l_finger_middle_link_median_bar</child>
       <pose>0.0381 0 0 0 0 0</pose>
       <axis>
         <dynamics>
@@ -2243,13 +2250,13 @@ This program contains the description of the Grizzly + UR10 manipulator.
       </axis>
     </joint>
   </gazebo>
-  <gazebo reference="ur10_arm_finger_middle_link_median_bar_link_3_couple">
+  <gazebo reference="l_finger_middle_link_median_bar_link_3_couple">
     <implicitSpringDamper>1</implicitSpringDamper>
   </gazebo>
   <gazebo>
-    <joint name="ur10_arm_finger_middle_link_paramedian_bar_paradistal_hinge_couple" type="revolute">
-      <parent>ur10_arm_finger_middle_link_paradistal_hinge</parent>
-      <child>ur10_arm_finger_middle_link_median_bar_underactuated</child>
+    <joint name="l_finger_middle_link_paramedian_bar_paradistal_hinge_couple" type="revolute">
+      <parent>l_finger_middle_link_paradistal_hinge</parent>
+      <child>l_finger_middle_link_median_bar_underactuated</child>
       <pose>0.0381 0 0 0 0 0</pose>
       <axis>
         <dynamics>
@@ -2261,13 +2268,13 @@ This program contains the description of the Grizzly + UR10 manipulator.
       </axis>
     </joint>
   </gazebo>
-  <gazebo reference="ur10_arm_finger_middle_link_median_bar_link_3_couple">
+  <gazebo reference="l_finger_middle_link_median_bar_link_3_couple">
     <implicitSpringDamper>1</implicitSpringDamper>
   </gazebo>
   <gazebo>
-    <joint name="ur10_arm_finger_middle_link_paradistal_hinge_link_3_couple" type="revolute">
-      <parent>ur10_arm_finger_middle_link_paradistal_hinge</parent>
-      <child>ur10_arm_finger_middle_link_3</child>
+    <joint name="l_finger_middle_link_paradistal_hinge_link_3_couple" type="revolute">
+      <parent>l_finger_middle_link_paradistal_hinge</parent>
+      <child>l_finger_middle_link_3</child>
       <pose>0.0381 0 0 0 0 0</pose>
       <axis>
         <dynamics>
@@ -2279,13 +2286,13 @@ This program contains the description of the Grizzly + UR10 manipulator.
       </axis>
     </joint>
   </gazebo>
-  <gazebo reference="ur10_arm_finger_middle_link_paradistal_hinge_link_3_couple">
+  <gazebo reference="l_finger_middle_link_paradistal_hinge_link_3_couple">
     <implicitSpringDamper>1</implicitSpringDamper>
   </gazebo>
   <gazebo>
-    <joint name="ur10_arm_finger_middle_link_paraproximal_bar_paramedian_hinge_couple" type="revolute">
-      <parent>ur10_arm_finger_middle_link_paramedian_hinge</parent>
-      <child>ur10_arm_finger_middle_link_paraproximal_bar</child>
+    <joint name="l_finger_middle_link_paraproximal_bar_paramedian_hinge_couple" type="revolute">
+      <parent>l_finger_middle_link_paramedian_hinge</parent>
+      <child>l_finger_middle_link_paraproximal_bar</child>
       <pose>0.05770 0 0 0 0 0</pose>
       <axis>
         <dynamics>
@@ -2297,13 +2304,13 @@ This program contains the description of the Grizzly + UR10 manipulator.
       </axis>
     </joint>
   </gazebo>
-  <gazebo reference="ur10_arm_finger_middle_link_paraproximal_bar_paramedian_hinge_couple">
+  <gazebo reference="l_finger_middle_link_paraproximal_bar_paramedian_hinge_couple">
     <implicitSpringDamper>1</implicitSpringDamper>
   </gazebo>
-  <link name="ur10_arm_palm">
+  <link name="l_palm">
     <visual>
       <geometry>
-        <mesh filename="package://grizzly_ur10_description/meshes/s-model_articulated/visual/palm.STL"/>
+        <mesh filename="package://robotiq_s_model_visualization/meshes/s-model_articulated/visual/palm.STL"/>
       </geometry>
       <material name="green">
         <color rgba="0 1 0 1"/>
@@ -2334,51 +2341,44 @@ This program contains the description of the Grizzly + UR10 manipulator.
       <inertia ixx="0.0035" ixy="0" ixz="-0" iyy="0.0035" iyz="0" izz="0.0035"/>
     </inertial>
   </link>
-  <gazebo reference="ur10_arm_palm">
+  <gazebo reference="l_palm">
     <mu1>1.1</mu1>
     <mu2>1.1</mu2>
   </gazebo>
-  <joint name="ur10_arm_palm_finger_1_joint" type="revolute">
-    <parent link="ur10_arm_palm"/>
-    <child link="ur10_arm_finger_1_link_0"/>
+  <joint name="l_palm_finger_1_joint" type="revolute">
+    <parent link="l_palm"/>
+    <child link="l_finger_1_link_0"/>
     <dynamics damping="1" friction="0"/>
     <axis xyz="0 1 0"/>
     <origin rpy="0 3.1416 -1.57" xyz="-0.0455 0.0214 0.036"/>
     <!-- Limits: [-17deg.,17deg.] -->
     <limit effort="60" lower="-0.2967" upper="0.2967" velocity="-1"/>
   </joint>
-  <gazebo reference="ur10_arm_palm_finger_1_joint">
+  <gazebo reference="l_palm_finger_1_joint">
     <implicitSpringDamper>1</implicitSpringDamper>
   </gazebo>
-  <joint name="ur10_arm_palm_finger_2_joint" type="revolute">
-    <parent link="ur10_arm_palm"/>
-    <child link="ur10_arm_finger_2_link_0"/>
+  <joint name="l_palm_finger_2_joint" type="revolute">
+    <parent link="l_palm"/>
+    <child link="l_finger_2_link_0"/>
     <dynamics damping="1" friction="0"/>
     <axis xyz="0 1 0"/>
     <origin rpy="0 3.1416 -1.57" xyz="-0.0455 0.0214 -0.036"/>
     <!-- Limits: [-17deg.,17deg.] -->
     <limit effort="60" lower="-0.2967" upper="0.2967" velocity="-1"/>
   </joint>
-  <gazebo reference="ur10_arm_palm_finger_2_joint">
+  <gazebo reference="l_palm_finger_2_joint">
     <implicitSpringDamper>1</implicitSpringDamper>
   </gazebo>
-  <joint name="ur10_arm_palm_finger_middle_joint" type="revolute">
-    <parent link="ur10_arm_palm"/>
-    <child link="ur10_arm_finger_middle_link_0"/>
+  <joint name="l_palm_finger_middle_joint" type="revolute">
+    <parent link="l_palm"/>
+    <child link="l_finger_middle_link_0"/>
     <dynamics damping="1" friction="0"/>
     <axis xyz="0 1 0"/>
     <origin rpy="0 0 1.57" xyz="0.0455 0.0214 0"/>
     <limit effort="60" lower="0" upper="0" velocity="-1"/>
   </joint>
-  <gazebo reference="ur10_arm_palm_finger_middle_joint">
+  <gazebo reference="l_palm_finger_middle_joint">
     <implicitSpringDamper>1</implicitSpringDamper>
-  </gazebo>
-  <gazebo>
-    <plugin filename="libRobotiqHandPlugin.so" name="robotiq_hand_plugin">
-      <side>left</side>
-      <kp_position>5.0</kp_position>
-      <kd_position>0.5</kd_position>
-    </plugin>
   </gazebo>
   <joint name="grizzly_ur10_kinect_frame_joint" type="fixed">
     <origin rpy="0 0.349065850399 0" xyz="0.5 0 0.4"/>
