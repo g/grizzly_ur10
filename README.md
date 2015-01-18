@@ -1,4 +1,4 @@
-** With Sensors version **
+** With Sensors version && Fully underactuated model of Robotiq Gripper **
 
 ==============================
 Usage with real Hardware (Not tested yet)
