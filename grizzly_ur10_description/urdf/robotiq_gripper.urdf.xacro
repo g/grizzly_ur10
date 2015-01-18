@@ -100,7 +100,7 @@ This program contains the description of the Grizzly + UR10 manipulator.
      </gazebo> 
 
     <xacro:robotiq_hand prefix="l_" reflect="-1" parent="ur10_arm_ee_link">
-      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <origin xyz="-0.01 0 0" rpy="1.57 0 1.57"/>
    </xacro:robotiq_hand>  
 
 
