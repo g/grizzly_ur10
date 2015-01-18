@@ -605,7 +605,7 @@ there are multiple hands then a prefix followed by an "_" is needed.
             <friction>0</friction>
           </dynamics>
           <xyz>0 0 1</xyz>
-          <use_parent_model_frame>false</use_parent_model_frame>
+          <!-- <use_parent_model_frame>false</use_parent_model_frame> -->
         </axis>
       </joint>
     </gazebo>
@@ -624,7 +624,7 @@ there are multiple hands then a prefix followed by an "_" is needed.
             <friction>0</friction>
           </dynamics>
           <xyz>0 0 1</xyz>
-          <use_parent_model_frame>false</use_parent_model_frame>
+          <!-- <use_parent_model_frame>false</use_parent_model_frame> -->
         </axis>
       </joint>
     </gazebo>
@@ -643,7 +643,7 @@ there are multiple hands then a prefix followed by an "_" is needed.
             <friction>0</friction>
           </dynamics>
           <xyz>0 0 1</xyz>
-          <use_parent_model_frame>false</use_parent_model_frame>
+           <!-- <use_parent_model_frame>false</use_parent_model_frame> -->
         </axis>
       </joint>
     </gazebo>
@@ -662,7 +662,7 @@ there are multiple hands then a prefix followed by an "_" is needed.
             <friction>0</friction>
           </dynamics>
           <xyz>0 0 1</xyz>
-          <use_parent_model_frame>false</use_parent_model_frame>
+          <!-- <use_parent_model_frame>false</use_parent_model_frame> -->
         </axis>
       </joint>
     </gazebo>
@@ -681,7 +681,7 @@ there are multiple hands then a prefix followed by an "_" is needed.
             <friction>0</friction>
           </dynamics>
           <xyz>0 0 1</xyz>
-          <use_parent_model_frame>false</use_parent_model_frame>
+          <!-- <use_parent_model_frame>false</use_parent_model_frame> -->
         </axis>
       </joint>
     </gazebo>

@@ -92,6 +92,7 @@ void RobotiqHandPlugin::Load(gazebo::physics::ModelPtr _parent,
 
   // Load the vector of all joints.
   if (!this->FindJoints())
+    ROS_INFO("Could not find the vector of all joints");
     return;
 
   // Initialize joint state vector.
@@ -106,6 +107,7 @@ void RobotiqHandPlugin::Load(gazebo::physics::ModelPtr _parent,
     this->jointStates.velocity[i] = 0;
     this->jointStates.effort[i] = 0;
   }
+  ROS_INFO("Initialized the joint state vector");
 
   // Default ROS topic names.
   std::string controlTopicName = this->DefaultLeftTopicCommand;
@@ -115,6 +117,7 @@ void RobotiqHandPlugin::Load(gazebo::physics::ModelPtr _parent,
     controlTopicName = this->DefaultRightTopicCommand;
     stateTopicName   = this->DefaultRightTopicState;
   }
+  ROS_INFO("Using control topic %s and state topic %s", controlTopicName.c_str(), stateTopicName.c_str());
 
   for (int i = 0; i < this->NumJoints; ++i)
   {
@@ -142,6 +145,7 @@ void RobotiqHandPlugin::Load(gazebo::physics::ModelPtr _parent,
     if (this->sdf->HasElement("position_effort_max"))
       this->posePID[i].SetCmdMax(this->sdf->Get<double>("position_effort_max"));
   }
+  ROS_INFO("set the PID limits and parameters");
 
   // Overload the ROS topics for the hand if they are available.
   if (this->sdf->HasElement("topic_command"))
@@ -158,6 +162,7 @@ void RobotiqHandPlugin::Load(gazebo::physics::ModelPtr _parent,
           << " gazebo -s libgazebo_ros_api_plugin.so\n";
     return;
   }
+  ROS_INFO("Initialized ROS");
 
   // Create a ROS node.
   this->rosNode.reset(new ros::NodeHandle(""));
