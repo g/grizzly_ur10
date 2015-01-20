@@ -1090,7 +1090,7 @@
 
     <disable_collisions link1="l_finger_middle_link_2" link2="l_palm" reason="Adjacent" />
 
- <disable_collisions link1="l_finger_middle_link_2" link2="link_finger_middle_link_paradistal_hinge" reason="Adjacent" />
+ <disable_collisions link1="l_finger_middle_link_2" link2="l_finger_middle_link_paradistal_hinge" reason="Adjacent" />
 
 <!-- l_fingeR_middle_link_3 -->
  <disable_collisions link1="l_finger_middle_link_3" link2="l_finger_middle_link_median_bar" reason="Adjacent" />
