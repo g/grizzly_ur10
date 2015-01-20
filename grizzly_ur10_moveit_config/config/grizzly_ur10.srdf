@@ -1112,4 +1112,13 @@
  <disable_collisions link1="ur10_arm_wrist_1_link" link2="ur10_arm_wrist_2_link" reason="Adjacent" />
  <disable_collisions link1="ur10_arm_wrist_2_link" link2="ur10_arm_wrist_3_link" reason="Adjacent" />
 
+ <disable_collisions link1="base_link" link2="l_finger_1_link_0" reason="Never" />
+ <disable_collisions link1="base_link" link2="l_finger_1_link_1" reason="Never" />
+ <disable_collisions link1="base_link" link2="l_finger_1_link_proximal_actuating_bar" reason="Never" />
+ <disable_collisions link1="base_link" link2="l_finger_1_link_proximal_actuating_hinge" reason="Adjacent" />
+
+ <disable_collisions link1="base_link" link2="l_palm" reason="Adjacent" />
+ <disable_collisions link1="l_palm" link2="ur10_arm_wrist_1_link" reason="Adjacent" />
+
+
 </robot>
