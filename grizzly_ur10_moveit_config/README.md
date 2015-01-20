@@ -1,4 +1,7 @@
-================ To close the gripper in simulation  =============================
+===========================================
+Operating the Robotiq Gripper in Simulation
+===========================================
+
 Make sure the Gazebo simulation of the Grizzly UR10 is up and running before calling this command.
 
 If it's not, you may start it by (first make sure your workspace is sourced to devel/setup.bash if it is installed by source, or /opt/ros/${rosdistro}/setup.bash if from apt-get)
@@ -13,7 +16,9 @@ This command will close the gripper:
 
     rostopic pub --once left_hand/command robotiq_s_model_articulated_msgs/SModelRobotOutput {1,1,1,0,0,0,255,255,0,155,0,0,255,0,0,0,0,0}
 
-================ To move the arm in simulation ===================================
+===============================
+MoveIt! with a simulated robot
+===============================
 
 Have the Gazebo simulation up and running: 
 
