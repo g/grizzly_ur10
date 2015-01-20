@@ -12,7 +12,7 @@
     <group name="ur10_arm">
         <chain base_link="ur10_arm_base_link" tip_link="ur10_arm_ee_link" />
     </group>
-    <group name="robotiq_middle_finger_links">
+   <!--  <group name="robotiq_middle_finger_links">
         <chain base_link="ur10_arm_ee_link" tip_link="l_finger_middle_link_3" />
     </group>
     <group name="robotiq_finger_1_links">
@@ -94,9 +94,9 @@
         <group name="robotiq_finger_1" />
         <group name="robotiq_finger_2" />
         <group name="robotiq_middle_finger" />
-    </group>
+    </group> --> 
     <!--END EFFECTOR: Purpose: Represent information about an end effector.-->
-    <end_effector name="robotiq_gripper" parent_link="ur10_arm_ee_link" group="robotiq_gripper" parent_group="ur10_arm" />
+   <!--  <end_effector name="robotiq_gripper" parent_link="ur10_arm_ee_link" group="robotiq_gripper" parent_group="ur10_arm" /> -->
     <!--VIRTUAL JOINT: Purpose: this element defines a virtual joint between a robot link and an external frame of reference (considered fixed with respect to the robot)-->
     <virtual_joint name="virtual_joint" type="fixed" parent_frame="base_link" child_link="base_footprint" />
     <!--DISABLE COLLISIONS: By default it is assumed that any link of the robot could potentially come into collision with any other link in the robot. This tag disables collision checking between a specified pair of links. -->
