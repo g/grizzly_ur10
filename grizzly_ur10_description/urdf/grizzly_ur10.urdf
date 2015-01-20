@@ -704,7 +704,7 @@ This program contains the description of the Grizzly + UR10 manipulator.
     </plugin>
   </gazebo>
   <joint name="l_robotiq_hand_joint" type="fixed">
-    <origin rpy="0 0 0" xyz="0 0 0"/>
+    <origin rpy="1.57 1.57 0" xyz="-0.01 0 0"/>
     <parent link="ur10_arm_ee_link"/>
     <child link="l_palm"/>
   </joint>
@@ -1162,7 +1162,7 @@ This program contains the description of the Grizzly + UR10 manipulator.
           <friction>0</friction>
         </dynamics>
         <xyz>0 0 1</xyz>
-        <use_parent_model_frame>false</use_parent_model_frame>
+        <!-- <use_parent_model_frame>false</use_parent_model_frame> -->
       </axis>
     </joint>
   </gazebo>
@@ -1180,7 +1180,7 @@ This program contains the description of the Grizzly + UR10 manipulator.
           <friction>0</friction>
         </dynamics>
         <xyz>0 0 1</xyz>
-        <use_parent_model_frame>false</use_parent_model_frame>
+        <!-- <use_parent_model_frame>false</use_parent_model_frame> -->
       </axis>
     </joint>
   </gazebo>
@@ -1198,7 +1198,7 @@ This program contains the description of the Grizzly + UR10 manipulator.
           <friction>0</friction>
         </dynamics>
         <xyz>0 0 1</xyz>
-        <use_parent_model_frame>false</use_parent_model_frame>
+        <!-- <use_parent_model_frame>false</use_parent_model_frame> -->
       </axis>
     </joint>
   </gazebo>
@@ -1216,7 +1216,7 @@ This program contains the description of the Grizzly + UR10 manipulator.
           <friction>0</friction>
         </dynamics>
         <xyz>0 0 1</xyz>
-        <use_parent_model_frame>false</use_parent_model_frame>
+        <!-- <use_parent_model_frame>false</use_parent_model_frame> -->
       </axis>
     </joint>
   </gazebo>
@@ -1234,7 +1234,7 @@ This program contains the description of the Grizzly + UR10 manipulator.
           <friction>0</friction>
         </dynamics>
         <xyz>0 0 1</xyz>
-        <use_parent_model_frame>false</use_parent_model_frame>
+        <!-- <use_parent_model_frame>false</use_parent_model_frame> -->
       </axis>
     </joint>
   </gazebo>
@@ -1695,7 +1695,7 @@ This program contains the description of the Grizzly + UR10 manipulator.
           <friction>0</friction>
         </dynamics>
         <xyz>0 0 1</xyz>
-        <use_parent_model_frame>false</use_parent_model_frame>
+        <!-- <use_parent_model_frame>false</use_parent_model_frame> -->
       </axis>
     </joint>
   </gazebo>
@@ -1713,7 +1713,7 @@ This program contains the description of the Grizzly + UR10 manipulator.
           <friction>0</friction>
         </dynamics>
         <xyz>0 0 1</xyz>
-        <use_parent_model_frame>false</use_parent_model_frame>
+        <!-- <use_parent_model_frame>false</use_parent_model_frame> -->
       </axis>
     </joint>
   </gazebo>
@@ -1731,7 +1731,7 @@ This program contains the description of the Grizzly + UR10 manipulator.
           <friction>0</friction>
         </dynamics>
         <xyz>0 0 1</xyz>
-        <use_parent_model_frame>false</use_parent_model_frame>
+        <!-- <use_parent_model_frame>false</use_parent_model_frame> -->
       </axis>
     </joint>
   </gazebo>
@@ -1749,7 +1749,7 @@ This program contains the description of the Grizzly + UR10 manipulator.
           <friction>0</friction>
         </dynamics>
         <xyz>0 0 1</xyz>
-        <use_parent_model_frame>false</use_parent_model_frame>
+        <!-- <use_parent_model_frame>false</use_parent_model_frame> -->
       </axis>
     </joint>
   </gazebo>
@@ -1767,7 +1767,7 @@ This program contains the description of the Grizzly + UR10 manipulator.
           <friction>0</friction>
         </dynamics>
         <xyz>0 0 1</xyz>
-        <use_parent_model_frame>false</use_parent_model_frame>
+        <!-- <use_parent_model_frame>false</use_parent_model_frame> -->
       </axis>
     </joint>
   </gazebo>
@@ -2228,7 +2228,7 @@ This program contains the description of the Grizzly + UR10 manipulator.
           <friction>0</friction>
         </dynamics>
         <xyz>0 0 1</xyz>
-        <use_parent_model_frame>false</use_parent_model_frame>
+        <!-- <use_parent_model_frame>false</use_parent_model_frame> -->
       </axis>
     </joint>
   </gazebo>
@@ -2246,7 +2246,7 @@ This program contains the description of the Grizzly + UR10 manipulator.
           <friction>0</friction>
         </dynamics>
         <xyz>0 0 1</xyz>
-        <use_parent_model_frame>false</use_parent_model_frame>
+        <!-- <use_parent_model_frame>false</use_parent_model_frame> -->
       </axis>
     </joint>
   </gazebo>
@@ -2264,7 +2264,7 @@ This program contains the description of the Grizzly + UR10 manipulator.
           <friction>0</friction>
         </dynamics>
         <xyz>0 0 1</xyz>
-        <use_parent_model_frame>false</use_parent_model_frame>
+        <!-- <use_parent_model_frame>false</use_parent_model_frame> -->
       </axis>
     </joint>
   </gazebo>
@@ -2282,7 +2282,7 @@ This program contains the description of the Grizzly + UR10 manipulator.
           <friction>0</friction>
         </dynamics>
         <xyz>0 0 1</xyz>
-        <use_parent_model_frame>false</use_parent_model_frame>
+        <!-- <use_parent_model_frame>false</use_parent_model_frame> -->
       </axis>
     </joint>
   </gazebo>
@@ -2300,7 +2300,7 @@ This program contains the description of the Grizzly + UR10 manipulator.
           <friction>0</friction>
         </dynamics>
         <xyz>0 0 1</xyz>
-        <use_parent_model_frame>false</use_parent_model_frame>
+        <!-- <use_parent_model_frame>false</use_parent_model_frame> -->
       </axis>
     </joint>
   </gazebo>
@@ -2316,15 +2316,6 @@ This program contains the description of the Grizzly + UR10 manipulator.
         <color rgba="0 1 0 1"/>
       </material>
     </visual>
-    <!-- Mesh collision -->
-    <!-- <collision>
-          <geometry>
-            <mesh filename="package://grizzly_ur10_description/meshes/s-model_articulated/collision/palm.STL"/>
-          </geometry>
-          <material name="yellow">
-            <color rgba="0 1 1 1"/>
-          </material>
-        </collision> -->
     <!-- Simple shape collision -->
     <collision>
       <origin rpy="0 0 0" xyz="0 0 0"/>
