@@ -986,4 +986,130 @@
     <disable_collisions link1="ur10_arm_wrist_1_link" link2="ur10_arm_wrist_2_link" reason="Adjacent" />
     <disable_collisions link1="ur10_arm_wrist_1_link" link2="ur10_arm_wrist_3_link" reason="Never" />
     <disable_collisions link1="ur10_arm_wrist_2_link" link2="ur10_arm_wrist_3_link" reason="Adjacent" />
+
+    <disable_collisions link1="l_finger_2_link_0" link2="l_finger_2_link_1" reason="Adjacent" />
+    <disable_collisions link1="l_finger_2_link_0" link2="l_finger_2_link_paraproximal_actuating_hinge" reason="Adjacent" />
+    <disable_collisions link1="l_finger_2_link_0" link2="l_finger_2_link_paraproximal_actuating_hinge" reason="Adjacent" />
+    <disable_collisions link1="l_finger_2_link_0" link2="l_finger_2_link_proximal_actuating_hinge" reason="Adjacent" />
+    <disable_collisions link1="l_finger_2_link_0" link2="l_palm"
+ reason="Adjacent" />
+    <disable_collisions link1="l_finger_2_link_0" link2="ur10_arm_wrist_3_link" reason="Never" />
+    <disable_collisions link1="l_finger_2_link_1" link2="l_finger_2_link_2" reason="Adjacent" />
+
+   <!-- l_finger_2_link_1 -->
+    <disable_collisions link1="l_finger_2_link_1" link2="l_finger_2_link_median_actuating_hinge" reason="Adjacent" />
+    <disable_collisions link1="l_finger_2_link_1" link2="l_finger_2_link_median_bar" reason="Adjacent" />
+
+    <disable_collisions link1="l_finger_2_link_1" link2="l_finger_2_link_median_bar_underactuated" reason="Never" />
+    <disable_collisions link1="l_finger_2_link_1" link2="l_finger_2_link_paramedian_hinge" reason="Adjacent" />
+    <disable_collisions link1="l_finger_2_link_1" link2="l_finger_2_link_paraproximal_bar" reason="Adjacent" />
+    <disable_collisions link1="l_finger_2_link_1" link2="l_finger_2_link_proximal_actuating_bar" reason="Adjacent" />
+    <disable_collisions link1="l_finger_2_link_1" link2="l_finger_2_link_proximal_actuating_hinge" reason="Never" />
+    <disable_collisions link1="l_finger_2_link_1" link2="l_palm" reason="Adjacent" />
+
+    <!-- l_finger_2_link_2 -->
+    <disable_collisions link1="l_finger_2_link_2" link2="l_finger_2_link_median_actuating_hinge" reason="Adjacent" />
+
+    <disable_collisions link1="l_finger_2_link_2" link2="l_finger_2_link_median_bar" reason="Adjacent" />
+
+    <disable_collisions link1="l_finger_2_link_2" link2="l_finger_2_link_median_bar_underactuated" reason="Adjacent" />
+
+    <disable_collisions link1="l_finger_2_link_2" link2="l_finger_2_link_paradistal_hinge" reason="Adjacent" />
+
+    <disable_collisions link1="l_finger_2_link_2" link2="l_finger_2_link_paramedian_hinge" reason="Adjacent" />
+
+    <disable_collisions link1="l_finger_2_link_2" link2="l_finger_2_link_paraproximal_bar" reason="Adjacent" />
+
+    <disable_collisions link1="l_finger_2_link_2" link2="l_finger_2_link_proximal_actuating_bar" reason="Adjacent" />
+
+  <!-- l_finger_2_link_3 -->
+
+    <disable_collisions link1="l_finger_2_link_3" link2="l_finger_2_link_median_actuating_hinge" reason="Adjacent" />
+
+    <disable_collisions link1="l_finger_2_link_3" link2="l_finger_2_link_median_bar" reason="Adjacent" />
+
+    <disable_collisions link1="l_finger_2_link_3" link2="l_finger_2_link_median_bar_underactuated" reason="Adjacent" />
+
+    <disable_collisions link1="l_finger_2_link_3" link2="l_finger_2_link_paradistal_hinge" reason="Adjacent" />
+
+    <disable_collisions link1="l_finger_2_link_3" link2="l_finger_2_link_paramedian_hinge" reason="Adjacent" />
+
+    <disable_collisions link1="l_finger_2_link_3" link2="l_finger_2_link_paraproximal_bar" reason="Adjacent" />
+
+    <disable_collisions link1="l_finger_2_link_3" link2="l_finger_2_link_proximal_actuating_bar" reason="Adjacent" />
+
+ <!-- l_finger_2_link_median_bar_underactuated -->
+   <disable_collisions link1="l_finger_2_link_median_bar_underactuated" link2="l_finger_2_link_paradistal_hinge" reason="Adjacent" />
+
+  <disable_collisions link1="l_finger_2_link_median_bar_underactuated" link2="l_finger_2_link_paramedian_hinge" reason="Adjacent" />
+
+<!-- l_finger_2_link_paraproximal_actuating_hinge -->
+  <disable_collisions link1="l_finger_2_link_paraproximal_actuating_hinge" link2="l_finger_2_link_paraproximal_bar" reason="Adjacent" />
+
+  <disable_collisions link1="l_finger_2_link_paraproximal_actuating_hinge" link2="l_palm" reason="Adjacent" />
+
+<!-- l_finger_2_link_proximal_actuating_bar -->
+  <disable_collisions link1="l_finger_2_link_proximal_actuating_bar" link2="l_finger_2_link_proximal_actuating_hinge" reason="Adjacent" />
+
+<!-- l_finger_2_link_proximal_actuating_hinge -->
+  <disable_collisions link1="l_finger_2_link_proximal_actuating_hinge" link2="l_palm" reason="Adjacent" />
+
+<!-- l_finger_middle_link_0 -->
+ <disable_collisions link1="l_finger_middle_link_0" link2="l_finger_middle_link_1" reason="Adjacent" />
+
+ <disable_collisions link1="l_finger_middle_link_0" link2="l_finger_middle_link_paraproximal_actuating_hinge" reason="Adjacent" />
+
+ <disable_collisions link1="l_finger_middle_link_0" link2="l_palm" reason="Adjacent" />
+
+<!-- l_finger_middle_link_1 -->
+
+
+   <disable_collisions link1="l_finger_middle_link_1" link2="l_finger_middle_link_2" reason="Adjacent" />
+
+    <disable_collisions link1="l_finger_middle_link_1" link2="l_finger_middle_link_median_bar" reason="Adjacent" />
+
+    <disable_collisions link1="l_finger_middle_link_1" link2="l_finger_middle_link_median_bar_underactuated" reason="Adjacent" />
+
+    <disable_collisions link1="l_finger_middle_link_1" link2="l_finger_middle_link_paramedian_hinge" reason="Adjacent" />
+
+    <disable_collisions link1="l_finger_middle_link_1" link2="l_finger_middle_link_paraproximal_bar" reason="Adjacent" />
+
+    <disable_collisions link1="l_finger_middle_link_1" link2="l_palm" reason="Adjacent" />
+
+<!-- l_finger_middle_link_2 -->
+
+   <disable_collisions link1="l_finger_middle_link_2" link2="l_finger_middle_link_3" reason="Adjacent" />
+
+    <disable_collisions link1="l_finger_middle_link_2" link2="l_finger_middle_link_median_bar" reason="Adjacent" />
+
+    <disable_collisions link1="l_finger_middle_link_2" link2="l_finger_middle_link_median_bar_underactuated" reason="Adjacent" />
+
+    <disable_collisions link1="l_finger_middle_link_2" link2="l_finger_middle_link_paramedian_hinge" reason="Adjacent" />
+
+    <disable_collisions link1="l_finger_middle_link_2" link2="l_finger_middle_link_paraproximal_bar" reason="Adjacent" />
+
+    <disable_collisions link1="l_finger_middle_link_2" link2="l_palm" reason="Adjacent" />
+
+ <disable_collisions link1="l_finger_middle_link_2" link2="link_finger_middle_link_paradistal_hinge" reason="Adjacent" />
+
+<!-- l_fingeR_middle_link_3 -->
+ <disable_collisions link1="l_finger_middle_link_3" link2="l_finger_middle_link_median_bar" reason="Adjacent" />
+ <disable_collisions link1="l_finger_middle_link_3" link2="l_finger_middle_link_median_bar_underactuated" reason="Adjacent" />
+ <disable_collisions link1="l_finger_middle_link_3" link2="l_finger_middle_link_paradistal_hinge" reason="Adjacent" />
+
+<!-- l_finger_middle_link_median_bar_underactuated -->
+ <disable_collisions link1="l_finger_middle_link_median_bar_underactuated" link2="l_finger_middle_link_paramedian_hinge" reason="Adjacent" />
+ <disable_collisions link1="l_finger_middle_link_median_bar_underactuated" link2="l_finger_middle_link_paradistal_hinge" reason="Adjacent" />
+
+<!-- l_finger_middle_link_paraproximal_actuating_hinge -->
+ <disable_collisions link1="l_finger_middle_link_paraproximal_actuating_hinge" link2="l_finger_middle_link_paraproximal_bar" reason="Adjacent" />
+ <disable_collisions link1="l_finger_middle_link_paraproximal_actuating_hinge" link2="l_palm" reason="Adjacent" />
+
+
+ <disable_collisions link1="l_palm" link2="ur10_arm_ee_link" reason="Adjacent" />
+ <disable_collisions link1="l_palm" link2="ur10_arm_wrist_2_link" reason="Adjacent" />
+
+ <disable_collisions link1="ur10_arm_wrist_1_link" link2="ur10_arm_wrist_2_link" reason="Adjacent" />
+ <disable_collisions link1="ur10_arm_wrist_2_link" link2="ur10_arm_wrist_3_link" reason="Adjacent" />
+
 </robot>
