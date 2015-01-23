@@ -163,7 +163,7 @@ This program contains the description of the Grizzly + UR10 manipulator.
     <collision>
       <origin rpy="1.57079632679 0.0 0" xyz="0 0 0"/>
       <geometry>
-        <cylinder length="0.252" radius="0.33"/>
+        <cylinder length="0.2772" radius="0.33"/>
       </geometry>
     </collision>
   </link>
@@ -207,7 +207,7 @@ This program contains the description of the Grizzly + UR10 manipulator.
     <collision>
       <origin rpy="1.57079632679 3.14159265359 0" xyz="0 0 0"/>
       <geometry>
-        <cylinder length="0.252" radius="0.33"/>
+        <cylinder length="0.2772" radius="0.33"/>
       </geometry>
     </collision>
   </link>
@@ -282,7 +282,7 @@ This program contains the description of the Grizzly + UR10 manipulator.
     <collision>
       <origin rpy="1.57079632679 0.0 0" xyz="0 0 0"/>
       <geometry>
-        <cylinder length="0.252" radius="0.33"/>
+        <cylinder length="0.2772" radius="0.33"/>
       </geometry>
     </collision>
   </link>
@@ -326,7 +326,7 @@ This program contains the description of the Grizzly + UR10 manipulator.
     <collision>
       <origin rpy="1.57079632679 3.14159265359 0" xyz="0 0 0"/>
       <geometry>
-        <cylinder length="0.252" radius="0.33"/>
+        <cylinder length="0.2772" radius="0.33"/>
       </geometry>
     </collision>
   </link>
@@ -2371,117 +2371,7 @@ This program contains the description of the Grizzly + UR10 manipulator.
   <gazebo reference="l_palm_finger_middle_joint">
     <implicitSpringDamper>1</implicitSpringDamper>
   </gazebo>
-  <joint name="grizzly_ur10_kinect_frame_joint" type="fixed">
-    <origin rpy="0 0.349065850399 0" xyz="0.5 0 0.4"/>
-    <parent link="sensor_anchor_link"/>
-    <child link="grizzly_ur10_kinect_frame"/>
-  </joint>
-  <link name="grizzly_ur10_kinect_frame">
-    <inertial>
-      <mass value="0.1"/>
-      <origin rpy="0 0 0" xyz="0 0 0"/>
-      <inertia ixx="0.01" ixy="0.0" ixz="0.0" iyy="0.01" iyz="0.0" izz="0.01"/>
-    </inertial>
-    <visual>
-      <origin rpy="0 0 0" xyz="0.0 0.012 0"/>
-      <geometry>
-        <mesh filename="package://pr2_description/meshes/sensors/kinect_v0/kinect.dae" scale="0.001 0.001 0.001"/>
-      </geometry>
-    </visual>
-    <collision>
-      <origin rpy="0 0 0" xyz="0.0 0.012 0"/>
-      <geometry>
-        <mesh filename="package://pr2_description/meshes/sensors/kinect_v0/kinect.dae" scale="0.001 0.001 0.001"/>
-      </geometry>
-    </collision>
-  </link>
-  <joint name="grizzly_ur10_kinect_optical_joint" type="fixed">
-    <origin rpy="-1.57079632679 0.0 -1.57079632679" xyz="0.0            0.0         0.0"/>
-    <parent link="grizzly_ur10_kinect_frame"/>
-    <child link="grizzly_ur10_kinect_optical_frame"/>
-  </joint>
-  <link name="grizzly_ur10_kinect_optical_frame"/>
-  <gazebo reference="grizzly_ur10_kinect_frame">
-    <sensor name="grizzly_ur10_kinect_frame_sensor" type="depth">
-      <always_on>true</always_on>
-      <update_rate>20.0</update_rate>
-      <camera>
-        <horizontal_fov>0.994837673637</horizontal_fov>
-        <image>
-          <format>R8G8B8</format>
-          <width>640</width>
-          <height>480</height>
-        </image>
-        <clip>
-          <near>0.01</near>
-          <far>5</far>
-        </clip>
-      </camera>
-      <plugin filename="libgazebo_ros_openni_kinect.so" name="grizzly_ur10_kinect_frame_controller">
-        <alwaysOn>true</alwaysOn>
-        <updateRate>20.0</updateRate>
-        <cameraName>grizzly_ur10_kinect</cameraName>
-        <imageTopicName>grizzly_ur10_kinect/ir/image_raw</imageTopicName>
-        <cameraInfoTopicName>grizzly_ur10_kinect/ir/camera_info</cameraInfoTopicName>
-        <depthImageTopicName>grizzly_ur10_kinect/depth/image_raw</depthImageTopicName>
-        <depthImageCameraInfoTopicName>grizzly_ur10_kinect/depth/camera_info</depthImageCameraInfoTopicName>
-        <pointCloudTopicName>grizzly_ur10_kinect/depth/points</pointCloudTopicName>
-        <frameName>grizzly_ur10_kinect_optical_frame</frameName>
-        <pointCloudCutoff>0.5</pointCloudCutoff>
-        <distortionK1>0.00000001</distortionK1>
-        <distortionK2>0.00000001</distortionK2>
-        <distortionK3>0.00000001</distortionK3>
-        <distortionT1>0.00000001</distortionT1>
-        <distortionT2>0.00000001</distortionT2>
-        <CxPrime>0</CxPrime>
-        <Cx>0</Cx>
-        <Cy>0</Cy>
-        <focalLength>0</focalLength>
-        <hackBaseline>0</hackBaseline>
-      </plugin>
-    </sensor>
-    <sensor name="grizzly_ur10_kinect_frame_sensor" type="depth">
-      <always_on>true</always_on>
-      <update_rate>20.0</update_rate>
-      <camera>
-        <horizontal_fov>0.994837673637</horizontal_fov>
-        <image>
-          <format>R8G8B8</format>
-          <width>640</width>
-          <height>480</height>
-        </image>
-        <clip>
-          <near>0.01</near>
-          <far>5</far>
-        </clip>
-      </camera>
-      <plugin filename="libgazebo_ros_openni_kinect.so" name="grizzly_ur10_kinect_frame_controller">
-        <alwaysOn>true</alwaysOn>
-        <updateRate>20.0</updateRate>
-        <cameraName>grizzly_ur10_kinect</cameraName>
-        <imageTopicName>grizzly_ur10_kinect/rgb/image_raw</imageTopicName>
-        <cameraInfoTopicName>grizzly_ur10_kinect/rgb/camera_info</cameraInfoTopicName>
-        <depthImageTopicName>grizzly_ur10_kinect/depth/image_raw</depthImageTopicName>
-        <depthImageCameraInfoTopicName>grizzly_ur10_kinect/depth/camera_info</depthImageCameraInfoTopicName>
-        <pointCloudTopicName>grizzly_ur10_kinect/rgb/points</pointCloudTopicName>
-        <frameName>grizzly_ur10_kinect_optical_frame</frameName>
-        <pointCloudCutoff>0.5</pointCloudCutoff>
-        <distortionK1>0.00000001</distortionK1>
-        <distortionK2>0.00000001</distortionK2>
-        <distortionK3>0.00000001</distortionK3>
-        <distortionT1>0.00000001</distortionT1>
-        <distortionT2>0.00000001</distortionT2>
-        <CxPrime>0</CxPrime>
-        <Cx>0</Cx>
-        <Cy>0</Cy>
-        <focalLength>0</focalLength>
-        <hackBaseline>0</hackBaseline>
-      </plugin>
-    </sensor>
-  </gazebo>
-  <gazebo reference="grizzly_ur10_kinect_link">
-    <selfCollide>true</selfCollide>
-  </gazebo>
+  <!--  <xacro:include filename="$(find grizzly_ur10_description)/urdf/grizzly_ur10_kinect.gazebo.xacro" /> -->
   <joint name="grizzly_ur10_hokuyo_joint" type="fixed">
     <axis xyz="0 1 0"/>
     <origin rpy="0 0 0" xyz="1.0 0 -0.1"/>

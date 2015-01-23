@@ -102,10 +102,17 @@
     <!--DISABLE COLLISIONS: By default it is assumed that any link of the robot could potentially come into collision with any other link in the robot. This tag disables collision checking between a specified pair of links. -->
     <disable_collisions link1="back_left_wheel" link2="back_right_wheel" reason="Never" />
     <disable_collisions link1="back_left_wheel" link2="base_footprint_bumper_part" reason="Never" />
+
+   <disable_collisions link1="ur10_arm_forearm_link" link2="l_finger_middle_link_1" reason="Never" />
+   <disable_collisions link1="ur10_arm_forearm_link" link2="l_finger_middle_link_2" reason="Never" />
+   <disable_collisions link1="ur10_arm_forearm_link" link2="l_finger_middle_link_3" reason="Never" />
+
+
     <disable_collisions link1="back_left_wheel" link2="base_link" reason="Adjacent" />
     <disable_collisions link1="back_left_wheel" link2="front_axle_link" reason="Never" />
     <disable_collisions link1="back_left_wheel" link2="front_left_wheel" reason="Never" />
     <disable_collisions link1="back_left_wheel" link2="front_right_wheel" reason="Never" />
+   <disable_collisions link1="front_right_wheel" link2="ur10_arm_forearm_link" reason="Never" />
     <disable_collisions link1="back_left_wheel" link2="grizzly_ur10_kinect_frame" reason="Never" />
     <disable_collisions link1="back_left_wheel" link2="ur10_arm_base_link" reason="Never" />
     <disable_collisions link1="back_left_wheel" link2="ur10_arm_shoulder_link" reason="Never" />
