@@ -1,5 +1,28 @@
 ** With Sensors version && Fully underactuated model of Robotiq Gripper **
 
+=======================================
+Installing The Grizzly UR10 from Source
+=======================================
+
+clone these repositories and put them in your source directory, then catkin_make:
+
+git clone https://github.com/g/grizzly_ur10
+git clone https://github.com/ros-industrial/robotiq
+
+mv robotiq grizzly_ur10 ~/catkin_ws/your_source_directory
+cd ~/catkin_ws
+catkin_make
+
+Everything should compile smoothly (provided you have all of the debs installed. if not, install all of them until the compiler errors go away)
+
+
+=======================================
+Installing The Grizzly UR10 from debs
+=======================================
+
+Until the ros-industrial/robotiq packages are released via debs, we recommend you install from source to prevent confusion and errors.
+
+
 ==============================
 Usage with real Hardware (Not tested yet)
 ==============================
