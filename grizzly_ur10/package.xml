@@ -1,0 +1,18 @@
+<?xml version="1.0"?>
+<package>
+  <name>grizzly_ur10</name>
+  <version>0.0.0</version>
+  <description>The grizzly_ur10 package</description>
+
+  <maintainer email="dash@clearpathrobotics.com">Devon Ash</maintainer>
+  <license>BSD</license>
+  <author email="dash@clearpathrobotics.com">Devon Ash</author>
+
+  <buildtool_depend>catkin</buildtool_depend>
+
+  <run_depend>grizzly</run_depend>
+  <run_depend>grizzly_ur10_gazebo</run_depend>
+  <run_depend>grizzly_ur10_description</run_depend>
+  <run_depend>grizzly_ur10_moveit_config</run_depend>
+
+</package>
