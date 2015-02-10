@@ -107,6 +107,20 @@
    <disable_collisions link1="ur10_arm_forearm_link" link2="l_finger_middle_link_2" reason="Never" />
    <disable_collisions link1="ur10_arm_forearm_link" link2="l_finger_middle_link_3" reason="Never" />
 
+<disable_collisions link1="ur10_arm_forearm_link" link2="l_finger_1_link_3" reason="Never" />
+<disable_collisions link1="ur10_arm_forearm_link" link2="l_finger_middle_link_paradistal_hinge" reason="Never" />
+
+<disable_collisions link1="ur10_arm_forearm_link" link2="l_finger_1_link_1" reason="Never" />
+
+<disable_collisions link1="ur10_arm_forearm_link" link2="l_finger_middle_link_median_bar" reason="Never" />
+
+<disable_collisions link1="ur10_arm_forearm_link" link2="l_finger_middle_link_paramedian_hinge" reason="Never" />
+
+<disable_collisions link1="ur10_arm_forearm_link" link2="l_finger_middle_link_median_actuating_hinge" reason="Never" />
+
+<disable_collisions link1="ur10_arm_forearm_link" link2="l_finger_middle_link_paraproximal_bar" reason="Never" />
+
+<disable_collisions link1="ur10_arm_forearm_link" link2="l_finger_link_median_bar_underactuated" reason="Never" />
 
     <disable_collisions link1="back_left_wheel" link2="base_link" reason="Adjacent" />
     <disable_collisions link1="back_left_wheel" link2="front_axle_link" reason="Never" />
